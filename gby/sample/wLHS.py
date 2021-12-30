@@ -75,6 +75,7 @@ class wLHS():
         # 只有当某一个变量给的corr不等于0时，对该变量使用wLHS抽样
         else:
             print('corr ！= 0，使用wlhs抽样')
+            # d = (corr * C) / (math.exp(-corr * lower * C) - math.exp(-corr * upper * C))
             d = (corr * C) / (math.exp(-corr * lower * C) - math.exp(-corr * upper * C))
             # 计算第1 - k         K个采样点 0-1         k-1~K
             for j in range(1,K+1) :
@@ -126,7 +127,7 @@ class wLHS():
             self.getPoints(corr, K, C, lower, upper)
         samples = self.all_samples()
         print('------------lasso计算的corr生成的lhs样本------------')
-        print(samples)
+        # print(samples)
         return samples
 
 '''
@@ -139,8 +140,8 @@ def std_lhs(pbounds, N):
     # 参数1：变量个数；参数2：bounds= [[0,90],[0,30]]  参数3：需要生成几个初始样本
     std_lhs = LHSample(len(pbounds), bounds, N)
     std_result = std_lhs.lhs()
-    print('----------标准lhs生成的样本------------')
-    print((std_result))
+    print('----------标准lhs生成样本------------')
+    # print((std_result))
     return std_result
 
 # 黑盒函数，计算一组参数对应的target
@@ -154,7 +155,7 @@ def black_box_function(params):
 def l1_lasso(result, target, para_names):
     from sklearn.linear_model import Lasso
     # from correlation import linear_model
-
+    print('lasso使用样本的维度' + str(result.shape))
     X = result
     Y = target
     # names = para_names
@@ -177,47 +178,52 @@ if __name__ == '__main__':
         使用标准lhs生成10个初始样本
     '''
     std_result = std_lhs(pbounds, 10)
-
-    '''
-        获取参数获得对应的target值，生成target列表
-    '''
-    # temp字典
-    temp = {}
-    # 专门用一个list保存target，用于lasso相关性分析
-    std_target = []
-    # 获取采样样本对应的target
-    for r in std_result:
-        std_target.append(black_box_function(r))
-
-    '''
-       计算std_lhs生成的初始样本样本与target的lasso回归模型，得到每个参数的相关性系数corr，每个参数的corr不等，corr可能为0
-    '''
-    pname = []
-    for para_name in pbounds:
-        pname.append(para_name)
-    # 计算样本与target的lasso相关性
-    corr = l1_lasso(std_result, std_target, pname)
-    print('\n lasso计算的corr:' + str(corr))
+    # print(type(std_result))
+    # print(std_result)
 
 
-    '''
-        将key和bounds拼成pbounds格式：pbounds = {'x': (-5, 5), 'y': (-2, 15)}
-    '''
-    keys = ['spark.default.parallelism', 'spark.executor.cores', 'spark.executor.instances']
-    temp = [[200.0, 500.0], [1.0, 3.0], [4.0, 8.0]]
-    bounds = []
-    for i in temp:
-        bounds.append(tuple(i))
 
-    pbounds = dict(map(lambda x, y: [x, y], keys, bounds))
-
-    '''
-         使用wlhs产生样本
-     '''
-    wlhs_init_point = init_point - std_lhs_init_points
-    # C 超参数：重要性采样的积极程度
-    C = 0.9
-    # 生成lhs实例
-    w = wLHS(wlhs_init_point, C)
-    samples = w.w_lhs(wlhs_init_point, C, corr, pbounds)
-
+    #
+    # '''
+    #     获取参数获得对应的target值，生成target列表
+    # '''
+    # # temp字典
+    # temp = {}
+    # # 专门用一个list保存target，用于lasso相关性分析
+    # std_target = []
+    # # 获取采样样本对应的target
+    # for r in std_result:
+    #     std_target.append(black_box_function(r))
+    #
+    # '''
+    #    计算std_lhs生成的初始样本样本与target的lasso回归模型，得到每个参数的相关性系数corr，每个参数的corr不等，corr可能为0
+    # '''
+    # pname = []
+    # for para_name in pbounds:
+    #     pname.append(para_name)
+    # # 计算样本与target的lasso相关性
+    # corr = l1_lasso(std_result, std_target, pname)
+    # print('\n lasso计算的corr:' + str(corr))
+    #
+    #
+    # '''
+    #     将key和bounds拼成pbounds格式：pbounds = {'x': (-5, 5), 'y': (-2, 15)}
+    # '''
+    # keys = ['spark.default.parallelism', 'spark.executor.cores', 'spark.executor.instances']
+    # temp = [[200.0, 500.0], [1.0, 3.0], [4.0, 8.0]]
+    # bounds = []
+    # for i in temp:
+    #     bounds.append(tuple(i))
+    #
+    # pbounds = dict(map(lambda x, y: [x, y], keys, bounds))
+    #
+    # '''
+    #      使用wlhs产生样本
+    #  '''
+    # wlhs_init_point = init_point - std_lhs_init_points
+    # # C 超参数：重要性采样的积极程度
+    # C = 0.9
+    # # 生成lhs实例
+    # w = wLHS(wlhs_init_point, C)
+    # samples = w.w_lhs(wlhs_init_point, C, corr, pbounds)
+    #

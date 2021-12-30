@@ -68,11 +68,12 @@ def black_box_function(**params):
     i = []
     model = build_training_model(name)
     for conf in vital_params['vital_params']:
-        i.append(params[conf])
+        if params[conf] in i:
+            pass
+        else:
+            i.append(params[conf])
         # print(key)
-    # print(i)
     y = model.predict(np.matrix([i]))[0]
-    # print(y)
 
     return -y
 

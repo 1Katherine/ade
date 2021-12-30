@@ -147,6 +147,9 @@ class BayesianOptimization(Observable):
 
         return self._space.array_to_params(suggestion)
 
+    '''
+        改变初始样本的抽样方式只需要取消注释下面对应抽样的代码，注释其他抽样方法代码即可
+    '''
     # 生成初始样本点，放入_queue中
     def _prime_queue(self, init_points):
         """Make sure there's something in the queue at the very beginning."""
@@ -163,26 +166,65 @@ class BayesianOptimization(Observable):
         #     self._queue.add(self._space.random_sample())
 
 
-        # '''
-        #     新增代码：lhs生成样本代码（拉丁超立方根据初始的init_points大小，一次生成所有的init_points样本）
-        #     2021/12/29 19:17
-        # '''
-        # print('------------使用lhs生成初始样本点------------')
+
+        '''
+            新增代码：lhs生成样本代码（拉丁超立方根据初始的init_points大小，一次生成所有的init_points样本）
+            2021/12/29 19:17
+        '''
+        # print('------------使用标准lhs生成初始样本点------------')
         # lhsample = self._space.lhs_sample(init_points)
         # for l in lhsample:
         #     # print(l.ravel())
         #     self._queue.add(l.ravel())
 
 
+
         '''
-            新增代码：wlhs生成样本代码（拉丁超立方根据初始的init_points大小，一次生成所有的init_points样本）
-            2021/12/30 17:00
+            新增代码：wlhs生成样本代码(一次标准lhs+一次wlhs)
+            （根据初始的init_points大小，先生成20个标准lhs，使用生成的样本线性回归得到相关性，再生成init_points-20个wlhs样本）
+            2021/12/30 18:18
         '''
-        # 保准标准lhs样本和wlhs样本
+        # # 保准标准lhs样本和wlhs样本
+        # allsample = []
+        # '''
+        #     使用标准lhs生成10个初始样本
+        # '''
+        # std_lhs_init_points = 20
+        # print('------------使用标准lhs生成'+ str(std_lhs_init_points) +'个初始样本-----------')
+        # std_target = []
+        # # 使用标准lhs生成 std_lhs_init_points 个初始样本
+        # lhsample = self._space.lhs_sample(std_lhs_init_points)
+        # for std_samples in lhsample:
+        #     # 获取标准lhs产生的样本的target值
+        #     params = dict(zip(self.space._keys, std_samples))
+        #     target = self._space.target_func(**params)
+        #     std_target.append(target)
+        #     # 将初始队列中传入标准lhs产生的样本
+        #     allsample.append(std_samples)
+        #     # self._queue.add(std_samples.ravel())
+        #
+        # # print(std_target)
+        #
+        # print('------------使用wlhs生成初始样本点------------')
+        # wlhs_init_point = init_points - std_lhs_init_points
+        # wlhsample = self._space.wlhs_sample(wlhs_init_point, lhsample, std_target)
+        # for wsam in wlhsample:
+        #     # print(l.ravel())
+        #     # 将初始队列中传入wlhs产生的样本
+        #     allsample.append(wsam)
+        #
+        # # 将初始队列中传入标准lhs和wlhs产生的样本
+        # for sam in allsample:
+        #     self._queue.add(sam.ravel())
+
+
+        '''
+            新增代码：递归wlhs生成样本代码（一次标准lhs + 多个wlhs）
+            （根据初始的init_points大小，先生成20个标准lhs，使用生成的样本线性回归得到相关性，用wlhs生成20个样本，更新相关性，再生成20个样本（循环））
+            2021/12/30 17:51
+        '''
         allsample = []
-        '''
-            使用标准lhs生成10个初始样本
-        '''
+
         std_lhs_init_points = 20
         print('------------使用标准lhs生成'+ str(std_lhs_init_points) +'个初始样本-----------')
         std_target = []
@@ -197,19 +239,30 @@ class BayesianOptimization(Observable):
             allsample.append(std_samples)
             # self._queue.add(std_samples.ravel())
 
+        import numpy as np
         # print(std_target)
 
-        print('------------使用wlhs生成初始样本点------------')
-        wlhs_init_point = init_points - std_lhs_init_points
-        wlhsample = self._space.wlhs_sample(wlhs_init_point, lhsample, std_target)
-        for wsam in wlhsample:
-            # print(l.ravel())
-            # 将初始队列中传入wlhs产生的样本
-            allsample.append(wsam)
+        # 每次增加一些样本，进行相关性的计算
+        wlhs_init_point = 10
+        for i in range(0,4):
+            wlhsample = self._space.wlhs_sample(wlhs_init_point, lhsample, std_target)
+            for wsam in wlhsample:
+                allsample.append(wsam)
+                params = dict(zip(self.space._keys, wsam))
+                target = self._space.target_func(**params)
+
+                wsam = np.array([wsam])
+                lhsample = np.array(lhsample.tolist() + wsam.tolist())
+                std_target.append(target)
 
         # 将初始队列中传入标准lhs和wlhs产生的样本
         for sam in allsample:
             self._queue.add(sam.ravel())
+
+
+
+
+
 
     def _prime_subscriptions(self):
         if not any([len(subs) for subs in self._events.values()]):

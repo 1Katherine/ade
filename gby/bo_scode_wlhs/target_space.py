@@ -230,14 +230,14 @@ class TargetSpace(object):
         """
         # TODO: support integer, category, and basic scipy.optimize constraints
         data = np.empty((1, self.dim))
-        print(self.dim)
+        # print(self.dim)
         # numpy.ndarray [[-5.  5.][-2. 15.]]
         # print(self._bounds.tolist())
         for col, (lower, upper) in enumerate(self._bounds):
             # 在 lower, upper 内随机生成一个实数
             data.T[col] = self.random_state.uniform(lower, upper, size=1)
         # 返回随机生成的样本点（只有参数值，没有target）
-        print(data.ravel())
+        # print(data.ravel())
         return data.ravel()
 
     '''
@@ -281,20 +281,18 @@ class TargetSpace(object):
             pname.append(para_name)
         # 计算样本与target的lasso相关性
         corr = l1_lasso(std_samples, std_target, pname)
-        print('\n lasso计算的corr:' + str(corr))
 
         '''
              使用wlhs产生样本
         '''
-        print('------------使用wlhs生成剩下初始样本-----------')
+        print('------------使用wlhs生成初始样本-----------')
         # 生成lhs实例
         w = wLHS(wlhs_init_point, C = 0.9)
-        # print(type(pbounds))
-        # print(type(corr))
         wlhs_sample = w.w_lhs(wlhs_init_point, C = 0.9, corr = corr, pbounds = pbounds)
 
         # 返回20个样本，list形式内嵌
         return wlhs_sample
+
 
 
     # 返回当前代（样本集合中的最大target值对应的样本）
