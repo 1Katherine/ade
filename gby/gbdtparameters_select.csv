@@ -1,0 +1,6 @@
+vital_params
+spark.memory.storageFraction
+spark.executor.cores
+spark.executor.memory
+spark.executor.instances
+spark.memory.fraction

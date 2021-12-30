@@ -1,0 +1,4 @@
+,vital_params
+0,spark.maxRemoteBlockSizeFetchToMem
+1,spark.shuffle.file.buffer
+2,spark.speculation.multiplier
