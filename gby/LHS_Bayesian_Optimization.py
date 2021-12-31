@@ -5,20 +5,18 @@ import time
 
 import numpy as np
 import shutil
-import random
-import csv
 from sklearn.ensemble import GradientBoostingRegressor
 import pandas as pd
 import lightgbm as lgb
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.model_selection import train_test_split
-import seaborn as sns
-import matplotlib.pyplot as plt
-import pickle
 from sklearn.preprocessing import StandardScaler, normalize
 import joblib
 from bo_scode import SequentialDomainReductionTransformer
 from bo_scode import BayesianOptimization
+from bo_scode import JSONLogger
+from bo_scode import Events
+import matplotlib.pyplot as plt
 import warnings
 
 warnings.filterwarnings("ignore")
@@ -180,6 +178,22 @@ def choose_features(features):
         return
 
 
+'''
+    画出优化过程中的target值的变化过程
+'''
+def draw_target(bo):
+    # 画图
+    plt.plot(-bo.space.target, label='lhs_bo')
+    max = bo._space.target.max()
+    max_indx = bo._space.target.argmax()
+    # 在图上描出执行时间最低点
+    plt.scatter(max_indx, -max, s=20, color='r')
+    plt.xlabel('迭代次数')
+    plt.ylabel('runtime')
+    plt.legend()
+    # plt.savefig("./wlhs_searching_config/target.png")
+    plt.show()
+
 if __name__ == '__main__':
     name = 'rf'
 
@@ -252,12 +266,18 @@ if __name__ == '__main__':
         # bounds_transformer=bounds_transformer
     )
 
-    init_points = 60
+    # # 1. 实例化一个 observer  对象
+    # logger = JSONLogger(path="./lhs_searching_config/logs.json")
+    # # 2. 将观察者对象绑定到优化器触发的特定事件。
+    # optimizer.subscribe(Events.OPTIMIZATION_STEP, logger)
+
+    init_points = 30
     n_iter = 60
     optimizer.maximize(init_points=init_points, n_iter=n_iter)
     print('optimizer.max')
     print(optimizer.max)
-    # print(optimizer.space.bounds)
+
+    draw_target(optimizer)
 
     # 记录贝叶斯优化结束时间
     endTime = datetime.datetime.now()

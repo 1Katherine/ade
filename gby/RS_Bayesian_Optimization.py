@@ -76,134 +76,32 @@ def black_box_function(**params):
 
     return -y
 
-
 '''
-    切分数据，对切分的训练集和测试机做标准化
+    画出优化过程中的target值的变化过程
 '''
-
-
-def process_data(features):
-    # 切分数据集,测试集占0.25
-    features_data = data[features]
-    target_data = data[target]
-    x_train, x_test, y_train, y_test = train_test_split(features_data, target_data, test_size=0.25, random_state=22)
-
-    # 做标准化
-    transfer = StandardScaler()
-    x_train = transfer.fit_transform(x_train)
-    x_test = transfer.transform(x_test)
-    return x_train, x_test, y_train, y_test
-
-
-'''
-    计算模型误差
-    
-'''
-
-
-def error_calculate(y_predict, y_test):
-    y_test = y_test.tolist()
-    test_length = len(y_test)
-    error_percentage = 0
-    # print(test_length)
-
-    for i in range(0, test_length):
-        # print(y_predict[i])
-        error_percentage = error_percentage + (abs(y_test[i] - y_predict[i]) / y_test[i])
-
-        # 所有误差取平均值
-
-    error_percentage = error_percentage / test_length
-
-    return error_percentage
-
-
-'''
-    选择参数：构建模型，训练模型、预测y值，获取特征重要性，如果剩下的特征少于5个则保存模型退出，如果剩下特征大于5个则每次删除2个最不重要的特征递归直到退出
-'''
-
-
-def choose_features(features):
-    final_features = []
-    final_importance = []
-    min_error = 1.0
-    error_list = []
-
-    # 取训练集，测试集
-    x_train, x_test, y_train, y_test = process_data(features)
-    # 构建模型
-    model = build_model(name)
-    # 训练
-    model.fit(x_train, y_train)
-    # 记录特征重要性
-    features_importance = model.feature_importances_
-    # 将特征和特征重要性拼到一起 格式如右 [('RM', 0.49359385750858875), ('LSTAT', 0.3256110013950264)]
-    features_with_importance = list(zip(features, features_importance))
-    # 根据特征重要性进行排序，component[1]为重要性
-    # 按降序排序
-    features_with_importance = sorted(features_with_importance, key=lambda component: component[1], reverse=True)
-
-    # 预测
-    y_predict = model.predict(x_test)
-    # 计算误差
-    error_percentage = error_calculate(y_predict, y_test)
-    if min_error > error_percentage:
-        min_error = error_percentage
-        final_features = [x[0] for x in features_with_importance]
-        final_importance = [x[1] for x in features_with_importance]
-    error_list.append(error_percentage)
-
-    # 格式化参数配置：精度、单位等
-    # 直到剩下的特征数小于等于5停止
-    # sum_importance = sum(x[1] for x in features_with_importance)
-    if len(features_with_importance) > 5:
-        # print("进入")
-        f_length_ = len(features_with_importance)
-        # 取除最不重要的2个
-        features_with_importance = features_with_importance[0:f_length_ - 1]
-        # 计算删除最不重要的特征后，新的特征重要性，以及特征重要性变化程度
-        new_sum_importance = sum(x[1] for x in features_with_importance)
-        # if (sum_importance-new_sum_importance)/sum_importance<0.05:
-        # 计算剩下的新特征
-        new_features = [x[0] for x in features_with_importance]
-        # 用剩下的特征进行下一次训练
-        choose_features(new_features)
-    else:
-        # 递归终止,并保存模型
-        joblib.dump(model, name + ".pkl")
-        # 输出最终选的特征
-        print("features_with_importance: " + name, features)
-        # 将最终选出的特征转为dataframe，并指定列名为 vital_params
-        features = pd.DataFrame(features, columns=['vital_params'])
-        # 将最终选出的特征保存到 model.name+'parameters_select.csv 文件
-        pd.DataFrame.to_csv(features, name + 'parameters_select.csv', index=None)
-        return
-
+def draw_target(bo):
+    def draw_target(bo):
+        # 画图
+        plt.plot(-bo.space.target, label='lhs_bo')
+        max = bo._space.target.max()
+        max_indx = bo._space.target.argmax()
+        # 在图上描出执行时间最低点
+        plt.scatter(max_indx, -max, s=20, color='r')
+        plt.xlabel('迭代次数')
+        plt.ylabel('runtime')
+        plt.legend()
+        # plt.savefig("./wlhs_searching_config/target.png")
+        plt.show()
 
 if __name__ == '__main__':
     name = 'rf'
-
-    # 设置路径
     # 重要参数
     vital_params_path = './files100/' + name + "/selected_parameters.txt"
     print(vital_params_path)
     # 维护的参数-范围表
     conf_range_table = "Spark_conf_range_wordcount.xlsx"
-    # 保存所有的 Y
-    all_history_Y_save_path = 'all_history_y.csv'
     # 参数配置表（模型选出的最好配置参数）
     generation_confs = './searching_config/' + name + "generationbestConf.csv"
-    # 读取数据（配置参数 + 执行时间（最后一列））
-    data = pd.read_csv('data/wordcount-100G-sorting-parameters_runtime.csv')
-
-    # 取出所有列属性
-    all_columns = data.columns
-
-    column_length = len(all_columns)
-    # print(all_columns)
-    # 取出特征(预测目标以外的所有列属性)
-    features_global = all_columns[:column_length - 1]
-    target = all_columns[-1]
 
     '''
         读取模型输出的重要参数
@@ -253,11 +151,11 @@ if __name__ == '__main__':
         # bounds_transformer=bounds_transformer
     )
 
-    init_points = 60
+    init_points = 30
     n_iter = 60
     optimizer.maximize(init_points=init_points, n_iter=n_iter)
-    print('optimizer.max')
-    print(optimizer.max)
+    print('optimizer.max = ' + str(optimizer.max))
+    draw_target(optimizer)
     # print(optimizer.space.bounds)
 
     # 记录贝叶斯优化结束时间
