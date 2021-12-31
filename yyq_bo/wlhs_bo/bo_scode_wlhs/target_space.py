@@ -1,7 +1,7 @@
 import numpy as np
 from .util import ensure_rng
-from sample.LHS_sample import LHSample
-from sample.wLHS import wLHS,std_lhs,l1_lasso
+from wlhs_bo.sample.LHS_sample import LHSample
+from wlhs_bo.sample.wLHS import wLHS,std_lhs,l1_lasso
 
 def _hashable(x):
     """ ensure that an point is hashable by a python dict """
