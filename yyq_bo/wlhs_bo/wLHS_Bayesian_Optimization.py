@@ -8,10 +8,10 @@ import pandas as pd
 import lightgbm as lgb
 from sklearn.ensemble import RandomForestRegressor
 import joblib
-from bo_scode_wlhs import SequentialDomainReductionTransformer
-from bo_scode_wlhs import BayesianOptimization
-from bo_scode_wlhs.logger import JSONLogger
-from bo_scode_wlhs.event import Events
+from wlhs_bo.bo_scode_wlhs import SequentialDomainReductionTransformer
+from wlhs_bo.bo_scode_wlhs import BayesianOptimization
+from wlhs_bo.bo_scode_wlhs.logger import JSONLogger
+from wlhs_bo.bo_scode_wlhs.event import Events
 import matplotlib.pyplot as plt
 import warnings
 
@@ -97,7 +97,8 @@ def draw_target(bo):
     plt.xlabel('迭代次数')
     plt.ylabel('runtime')
     plt.legend()
-    plt.savefig("./wlhs_searching_config/target.png")
+    time = datetime.datetime.now()
+    plt.savefig("./wlhs_searching_config/target - " + str(time.strftime( '%Y-%m-%d %H-%M-%S')) + ".png")
     plt.show()
 
 '''

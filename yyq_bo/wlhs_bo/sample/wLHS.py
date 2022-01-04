@@ -75,7 +75,6 @@ class wLHS():
         zarray[K] = upper
         # 如果某一个变量的corr = 0，则对该变量使用标准LHS抽样
         if corr == 0:
-            # corr = 0.00001
             print('corr = 0，使用标准lhs抽样')
             bounds = [[lower,upper]]
             std_lhs = LHSample(len(bounds), bounds, K)
@@ -90,10 +89,10 @@ class wLHS():
                 x2 = math.exp(-corr * upper * C)
                 d = (corr * C) / (x1 - x2)
                 # d = (corr * C) / (math.exp(-corr * lower * C) - math.exp(-corr * upper * C))
-            except:
-                print('x1 - x2 : ' + str(x1) + ' - ' + str(x2))
-                print('d : ' + str(d))
-                d = (corr * C) / (x1 - x2)
+            except OverflowError:
+                print('(-corr * lower * C) = ' + str(-corr * lower * C))
+                print('(-corr * upper * C) = ' + str(-corr * upper * C))
+                d = (corr * C) / (math.exp(-corr * lower * C) - math.exp(-corr * upper * C))
             # 计算第1 - k         K个采样点 0-1         k-1~K
             for j in range(1,K+1) :
                 # 计算第j个分割点
@@ -108,6 +107,7 @@ class wLHS():
                 # 防止参数越界
                 l.append(x) # * (high-low)+low
             self.asample.append(l)
+            print('间隔点为：' + str(zarray))
 
     # 将每一个参数值的采样点shuffle后合并,得到所有参数采样值打散后合并的最终的样本
     def all_samples(self):
@@ -139,6 +139,7 @@ class wLHS():
         self.asample = []
         for corr, pname in zip(corr, pbounds):
             a = corr
+            # a = math.fabs(corr)
             lower = pbounds[pname][0]
             upper = pbounds[pname][1]
             self.getPoints(corr, K, C, lower, upper)
