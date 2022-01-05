@@ -22,8 +22,6 @@ warnings.filterwarnings("ignore")
 '''
     根据名称构建模型
 '''
-
-
 def build_model(name):
     if name.lower() == "lgb":
         model = lgb.LGBMRegressor()
@@ -37,8 +35,6 @@ def build_model(name):
 '''
     不重新建模，使用已经构建好的模型
 '''
-
-
 def build_training_model(name):
     if name.lower() == "lgb":
         model = joblib.load('./files100/lgb/lgb.pkl')
@@ -58,8 +54,6 @@ def build_training_model(name):
 '''
     贝叶斯的黑盒模型，传入参数，计算target（根据模型预测参数的执行时间）
 '''
-
-
 def black_box_function(**params):
     i = []
     model = build_training_model(name)

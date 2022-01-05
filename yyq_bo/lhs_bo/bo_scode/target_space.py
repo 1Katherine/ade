@@ -1,6 +1,6 @@
 import numpy as np
 from .util import ensure_rng
-from sample.LHS_sample import LHSample
+from lhs_bo.sample.LHS_sample import LHSample
 
 
 def _hashable(x):
@@ -262,7 +262,12 @@ class TargetSpace(object):
     def max(self):
         """Get maximum target value found and corresponding parametes."""
         try:
+            '''
+                新增返回值：maxIndex (bo优化过程中的最优值是第几个样本点)
+                更新时间：2021/1/5  14:46
+            '''
             res = {
+                'maxIndex': self.target.argmax() + 1,
                 'target': self.target.max(),
                 'params': dict(
                     zip(self.keys, self.params[self.target.argmax()])

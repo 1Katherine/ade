@@ -107,20 +107,21 @@ def schafferRun(p):
     configNum += 1
     return runtime
 
+
 '''
     画出优化过程中的target值的变化过程
 '''
+time = datetime.datetime.now()
 def draw_target(bo):
     # 画图
-    plt.plot(-bo.space.target, label='lhs_bo  init_points = ' + str(init_points))
+    plt.plot(-bo.space.target, label='lhs_bo  init_points = ' + str(init_points) + ', n_iter = ' + str(n_iter))
     max = bo._space.target.max()
     max_indx = bo._space.target.argmax()
     # 在图上描出执行时间最低点
     plt.scatter(max_indx, -max, s=20, color='r')
-    plt.xlabel('迭代次数')
+    plt.xlabel('iteration')
     plt.ylabel('runtime')
     plt.legend()
-    time = datetime.datetime.now()
     plt.savefig("./lhs_target - " + str(time.strftime( '%Y-%m-%d %H-%M-%S')) + ".png")
     plt.show()
 
@@ -167,8 +168,8 @@ if __name__ == '__main__':
     logger = JSONLogger(path="./logs.json")
     optimizer.subscribe(Events.OPTIMIZATION_STEP, logger)
 
-    init_points = 30
-    n_iter = 60
+    init_points = 20
+    n_iter = 30
     optimizer.maximize(init_points=init_points, n_iter=n_iter)
     print(optimizer.max)
 

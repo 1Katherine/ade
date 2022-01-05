@@ -18,6 +18,7 @@ from lhs_bo.bo_scode import JSONLogger
 from lhs_bo.bo_scode import Events
 import matplotlib.pyplot as plt
 import warnings
+import json
 
 warnings.filterwarnings("ignore")
 
@@ -78,18 +79,18 @@ def black_box_function(**params):
 '''
     画出优化过程中的target值的变化过程
 '''
+time = datetime.datetime.now()
 def draw_target(bo):
     # 画图
-    plt.plot(-bo.space.target, label='lhs_bo  init_points = ' + str(init_points))
+    plt.plot(-bo.space.target, label='lhs_bo  init_points = ' + str(init_points) + ', n_iter = ' + str(n_iter))
     max = bo._space.target.max()
     max_indx = bo._space.target.argmax()
     # 在图上描出执行时间最低点
     plt.scatter(max_indx, -max, s=20, color='r')
-    plt.xlabel('迭代次数')
+    plt.xlabel('iteration')
     plt.ylabel('runtime')
     plt.legend()
-    time = datetime.datetime.now()
-    plt.savefig("./lhs_searching_config/target - " + str(time.strftime( '%Y-%m-%d %H-%M-%S')) + ".png")
+    plt.savefig("./2lhs_searching_config/target - " + str(time.strftime( '%Y-%m-%d %H-%M-%S')) + ".png")
     plt.show()
 
 if __name__ == '__main__':
@@ -155,8 +156,13 @@ if __name__ == '__main__':
     # # 2. 将观察者对象绑定到优化器触发的特定事件。
     # optimizer.subscribe(Events.OPTIMIZATION_STEP, logger)
 
-    init_points = 30
-    n_iter = 60
+    # 把贝叶斯优化结果保存在logs文件中
+    logpath = './logs/logs - ' + str(time.strftime( '%Y-%m-%d %H-%M-%S')) + '.json'
+    logger = JSONLogger(path=logpath)
+    optimizer.subscribe(Events.OPTIMIZATION_STEP, logger)
+
+    init_points = 20
+    n_iter = 20
     optimizer.maximize(init_points=init_points, n_iter=n_iter)
     print('optimizer.max')
     print(optimizer.max)
@@ -169,49 +175,9 @@ if __name__ == '__main__':
     searchDuration = (endTime - startTime).seconds
 
 
-    '''
-        新建dataframe文件，用于保存贝叶斯优化中找到的最好的5个样本点
-        
-        1. 设置dataframe的列名为（all_参数名称，执行时间） 
-    '''
-    # index 存放贝叶斯优化过程中使用的所有参数名称 index = ['spark.default.parallelism', 'spark.executor.cores', 'spark.executor.instances', 'spark.executor.memory'
-    index = []
-    # 根据 optimizer 的第一个样本点获取 'params'中所有参数的名称
-    for key, value in optimizer.res[0]['params'].items():
-        index.append(key)
-    # print (index)
-
-    data = pd.DataFrame(columns=[x for x in index])
-    data['runtime'] = ''
-
-    '''
-        新建dataframe文件，用于保存贝叶斯优化中找到的最好的5个样本点
-
-        2.获取贝叶斯优化过程中搜索的所有样本点（总共 init_points + n_iter 个）存储到dataframe中
-        3.dataframe按照runtime列排序，取前5行存入csv文件中  './searching_config/' + name + "generationbestConf.csv" 
-    '''
-    # 获取最好的5个样本，存入 './lhs_searching_config/' + name + " - generationbestConf"+ init_points + n_iter +".csv"  中
-    generation_confs = './lhs_searching_config/' + name + " - generationbestConf - init_points="+ str(init_points) + " ,n_iter=" + str(n_iter) +".csv"
-    n = 0
-    # result 总共 init_points + n_iter 个，遍历这些样本点
-    for result in optimizer.res:
-        n = n + 1
-        params_and_runtime = []
-        runtime = -result['target']
-        # print(result['params'])
-        # print(execution)
-        # result['params'] 中 key是参数名称，value是采样的参数值
-        for key, value in result['params'].items():
-            # print(key)
-            # print(value)
-            params_and_runtime.append(value)
-        params_and_runtime.append(runtime)
-        # print(paramter)
-        data.loc[n] = params_and_runtime
-    # 按照执行时间排序
-    data = data.sort_values('runtime').reset_index(drop=True)
-    # 获得执行时间最短的前五个样本点
-    data = data[:5]
-    # 将执行时间最短的5个样本点存为 csv 文件
-    data.to_csv(generation_confs, index=False)
-
+    # 打开json文件追加内容 - optimizer.max
+    max = str(optimizer.max)
+    fr = open(logpath, 'a')
+    model=json.dumps(max)
+    fr.write(model)
+    fr.close()
