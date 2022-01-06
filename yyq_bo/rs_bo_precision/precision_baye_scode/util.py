@@ -47,7 +47,8 @@ def acq_max(ac, gp, y_max, bounds, precisions, random_state, n_warmup=10000, n_i
     x_tries = np.empty((n_warmup, bounds.shape[0]))
     '''
             新增属性 precisions
-            方法：在acqusition function上根据精度随机生成对应精度的数据（10000个），用于预测下一个最好样本（主要有两种精度 1.0 和 0.01 ）
+            方法：根据精度生成n_warmup（10000个）随机样本点，赋给x_tries
+            在acqusition function上随机生成对应精度的样本点，用于预测下一个最好样本（主要有两种精度 1.0 和 0.01 ）
             更新时间：2021/1/5  14:15
     '''
     bounds_and_pre = np.column_stack((bounds, precisions))
@@ -64,8 +65,13 @@ def acq_max(ac, gp, y_max, bounds, precisions, random_state, n_warmup=10000, n_i
     '''
     # x_tries = random_state.uniform(bounds[:, 0], bounds[:, 1],
     #                                size=(n_warmup, bounds.shape[0]))
+
+    # 使用训练好的gp模型和采集函数预测x_tries对应的y值 ys.shape = (10000,)
+    # ac=utility_function.utility , 给定x样本点，返回gp预测的y
     ys = ac(x_tries, gp=gp, y_max=y_max)
+    # argmax最大值所对应的索引， 取出预测的最大y值对应的样本x
     x_max = x_tries[ys.argmax()]
+    # 记录采集函数找到的最大样本点，用于explore样本点时的更新使用
     max_acq = ys.max()
 
     '''
@@ -75,7 +81,7 @@ def acq_max(ac, gp, y_max, bounds, precisions, random_state, n_warmup=10000, n_i
     # Explore the parameter space more throughly
     # x_seeds = random_state.uniform(bounds[:, 0], bounds[:, 1],
     #                                size=(n_iter, bounds.shape[0]))
-
+    # explore 随机产生n_iter个（10个）样本点，看看能不能找到更好的样本点赋给x_max
     x_seeds = np.empty((n_iter, bounds.shape[0]))
     '''
             新增属性 precisions
@@ -91,7 +97,9 @@ def acq_max(ac, gp, y_max, bounds, precisions, random_state, n_warmup=10000, n_i
     # print('x_seeds = ' + str(x_seeds))
 
     for x_try in x_seeds:
-        # Find the minimum of minus the acquisition function
+        # Find the minimum of minus the acquisition function 求-ac的极小值 = 求ac的极大值
+        # minimize ： 非线性规划（求极小值） , x = x_try.reshape(1, -1)
+        # 求 函数 -ac(x.reshape(1, -1), gp=gp, y_max=y_max) 的最小值对应的样本res.x
         res = minimize(lambda x: -ac(x.reshape(1, -1), gp=gp, y_max=y_max),
                        x_try.reshape(1, -1),
                        bounds=bounds,
@@ -102,6 +110,7 @@ def acq_max(ac, gp, y_max, bounds, precisions, random_state, n_warmup=10000, n_i
             continue
 
         # Store it if better than previous minimum(maximum).
+        # 如果找到了比max_acq还要大的样本x，则更新max_acq
         if max_acq is None or -res.fun[0] >= max_acq:
             x_max = res.x
             max_acq = -res.fun[0]

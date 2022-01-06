@@ -2,83 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="979008bb-2160-493f-9f34-d1dee7767165" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../gby/ACS_cluster_test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../gby/test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rs_bo_precision/RS_Bayesian_Optimization_precision.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rs_bo_precision/Spark_conf_range_wordcount.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rs_bo_precision/files100/ada/ada.pkl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rs_bo_precision/files100/ada/ada_parameters_error.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rs_bo_precision/files100/ada/ada_parameters_features.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rs_bo_precision/files100/ada/parameters_error.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rs_bo_precision/files100/ada/parameters_features.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rs_bo_precision/files100/ada/reserved/ada_reserved.pkl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rs_bo_precision/files100/ada/reserved/reserved_error.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rs_bo_precision/files100/ada/reserved/selected_parameters.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rs_bo_precision/files100/ada/selected_parameters.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rs_bo_precision/files100/gbdt/gbdt.pkl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rs_bo_precision/files100/gbdt/gbdt_parameters_error.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rs_bo_precision/files100/gbdt/gbdt_parameters_features.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rs_bo_precision/files100/gbdt/parameters_error.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rs_bo_precision/files100/gbdt/parameters_features.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rs_bo_precision/files100/gbdt/reserved/gbdt_reserved.pkl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rs_bo_precision/files100/gbdt/reserved/reserved_error.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rs_bo_precision/files100/gbdt/reserved/selected_parameters.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rs_bo_precision/files100/gbdt/selected_parameters.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rs_bo_precision/files100/lgb/lgb.pkl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rs_bo_precision/files100/lgb/lgb_parameters_error.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rs_bo_precision/files100/lgb/lgb_parameters_features.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rs_bo_precision/files100/lgb/parameters_error.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rs_bo_precision/files100/lgb/parameters_features.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rs_bo_precision/files100/lgb/reserved/lgb_reserved.pkl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rs_bo_precision/files100/lgb/reserved/reserved_error.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rs_bo_precision/files100/lgb/reserved/selected_parameters.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rs_bo_precision/files100/lgb/selected_parameters.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rs_bo_precision/files100/rf/parameters_error.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rs_bo_precision/files100/rf/parameters_features.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rs_bo_precision/files100/rf/reserved/reserved_error.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rs_bo_precision/files100/rf/reserved/rf_reserved.pkl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rs_bo_precision/files100/rf/reserved/selected_parameters.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rs_bo_precision/files100/rf/rf.pkl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rs_bo_precision/files100/rf/rf_parameters_error.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rs_bo_precision/files100/rf/rf_parameters_features.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rs_bo_precision/files100/rf/selected_parameters.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rs_bo_precision/files100/xgb/parameters_error.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rs_bo_precision/files100/xgb/parameters_features.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rs_bo_precision/files100/xgb/reserved/reserved_error.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rs_bo_precision/files100/xgb/reserved/selected_parameters.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rs_bo_precision/files100/xgb/reserved/xgb_reserved.pkl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rs_bo_precision/files100/xgb/selected_parameters.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rs_bo_precision/files100/xgb/xgb.pkl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rs_bo_precision/files100/xgb/xgb_parameters_error.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rs_bo_precision/files100/xgb/xgb_parameters_features.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rs_bo_precision/precision_baye_scode/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rs_bo_precision/precision_baye_scode/bayesian_optimization.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rs_bo_precision/precision_baye_scode/domain_reduction.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rs_bo_precision/precision_baye_scode/event.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rs_bo_precision/precision_baye_scode/logger.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rs_bo_precision/precision_baye_scode/observer.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rs_bo_precision/precision_baye_scode/target_space.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rs_bo_precision/precision_baye_scode/util.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rs_bo_precision/searching_config/adagenerationbestConf.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rs_bo_precision/searching_config/gbdtgenerationbestConf.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rs_bo_precision/searching_config/lgbgenerationbestConf.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rs_bo_precision/searching_config/rfgenerationbestConf.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rs_bo_precision/searching_config/xgbgenerationbestConf.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../yyq_server/bo/.idea/bo.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gby/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../gby/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/ade.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/gpr.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/gpr2.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/scipy.optimize.minimize.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/yyq_bo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/yyq_bo.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lhs_bo/LHS_Bayesian_Optimization.py" beforeDir="false" afterPath="$PROJECT_DIR$/lhs_bo/LHS_Bayesian_Optimization.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lhs_bo/bo_scode/target_space.py" beforeDir="false" afterPath="$PROJECT_DIR$/lhs_bo/bo_scode/target_space.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lhs_bo/bo_scode/util.py" beforeDir="false" afterPath="$PROJECT_DIR$/lhs_bo/bo_scode/util.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lhs_bo/lhs_searching_config/rf - generationbestConf - init_points=30 ,n_iter=60.csv" beforeDir="false" afterPath="$PROJECT_DIR$/lhs_bo/lhs_searching_config/rf - generationbestConf - init_points=30 ,n_iter=60.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rs_bo/RS_Bayesian_Optimization.py" beforeDir="false" afterPath="$PROJECT_DIR$/rs_bo/RS_Bayesian_Optimization.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rs_bo/rs_searching_config/target - 2022-01-01 14-51-37.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rs_bo/rs_searching_config/target - 2022-01-01 14-51-51.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yyq_server/bo/lhs_bo/LHS_Bayesian_Optimization.py" beforeDir="false" afterPath="$PROJECT_DIR$/../yyq_server/bo/lhs_bo/LHS_Bayesian_Optimization.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yyq_server/bo/lhs_bo/bo_scode/target_space.py" beforeDir="false" afterPath="$PROJECT_DIR$/../yyq_server/bo/lhs_bo/bo_scode/target_space.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yyq_server/bo/lhs_bo/bo_scode/util.py" beforeDir="false" afterPath="$PROJECT_DIR$/../yyq_server/bo/lhs_bo/bo_scode/util.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rs_bo_precision.rar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rs_bo_precision/RS_Bayesian_Optimization_precision.py" beforeDir="false" afterPath="$PROJECT_DIR$/rs_bo_precision/RS_Bayesian_Optimization_precision.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rs_bo_precision/precision_baye_scode/bayesian_optimization.py" beforeDir="false" afterPath="$PROJECT_DIR$/rs_bo_precision/precision_baye_scode/bayesian_optimization.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rs_bo_precision/precision_baye_scode/util.py" beforeDir="false" afterPath="$PROJECT_DIR$/rs_bo_precision/precision_baye_scode/util.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,17 +54,19 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/rs_bo_precision/precision_baye_scode" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Desktop\github同步代码\ade\yyq_bo" />
+      <recent name="E:\Desktop\贝叶斯优化代码（github同步）\ade\yyq_bo\lhs_bo\2lhs_searching_config" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\Desktop\贝叶斯优化代码（github同步）\ade\yyq_bo\rs_bo_precision\precision_baye_scode" />
       <recent name="E:\Desktop\贝叶斯优化代码（github同步）\ade\yyq_bo" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\Desktop\贝叶斯优化代码（github同步）\ade\yyq_bo\lhs_bo\2lhs_searching_config" />
-    </key>
   </component>
-  <component name="RunManager" selected="Python.LHS_Bayesian_Optimization">
+  <component name="RunManager" selected="Python.RS_Bayesian_Optimization_precision">
     <configuration name="LHS_Bayesian_Optimization" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="yyq_bo" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -133,9 +74,9 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="" />
+      <option name="SDK_HOME" value="E:\Anaconda3\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/lhs_bo" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
@@ -192,7 +133,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="wLHS_Bayesian_Optimization" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="gpr" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="yyq_bo" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -200,12 +141,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/wlhs_bo" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/rs_bo_precision" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/wlhs_bo/wLHS_Bayesian_Optimization.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/rs_bo_precision/gpr.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -214,36 +154,41 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Doctest TargetSpace.random_sample" type="tests" factoryName="Doctests" temporary="true" nameIsGenerated="true">
+    <configuration name="scipy.optimize.minimize" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="yyq_bo" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/rs_bo_precision/precision_baye_scode" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/rs_bo_precision/precision_baye_scode/target_space.py" />
-      <option name="CLASS_NAME" value="TargetSpace" />
-      <option name="METHOD_NAME" value="random_sample" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_METHOD" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test/scipy.optimize.minimize.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.RS_Bayesian_Optimization_precision" />
+        <item itemvalue="Python.scipy.optimize.minimize" />
+        <item itemvalue="Python.gpr" />
         <item itemvalue="Python.LHS_Bayesian_Optimization" />
         <item itemvalue="Python.RS_Bayesian_Optimization" />
-        <item itemvalue="Python.RS_Bayesian_Optimization_precision" />
-        <item itemvalue="Python tests.Doctest TargetSpace.random_sample" />
-        <item itemvalue="Python.wLHS_Bayesian_Optimization" />
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="979008bb-2160-493f-9f34-d1dee7767165" name="Default Changelist" comment="" />
@@ -266,20 +211,42 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
-  <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/yyq_bo$Doctest_TargetSpace_random_sample.coverage" NAME="Doctest TargetSpace.random_sample Coverage Results" MODIFIED="1641351775042" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/rs_bo_precision/precision_baye_scode" />
-    <SUITE FILE_PATH="coverage/yyq_bo$RS_Bayesian_Optimization_precision.coverage" NAME="RS_Bayesian_Optimization_precision Coverage Results" MODIFIED="1641367432229" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/rs_bo_precision" />
-    <SUITE FILE_PATH="coverage/yyq_bo$RS_Bayesian_Optimization.coverage" NAME="RS_Bayesian_Optimization Coverage Results" MODIFIED="1641372587412" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/rs_bo" />
-    <SUITE FILE_PATH="coverage/yyq_bo$wLHS.coverage" NAME="wLHS Coverage Results" MODIFIED="1640935930554" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/wlhs_bo/sample" />
-    <SUITE FILE_PATH="coverage/yyq_bo$LHS_Bayesian_Optimization.coverage" NAME="LHS_Bayesian_Optimization Coverage Results" MODIFIED="1641373855645" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lhs_bo" />
-    <SUITE FILE_PATH="coverage/yyq_bo$test.coverage" NAME="test Coverage Results" MODIFIED="1640936578535" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/wlhs_bo/sample" />
-    <SUITE FILE_PATH="coverage/yyq_bo$wLHS_Bayesian_Optimization.coverage" NAME="wLHS_Bayesian_Optimization Coverage Results" MODIFIED="1640937156095" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/wlhs_bo" />
+  <component name="WindowStateProjectService">
+    <state x="358" y="16" key="#LHS_Bayesian_Optimization" timestamp="1641431733925">
+      <screen x="0" y="0" width="1280" height="760" />
+    </state>
+    <state x="358" y="16" key="#LHS_Bayesian_Optimization/0.0.1280.760@0.0.1280.760" timestamp="1641431733925" />
+    <state width="1260" height="150" key="GridCell.Tab.0.bottom" timestamp="1641444569925">
+      <screen x="0" y="0" width="1280" height="760" />
+    </state>
+    <state width="1260" height="150" key="GridCell.Tab.0.bottom/0.0.1280.760@0.0.1280.760" timestamp="1641444569925" />
+    <state width="1260" height="150" key="GridCell.Tab.0.center" timestamp="1641444569924">
+      <screen x="0" y="0" width="1280" height="760" />
+    </state>
+    <state width="1260" height="150" key="GridCell.Tab.0.center/0.0.1280.760@0.0.1280.760" timestamp="1641444569924" />
+    <state width="1260" height="150" key="GridCell.Tab.0.left" timestamp="1641444569924">
+      <screen x="0" y="0" width="1280" height="760" />
+    </state>
+    <state width="1260" height="150" key="GridCell.Tab.0.left/0.0.1280.760@0.0.1280.760" timestamp="1641444569924" />
+    <state width="1260" height="150" key="GridCell.Tab.0.right" timestamp="1641444569924">
+      <screen x="0" y="0" width="1280" height="760" />
+    </state>
+    <state width="1260" height="150" key="GridCell.Tab.0.right/0.0.1280.760@0.0.1280.760" timestamp="1641444569924" />
+    <state x="144" y="25" key="SettingsEditor" timestamp="1641431746839">
+      <screen x="0" y="0" width="1280" height="760" />
+    </state>
+    <state x="144" y="25" key="SettingsEditor/0.0.1280.760@0.0.1280.760" timestamp="1641431746839" />
+    <state x="336" y="208" key="com.intellij.ide.util.TipDialog" timestamp="1641441578589">
+      <screen x="0" y="0" width="1280" height="760" />
+    </state>
+    <state x="336" y="208" key="com.intellij.ide.util.TipDialog/0.0.1280.760@0.0.1280.760" timestamp="1641441578589" />
   </component>
 </project>

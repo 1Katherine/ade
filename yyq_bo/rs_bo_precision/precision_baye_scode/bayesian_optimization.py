@@ -130,8 +130,10 @@ class BayesianOptimization(Observable):
 
         # Sklearn's GP throws a large number of warnings at times, but
         # we don't really need to see them here.
+        # 忽略高斯过程中发出的警告信息
         with warnings.catch_warnings():
             warnings.simplefilter("ignore")
+            # 1. 使用目前已经搜索过的参数和target拟合高斯过程回归模型
             self._gp.fit(self._space.params, self._space.target)
 
         '''
@@ -139,6 +141,7 @@ class BayesianOptimization(Observable):
                 更新时间：2021/1/5  14:15
         '''
         # Finding argmax of the acquisition function.
+        # 2. 找到采集函数的最大值，赋给 suggestion
         suggestion = acq_max(
             ac=utility_function.utility,
             gp=self._gp,
@@ -147,7 +150,7 @@ class BayesianOptimization(Observable):
             precisions=self._space._precisions,
             random_state=self._random_state
         )
-
+        # 将suggestion封装成配置参数的样式传递回去做probe计算target值并注册到space中
         return self._space.array_to_params(suggestion)
 
     def _prime_queue(self, init_points):
@@ -180,6 +183,7 @@ class BayesianOptimization(Observable):
         self._prime_queue(init_points)
         self.set_gp_params(**gp_params)
 
+        # 实例UtilityFunction，指定acq = ucb
         util = UtilityFunction(kind=acq,
                                kappa=kappa,
                                xi=xi,

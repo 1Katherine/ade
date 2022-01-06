@@ -13,10 +13,12 @@ import lightgbm as lgb
 from sklearn.ensemble import RandomForestRegressor
 import matplotlib.pyplot as plt
 import joblib
-from precision_baye_scode import SequentialDomainReductionTransformer
-from precision_baye_scode import BayesianOptimization
-from precision_baye_scode import JSONLogger
-from precision_baye_scode import Events
+import sys
+
+from rs_bo_precision.precision_baye_scode import SequentialDomainReductionTransformer
+from rs_bo_precision.precision_baye_scode import BayesianOptimization
+from rs_bo_precision.precision_baye_scode import JSONLogger
+from rs_bo_precision.precision_baye_scode import Events
 import warnings
 import os
 from os.path import join as pjoin
@@ -77,12 +79,12 @@ def black_box_function(**params):
 time = datetime.datetime.now()
 def draw_target(bo):
     # 画图
-    plt.plot(-bo.space.target, label='rs_bo  init_points = ' + str(init_points))
+    plt.plot(-bo.space.target, label='rs_bo  init_points = ' + str(init_points) + ', n_iter = ' + str(n_iter))
     max = bo._space.target.max()
     max_indx = bo._space.target.argmax()
     # 在图上描出执行时间最低点
     plt.scatter(max_indx, -max, s=20, color='r')
-    plt.xlabel('迭代次数')
+    plt.xlabel('n_iter')
     plt.ylabel('runtime')
     plt.legend()
 
@@ -162,7 +164,9 @@ if __name__ == '__main__':
 
     init_points = 30
     n_iter = 60
-    optimizer.maximize(init_points=init_points, n_iter=n_iter)
+    # 可以在maximize中指定acq=['ucb','ei','poi']
+    optimizer.maximize(init_points=init_points, n_iter=n_iter, acq='ei')
+    # optimizer.maximize(init_points=init_points, n_iter=n_iter)
     print('optimizer.max = ' + str(optimizer.max))
     draw_target(optimizer)
     # print(optimizer.space.bounds)

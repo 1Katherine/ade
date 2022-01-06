@@ -40,8 +40,6 @@ def build_model(name):
 '''
     不重新建模，使用已经构建好的模型
 '''
-
-
 def build_training_model(name):
     if name.lower() == "lgb":
         model = joblib.load('./files100/lgb/lgb.pkl')
