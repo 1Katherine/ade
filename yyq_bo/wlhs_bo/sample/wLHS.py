@@ -17,7 +17,11 @@ github：https://github.com/sselab/autoconfig
 import math
 import random
 import numpy as np
-from wlhs_bo.sample.LHS_sample import LHSample
+import sys
+import os
+# 将lhs_bo目录放在path路径中 (wlhs_bo/ 是当前文件的上级目录 的上级目录
+sys.path.append(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))
+from sample.LHS_sample import LHSample
 
 
 class wLHS():

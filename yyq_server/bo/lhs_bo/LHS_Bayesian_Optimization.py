@@ -6,11 +6,17 @@ import matplotlib.pyplot as plt
 import shutil
 import os
 import time
+import sys
+import os
+# 将lhs_bo目录放在path路径中 (lhs_bo/ 是当前文件的上级目录
+sys.path.append(os.path.dirname(os.path.realpath(__file__)))
 from bo_scode.logger import JSONLogger
 from bo_scode.event import Events
 from bo_scode import BayesianOptimization
 from bo_scode import SequentialDomainReductionTransformer
 import matplotlib.pyplot as plt
+
+
 
 
 # 服务器运行spark时config文件

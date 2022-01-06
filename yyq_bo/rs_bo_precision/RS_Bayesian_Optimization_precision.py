@@ -1,6 +1,5 @@
 import array
 import datetime
-import os
 import time
 
 import numpy as np
@@ -14,11 +13,13 @@ from sklearn.ensemble import RandomForestRegressor
 import matplotlib.pyplot as plt
 import joblib
 import sys
-
-from rs_bo_precision.precision_baye_scode import SequentialDomainReductionTransformer
-from rs_bo_precision.precision_baye_scode import BayesianOptimization
-from rs_bo_precision.precision_baye_scode import JSONLogger
-from rs_bo_precision.precision_baye_scode import Events
+import os
+# 将lhs_bo目录放在path路径中 (rs_bo_precision/ 是当前文件的上级目录 的上级目录
+sys.path.append(os.path.dirname(os.path.realpath(__file__)))
+from precision_baye_scode import SequentialDomainReductionTransformer
+from precision_baye_scode import BayesianOptimization
+from precision_baye_scode import JSONLogger
+from precision_baye_scode import Events
 import warnings
 import os
 from os.path import join as pjoin

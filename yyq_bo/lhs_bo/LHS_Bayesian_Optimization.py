@@ -1,6 +1,5 @@
 import array
 import datetime
-import os
 import time
 
 import numpy as np
@@ -12,10 +11,14 @@ from sklearn.ensemble import RandomForestRegressor
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler, normalize
 import joblib
-from lhs_bo.bo_scode import SequentialDomainReductionTransformer
-from lhs_bo.bo_scode import BayesianOptimization
-from lhs_bo.bo_scode import JSONLogger
-from lhs_bo.bo_scode import Events
+import sys
+import os
+# 父级目录加入系统路径
+sys.path.append(os.path.dirname(os.path.realpath(__file__)))
+from bo_scode import SequentialDomainReductionTransformer
+from bo_scode import BayesianOptimization
+from bo_scode import JSONLogger
+from bo_scode import Events
 import matplotlib.pyplot as plt
 import warnings
 import json

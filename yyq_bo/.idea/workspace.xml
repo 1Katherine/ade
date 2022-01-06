@@ -2,22 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="979008bb-2160-493f-9f34-d1dee7767165" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/ade.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/gpr.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/gpr2.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/scipy.optimize.minimize.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lhs_bo/import_test.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../yyq_server/bo/lhs_bo/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/ade.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/ade.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/yyq_bo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/yyq_bo.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lhs_bo/LHS_Bayesian_Optimization.py" beforeDir="false" afterPath="$PROJECT_DIR$/lhs_bo/LHS_Bayesian_Optimization.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rs_bo_precision.rar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rs_bo_precision/RS_Bayesian_Optimization_precision.py" beforeDir="false" afterPath="$PROJECT_DIR$/rs_bo_precision/RS_Bayesian_Optimization_precision.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rs_bo_precision/precision_baye_scode/bayesian_optimization.py" beforeDir="false" afterPath="$PROJECT_DIR$/rs_bo_precision/precision_baye_scode/bayesian_optimization.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rs_bo_precision/precision_baye_scode/util.py" beforeDir="false" afterPath="$PROJECT_DIR$/rs_bo_precision/precision_baye_scode/util.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yyq_server/bo/lhs_bo/bo_scode/target_space.py" beforeDir="false" afterPath="$PROJECT_DIR$/../yyq_server/bo/lhs_bo/bo_scode/target_space.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yyq_server/bo/lhs_bo/bo_scode/util.py" beforeDir="false" afterPath="$PROJECT_DIR$/../yyq_server/bo/lhs_bo/bo_scode/util.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +60,7 @@
       <recent name="E:\Desktop\贝叶斯优化代码（github同步）\ade\yyq_bo" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.RS_Bayesian_Optimization_precision">
+  <component name="RunManager" selected="Python.LHS_Bayesian_Optimization">
     <configuration name="LHS_Bayesian_Optimization" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="yyq_bo" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -145,6 +139,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/rs_bo_precision/gpr.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -166,6 +161,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test/scipy.optimize.minimize.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -177,15 +173,15 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.LHS_Bayesian_Optimization" />
         <item itemvalue="Python.RS_Bayesian_Optimization_precision" />
         <item itemvalue="Python.scipy.optimize.minimize" />
         <item itemvalue="Python.gpr" />
-        <item itemvalue="Python.LHS_Bayesian_Optimization" />
         <item itemvalue="Python.RS_Bayesian_Optimization" />
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -200,6 +196,7 @@
       <workItem from="1640940174340" duration="223000" />
       <workItem from="1641261575974" duration="6825000" />
       <workItem from="1641350356103" duration="15409000" />
+      <workItem from="1641453573103" duration="68000" />
     </task>
     <servers />
   </component>
@@ -211,42 +208,14 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
-  <component name="WindowStateProjectService">
-    <state x="358" y="16" key="#LHS_Bayesian_Optimization" timestamp="1641431733925">
-      <screen x="0" y="0" width="1280" height="760" />
-    </state>
-    <state x="358" y="16" key="#LHS_Bayesian_Optimization/0.0.1280.760@0.0.1280.760" timestamp="1641431733925" />
-    <state width="1260" height="150" key="GridCell.Tab.0.bottom" timestamp="1641444569925">
-      <screen x="0" y="0" width="1280" height="760" />
-    </state>
-    <state width="1260" height="150" key="GridCell.Tab.0.bottom/0.0.1280.760@0.0.1280.760" timestamp="1641444569925" />
-    <state width="1260" height="150" key="GridCell.Tab.0.center" timestamp="1641444569924">
-      <screen x="0" y="0" width="1280" height="760" />
-    </state>
-    <state width="1260" height="150" key="GridCell.Tab.0.center/0.0.1280.760@0.0.1280.760" timestamp="1641444569924" />
-    <state width="1260" height="150" key="GridCell.Tab.0.left" timestamp="1641444569924">
-      <screen x="0" y="0" width="1280" height="760" />
-    </state>
-    <state width="1260" height="150" key="GridCell.Tab.0.left/0.0.1280.760@0.0.1280.760" timestamp="1641444569924" />
-    <state width="1260" height="150" key="GridCell.Tab.0.right" timestamp="1641444569924">
-      <screen x="0" y="0" width="1280" height="760" />
-    </state>
-    <state width="1260" height="150" key="GridCell.Tab.0.right/0.0.1280.760@0.0.1280.760" timestamp="1641444569924" />
-    <state x="144" y="25" key="SettingsEditor" timestamp="1641431746839">
-      <screen x="0" y="0" width="1280" height="760" />
-    </state>
-    <state x="144" y="25" key="SettingsEditor/0.0.1280.760@0.0.1280.760" timestamp="1641431746839" />
-    <state x="336" y="208" key="com.intellij.ide.util.TipDialog" timestamp="1641441578589">
-      <screen x="0" y="0" width="1280" height="760" />
-    </state>
-    <state x="336" y="208" key="com.intellij.ide.util.TipDialog/0.0.1280.760@0.0.1280.760" timestamp="1641441578589" />
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/yyq_bo$LHS_Bayesian_Optimization.coverage" NAME="LHS_Bayesian_Optimization Coverage Results" MODIFIED="1641453589403" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lhs_bo" />
   </component>
 </project>

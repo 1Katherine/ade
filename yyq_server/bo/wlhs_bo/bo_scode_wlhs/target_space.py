@@ -1,5 +1,9 @@
 import numpy as np
 from .util import ensure_rng
+import sys
+import os
+# 将lhs_bo目录放在path路径中 (wlhs_bo/ 是当前文件的上上级目录
+sys.path.append(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))
 from sample.LHS_sample import LHSample
 from sample.wLHS import wLHS,std_lhs,l1_lasso
 

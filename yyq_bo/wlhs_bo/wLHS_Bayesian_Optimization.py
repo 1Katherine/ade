@@ -8,10 +8,14 @@ import pandas as pd
 import lightgbm as lgb
 from sklearn.ensemble import RandomForestRegressor
 import joblib
-from wlhs_bo.bo_scode_wlhs import SequentialDomainReductionTransformer
-from wlhs_bo.bo_scode_wlhs import BayesianOptimization
-from wlhs_bo.bo_scode_wlhs.logger import JSONLogger
-from wlhs_bo.bo_scode_wlhs.event import Events
+import sys
+import os
+# 将lhs_bo目录放在path路径中 (wlhs_bo/ 是当前文件的上级目录
+sys.path.append(os.path.dirname(os.path.realpath(__file__)))
+from bo_scode_wlhs import SequentialDomainReductionTransformer
+from bo_scode_wlhs import BayesianOptimization
+from bo_scode_wlhs.logger import JSONLogger
+from bo_scode_wlhs.event import Events
 import matplotlib.pyplot as plt
 import warnings
 

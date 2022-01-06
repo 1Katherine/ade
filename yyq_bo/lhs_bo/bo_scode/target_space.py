@@ -1,6 +1,10 @@
 import numpy as np
 from .util import ensure_rng
-from lhs_bo.sample.LHS_sample import LHSample
+import sys
+import os
+# 将lhs_bo目录放在path路径中 (lhs_bo/ 是当前文件的上级目录 的上级目录
+sys.path.append(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))
+from sample.LHS_sample import LHSample
 
 
 def _hashable(x):

@@ -6,6 +6,10 @@ import matplotlib.pyplot as plt
 import shutil
 import os
 import time
+import sys
+import os
+# 将lhs_bo目录放在path路径中 (wlhs_bo/ 是当前文件的上级目录
+sys.path.append(os.path.dirname(os.path.realpath(__file__)))
 from bo_scode_wlhs.logger import JSONLogger
 from bo_scode_wlhs.event import Events
 from bo_scode_wlhs import BayesianOptimization
