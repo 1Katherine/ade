@@ -19,7 +19,7 @@ mv /usr/local/home/yyq/bo/wlhs_bo/generationConf.csv /usr/local/home/yyq/bo/wlhs
 mv /usr/local/home/yyq/bo/wlhs_bo/wlhs_target* /usr/local/home/yyq/bo/wlhs_bo/config/$1-$startTime
 
 mkdir -p /usr/local/home/yyq/bo/wlhs_bo/config/wordcount-100G
-python3 direct_Bayesian.py
+python3 wLHS_Bayesian_Optimization.py
 
 finishTime=$(date "+%m-%d-%H-%M")
 mv /usr/local/home/yyq/bo/wlhs_bo/config/$1 /usr/local/home/yyq/bo/wlhs_bo/config/$1-$finishTime

@@ -80,7 +80,7 @@ def black_box_function(**params):
 '''
     画出优化过程中的target值的变化过程
 '''
-time = datetime.datetime.now()
+drawtime = datetime.datetime.now()
 def draw_target(bo):
     # 画图
     plt.plot(-bo.space.target, label='lhs_bo  init_points = ' + str(init_points) + ', n_iter = ' + str(n_iter))
@@ -91,14 +91,14 @@ def draw_target(bo):
     plt.xlabel('iteration')
     plt.ylabel('runtime')
     plt.legend()
-    plt.savefig("./2lhs_searching_config/target - " + str(time.strftime( '%Y-%m-%d %H-%M-%S')) + ".png")
+    plt.savefig("./2lhs_searching_config/target - " + str(drawtime.strftime( '%Y-%m-%d %H-%M-%S')) + ".png")
     plt.show()
 
 if __name__ == '__main__':
     name = 'rf'
     # 重要参数
     vital_params_path = './files100/' + name + "/selected_parameters.txt"
-    print(vital_params_path)
+    # print(vital_params_path)
     # 维护的参数-范围表
     conf_range_table = "Spark_conf_range_wordcount.xlsx"
     # 参数配置表（模型选出的最好配置参数）
@@ -158,7 +158,7 @@ if __name__ == '__main__':
     # optimizer.subscribe(Events.OPTIMIZATION_STEP, logger)
 
     # 把贝叶斯优化结果保存在logs文件中
-    logpath = './logs/logs - ' + str(time.strftime( '%Y-%m-%d %H-%M-%S')) + '.json'
+    logpath = './logs/logs - ' + str(drawtime.strftime( '%Y-%m-%d %H-%M-%S')) + '.json'
     logger = JSONLogger(path=logpath)
     optimizer.subscribe(Events.OPTIMIZATION_STEP, logger)
 

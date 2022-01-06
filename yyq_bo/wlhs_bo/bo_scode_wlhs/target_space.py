@@ -5,7 +5,7 @@ import os
 # 将lhs_bo目录放在path路径中 (wlhs_bo/ 是当前文件的上级目录 的上级目录
 sys.path.append(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))
 from sample.LHS_sample import LHSample
-from sample.wLHS import wLHS,std_lhs,l1_lasso
+from sample.wLHS import wLHS,std_lhs,l1_lasso,standardization,normalization
 
 def _hashable(x):
     """ ensure that an point is hashable by a python dict """
@@ -286,6 +286,11 @@ class TargetSpace(object):
         # 计算样本与target的lasso相关性
         corr = l1_lasso(std_samples, std_target, pname)
 
+        # corr = standardization(corr)
+        corr = normalization(corr)
+
+        print('归一化后的corr = ' + str(corr) + '\n')
+
         '''
              使用wlhs产生样本
         '''
@@ -304,6 +309,7 @@ class TargetSpace(object):
         """Get maximum target value found and corresponding parametes."""
         try:
             res = {
+                'maxIndex':self.target.argmax() + 1,
                 'target': self.target.max(),
                 'params': dict(
                     zip(self.keys, self.params[self.target.argmax()])

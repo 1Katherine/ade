@@ -65,9 +65,14 @@ class wLHS():
      * 返回在 【zj，zj1】之间随机生成一个参数值
     '''
     def getPoint(self, zj,  zj1, d, corr, C):
-        h = d * (math.exp(-corr * C * zj) - math.exp(-corr * C * zj1)) / corr * C
-        return -math.log(math.exp(-corr * C * zj) - self.getRandom() * (math.exp(-corr * C * zj) - math.exp(-corr * C * zj1))) / corr * C
-        # return np.random.uniform(zj, zj1)
+        # h = d * (math.exp(-corr * C * zj) - math.exp(-corr * C * zj1)) / corr * C
+        x = -math.log(math.exp(-corr * C * zj) - self.getRandom() * (math.exp(-corr * C * zj) - math.exp(-corr * C * zj1))) / corr * C
+        return x
+
+        # # 直接在 [zj,  zj1] 之间采样一个样本点
+        # x = np.random.uniform(zj, zj1)
+        # # print('np.random.uniform( '+ str(zj) + ', ' + str(zj1) +' ) = ' + str(x))
+        # return x
 
     # 返回：某一个参数值的K个采样点
     def getPoints(self, corr, K, C, lower, upper):
@@ -91,11 +96,15 @@ class wLHS():
             try:
                 x1 = math.exp(-corr * lower * C)
                 x2 = math.exp(-corr * upper * C)
+                print('lower = ' + str(lower) + ', upper = ' + str(upper) + ',-corr = ' + str(-corr))
+                print('没出错 : (-corr * lower * C) = ' + str(-corr * lower * C))
+                print('没出错 : (-corr * upper * C) = ' + str(-corr * upper * C))
                 d = (corr * C) / (x1 - x2)
                 # d = (corr * C) / (math.exp(-corr * lower * C) - math.exp(-corr * upper * C))
             except OverflowError:
-                print('(-corr * lower * C) = ' + str(-corr * lower * C))
-                print('(-corr * upper * C) = ' + str(-corr * upper * C))
+                print('lower = ' + str(lower) + ', upper = ' + str(upper))
+                print('出错了 : (-corr * lower * C) = ' + str(-corr * lower * C))
+                print('出错了 : (-corr * upper * C) = ' + str(-corr * upper * C))
                 d = (corr * C) / (math.exp(-corr * lower * C) - math.exp(-corr * upper * C))
             # 计算第1 - k         K个采样点 0-1         k-1~K
             for j in range(1,K+1) :
@@ -111,7 +120,7 @@ class wLHS():
                 # 防止参数越界
                 l.append(x) # * (high-low)+low
             self.asample.append(l)
-            print('间隔点为：' + str(zarray))
+            print('间隔点为：' + str(zarray) + '\n')
 
     # 将每一个参数值的采样点shuffle后合并,得到所有参数采样值打散后合并的最终的样本
     def all_samples(self):
@@ -180,14 +189,21 @@ def l1_lasso(result, target, para_names):
     print('lasso使用样本的维度' + str(result.shape))
     X = result
     Y = target
-    # names = para_names
-
     lasso = Lasso(alpha=.3)
     lasso.fit(X, Y)
-    # print(lasso.coef_)
-    # print("Lasso model: ", linear_model.pretty_print_linear(lasso.coef_, names, sort=True))
+    print('lasso.coef_ = ' + str(lasso.coef_))
     return lasso.coef_
 
+# 标准化
+def standardization(data):
+    mu = np.mean(data, axis=0)
+    sigma = np.std(data, axis=0)
+    return (data - mu) / sigma
+
+# 归一化
+def normalization(data):
+    _range = np.max(abs(data))
+    return data / _range
 
 if __name__ == '__main__':
     # 样本点采集个数
@@ -225,7 +241,11 @@ if __name__ == '__main__':
         pname.append(para_name)
     # 计算样本与target的lasso相关性
     corr = l1_lasso(std_result, std_target, pname)
-    print('\n lasso计算的corr:' + str(corr))
+    print('\n lasso计算的corr:' + str(corr) + '\n')
+
+    # corr标准化
+    corr = normalization(corr)
+    print('归一化后的corr = ' + str(corr) + '\n')
 
 
     '''

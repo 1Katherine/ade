@@ -26,7 +26,7 @@ vital_params_path = "/usr/local/home/yyq/bo/lhs_bo/parameters_set.txt"
 # 维护的参数-范围表
 conf_range_table = "/usr/local/home/yyq/bo/lhs_bo/Spark_conf_range_wordcount.xlsx"
 # 保存配置
-generation_confs = "/usr/local/home/yyq/bo/lhs_bo/generationDomainConf.csv"
+generation_confs = "/usr/local/home/yyq/bo/lhs_bo/generationConf.csv"
 
 
 
@@ -117,7 +117,7 @@ def schafferRun(p):
 '''
     画出优化过程中的target值的变化过程
 '''
-time = datetime.datetime.now()
+starttime = datetime.datetime.now()
 def draw_target(bo):
     # 画图
     plt.plot(-bo.space.target, label='lhs_bo  init_points = ' + str(init_points) + ', n_iter = ' + str(n_iter))
@@ -128,7 +128,7 @@ def draw_target(bo):
     plt.xlabel('iteration')
     plt.ylabel('runtime')
     plt.legend()
-    plt.savefig("./lhs_target - " + str(time.strftime( '%Y-%m-%d %H-%M-%S')) + ".png")
+    plt.savefig("/usr/local/home/yyq/bo/lhs_bo/lhs_target - " + str(starttime.strftime( '%Y-%m-%d %H-%M-%S')) + ".png")
     plt.show()
 
 
@@ -171,7 +171,7 @@ if __name__ == '__main__':
             random_state=1,
             # bounds_transformer=bounds_transformer
         )
-    logger = JSONLogger(path="./logs.json")
+    logger = JSONLogger(path="/usr/local/home/yyq/bo/lhs_bo/logs.json")
     optimizer.subscribe(Events.OPTIMIZATION_STEP, logger)
 
     init_points = 20
@@ -181,19 +181,15 @@ if __name__ == '__main__':
 
 
     #存储数据
-    time = []
     n = 0
     index = []
-    # 存储搜索到最好的十个配置
+    # 存储搜索到的所有配置
     for key, value in optimizer.res[0]['params'].items():
         index.append(key)
-    # print (index)
 
     data = pd.DataFrame(columns=[x for x in index])
     data['runtime'] = ''
-    # print (data)
     for i in optimizer.res:
-
         n = n + 1
         paramter = []
         execution = -i['target']
@@ -201,8 +197,5 @@ if __name__ == '__main__':
             paramter.append(value)
         paramter.append(execution)
         data.loc[n] = paramter
-    # print(data)
-    # data = data.sort_values('runtime').reset_index(drop=True)
-    # data = data[:5]
-    # data.insert(column='runtime',time)
     data.to_csv(generation_confs, index=False)
+

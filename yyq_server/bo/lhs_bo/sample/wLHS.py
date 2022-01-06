@@ -17,6 +17,11 @@ github：https://github.com/sselab/autoconfig
 import math
 import random
 import numpy as np
+# from sample.LHS_sample import LHSample
+import sys
+import os
+# 将lhs_bo目录放在path路径中 (lhs_bo/ 是当前文件的上上级目录
+sys.path.append(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))
 from sample.LHS_sample import LHSample
 
 class wLHS():
@@ -145,7 +150,7 @@ def std_lhs(pbounds, N):
     # 参数1：变量个数；参数2：bounds= [[0,90],[0,30]]  参数3：需要生成几个初始样本
     std_lhs = LHSample(len(pbounds), bounds, N)
     std_result = std_lhs.lhs()
-    print('----------标准lhs生成样本------------')
+    # print('----------标准lhs生成样本------------')
     # print((std_result))
     return std_result
 

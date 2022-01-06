@@ -18,6 +18,7 @@ from bo_scode_wlhs.logger import JSONLogger
 from bo_scode_wlhs.event import Events
 import matplotlib.pyplot as plt
 import warnings
+import json
 
 warnings.filterwarnings("ignore")
 
@@ -91,18 +92,19 @@ def rangecsv_to_pbounds():
 '''
     画出优化过程中的target值的变化过程
 '''
+drawtime = datetime.datetime.now()
 def draw_target(bo):
     # 画图
-    plt.plot(-bo.space.target, label='wlhs_bo')
+    plt.plot(-bo.space.target, label='wlhs_bo  init_points = ' + str(init_points) + ', n_iter = ' + str(n_iter))
     max = bo._space.target.max()
     max_indx = bo._space.target.argmax()
     # 在图上描出执行时间最低点
     plt.scatter(max_indx, -max, s=20, color='r')
-    plt.xlabel('迭代次数')
+    plt.xlabel('interations')
     plt.ylabel('runtime')
     plt.legend()
-    time = datetime.datetime.now()
-    plt.savefig("./wlhs_searching_config/target - " + str(time.strftime( '%Y-%m-%d %H-%M-%S')) + ".png")
+
+    plt.savefig("./wlhs_searching_config/target - " + str(drawtime.strftime( '%Y-%m-%d %H-%M-%S')) + ".png")
     plt.show()
 
 '''
@@ -192,9 +194,12 @@ if __name__ == '__main__':
     # logger = JSONLogger(path="./wlhs_searching_config/logs.json")
     # # 2. 将观察者对象绑定到优化器触发的特定事件。
     # optimizer.subscribe(Events.OPTIMIZATION_STEP, logger)
+    logpath = './logs/logs - ' + str(drawtime.strftime( '%Y-%m-%d %H-%M-%S')) + '.json'
+    logger = JSONLogger(path=logpath)
+    optimizer.subscribe(Events.OPTIMIZATION_STEP, logger)
 
     # 采样10个标准lhs，剩下妹五个采样一次wlhs，所以 init_points - 10 必须为5的倍数
-    init_points = 30
+    init_points = 20
     n_iter = 60
     optimizer.maximize(init_points=init_points, n_iter=n_iter)
     print('optimizer.max')
@@ -259,3 +264,11 @@ if __name__ == '__main__':
     data.to_csv(generation_confs, index=False)
 
     # pd.DataFrame(optimizer.res).to_csv(all_history_Y_save_path)
+
+
+    # 打开json文件追加内容 - optimizer.max
+    max = str(optimizer.max)
+    fr = open(logpath, 'a')
+    model=json.dumps(max)
+    fr.write(model)
+    fr.close()

@@ -20,7 +20,7 @@ vital_params_path = "/usr/local/home/yyq/bo/rs_bo/parameters_set.txt"
 # 维护的参数-范围表
 conf_range_table = "/usr/local/home/yyq/bo/rs_bo/Spark_conf_range_wordcount.xlsx"
 # 保存配置
-generation_confs = "/usr/local/home/yyq/bo/rs_bo/generationDomainConf.csv"
+generation_confs = "/usr/local/home/yyq/bo/rs_bo/generationConf.csv"
 
 
 
@@ -110,9 +110,10 @@ def schafferRun(p):
 '''
     画出优化过程中的target值的变化过程
 '''
+time = datetime.datetime.now()
 def draw_target(bo):
     # 画图
-    plt.plot(-bo.space.target, label='rs_bo  init_points = ' + str(init_points))
+    plt.plot(-bo.space.target, label='lhs_bo  init_points = ' + str(init_points) + ', n_iter = ' + str(n_iter))
     max = bo._space.target.max()
     max_indx = bo._space.target.argmax()
     # 在图上描出执行时间最低点
