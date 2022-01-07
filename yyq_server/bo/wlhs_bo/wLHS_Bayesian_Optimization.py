@@ -1,10 +1,7 @@
 import pandas as pd
 import numpy as np
 import datetime
-import joblib
-import matplotlib.pyplot as plt
 import shutil
-import os
 import time
 import sys
 import os
@@ -28,8 +25,6 @@ generation_confs = "/usr/local/home/yyq/bo/wlhs_bo/generationConf.csv"
 
 
 
-
-
 def black_box_function(**params):
     i=[]
     for conf in vital_params['vital_params']:
@@ -37,7 +32,6 @@ def black_box_function(**params):
         # print(key)
     # print(i)
     # print(y)
-
     return -schafferRun(i)
 
 
@@ -88,7 +82,6 @@ def run(configNum):
 
 
 
-
 # 1、实际运行
 configNum = 1
 def schafferRun(p):
@@ -111,10 +104,10 @@ def schafferRun(p):
     configNum += 1
     return runtime
 
+
 '''
     画出优化过程中的target值的变化过程
 '''
-time = datetime.datetime.now()
 def draw_target(bo):
     # 画图
     plt.plot(-bo.space.target, label='lhs_bo  init_points = ' + str(init_points) + ', n_iter = ' + str(n_iter))
@@ -122,11 +115,11 @@ def draw_target(bo):
     max_indx = bo._space.target.argmax()
     # 在图上描出执行时间最低点
     plt.scatter(max_indx, -max, s=20, color='r')
-    plt.xlabel('迭代次数')
+    plt.xlabel('interations')
     plt.ylabel('runtime')
     plt.legend()
     time = datetime.datetime.now()
-    plt.savefig("./wlhs_target - " + str(time.strftime( '%Y-%m-%d %H-%M-%S')) + ".png")
+    plt.savefig("/usr/local/home/yyq/bo/wlhs_bo/wlhs_target.png")
     plt.show()
 
 
@@ -177,6 +170,7 @@ if __name__ == '__main__':
     optimizer.maximize(init_points=init_points, n_iter=n_iter)
     print(optimizer.max)
 
+    draw_target(optimizer)
 
     #存储数据
     time = []
@@ -185,13 +179,10 @@ if __name__ == '__main__':
     # 存储搜索到最好的十个配置
     for key, value in optimizer.res[0]['params'].items():
         index.append(key)
-    # print (index)
 
     data = pd.DataFrame(columns=[x for x in index])
     data['runtime'] = ''
-    # print (data)
     for i in optimizer.res:
-
         n = n + 1
         paramter = []
         execution = -i['target']
@@ -199,8 +190,4 @@ if __name__ == '__main__':
             paramter.append(value)
         paramter.append(execution)
         data.loc[n] = paramter
-    # print(data)
-    # data = data.sort_values('runtime').reset_index(drop=True)
-    # data = data[:5]
-    # data.insert(column='runtime',time)
     data.to_csv(generation_confs, index=False)

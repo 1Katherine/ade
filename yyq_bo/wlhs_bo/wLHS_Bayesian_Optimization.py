@@ -199,9 +199,9 @@ if __name__ == '__main__':
     optimizer.subscribe(Events.OPTIMIZATION_STEP, logger)
 
     # 采样10个标准lhs，剩下妹五个采样一次wlhs，所以 init_points - 10 必须为5的倍数
-    init_points = 20
-    n_iter = 60
-    optimizer.maximize(init_points=init_points, n_iter=n_iter)
+    init_points = 30
+    n_iter = 20
+    optimizer.maximize(init_points=init_points, n_iter=n_iter, acq='poi', xi = 0.005)
     print('optimizer.max')
     print(optimizer.max)
     # print(optimizer.space.bounds)

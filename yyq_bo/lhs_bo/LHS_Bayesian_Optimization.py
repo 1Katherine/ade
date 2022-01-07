@@ -83,7 +83,7 @@ def black_box_function(**params):
 drawtime = datetime.datetime.now()
 def draw_target(bo):
     # 画图
-    plt.plot(-bo.space.target, label='lhs_bo  init_points = ' + str(init_points) + ', n_iter = ' + str(n_iter))
+    plt.plot(-bo.space.target, label='lhs_bo_ucb  init_points = ' + str(init_points) + ', n_iter = ' + str(n_iter))
     max = bo._space.target.max()
     max_indx = bo._space.target.argmax()
     # 在图上描出执行时间最低点
@@ -163,7 +163,7 @@ if __name__ == '__main__':
     optimizer.subscribe(Events.OPTIMIZATION_STEP, logger)
 
     init_points = 20
-    n_iter = 20
+    n_iter = 30
     optimizer.maximize(init_points=init_points, n_iter=n_iter)
     print('optimizer.max')
     print(optimizer.max)

@@ -2,39 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="979008bb-2160-493f-9f34-d1dee7767165" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/wlhs_bo/run_wlhs.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wlhs_bo/sample/corr标准归一化.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../yyq_server/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../yyq_server/bo/rs_bo_precision/RS_Precision_Bayesian_Optimization.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../yyq_server/bo/rs_bo_precision/Spark_conf_range_wordcount.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../yyq_server/bo/rs_bo_precision/configTemp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../yyq_server/bo/rs_bo_precision/generationDomainConf.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../yyq_server/bo/rs_bo_precision/parameters_set.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../yyq_server/bo/rs_bo_precision/precision_baye_scode/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../yyq_server/bo/rs_bo_precision/precision_baye_scode/bayesian_optimization.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../yyq_server/bo/rs_bo_precision/precision_baye_scode/domain_reduction.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../yyq_server/bo/rs_bo_precision/precision_baye_scode/event.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../yyq_server/bo/rs_bo_precision/precision_baye_scode/logger.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../yyq_server/bo/rs_bo_precision/precision_baye_scode/observer.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../yyq_server/bo/rs_bo_precision/precision_baye_scode/target_space.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../yyq_server/bo/rs_bo_precision/precision_baye_scode/util.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../yyq_server/bo/rs_bo_precision/run.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lhs_bo/ei_LHS_Bayesian_Optimization.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lhs_bo/poi_LHS_Bayesian_Optimization.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lhs_bo/run_lhs.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lhs_bo/text_draw.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lhs_bo/LHS_Bayesian_Optimization.py" beforeDir="false" afterPath="$PROJECT_DIR$/lhs_bo/LHS_Bayesian_Optimization.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lhs_bo/sample/wLHS.py" beforeDir="false" afterPath="$PROJECT_DIR$/lhs_bo/sample/wLHS.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lhs_bo/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/lhs_bo/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wlhs_bo/bo_scode_wlhs/target_space.py" beforeDir="false" afterPath="$PROJECT_DIR$/wlhs_bo/bo_scode_wlhs/target_space.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wlhs_bo/sample/wLHS.py" beforeDir="false" afterPath="$PROJECT_DIR$/wlhs_bo/sample/wLHS.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wlhs_bo/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/wlhs_bo/test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wlhs_bo/wLHS_Bayesian_Optimization.py" beforeDir="false" afterPath="$PROJECT_DIR$/wlhs_bo/wLHS_Bayesian_Optimization.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wlhs_bo/wlhs_searching_config/rf - generationbestConf - init_points=30 ,n_iter=60.csv" beforeDir="false" afterPath="$PROJECT_DIR$/wlhs_bo/wlhs_searching_config/rf - generationbestConf - init_points=30 ,n_iter=60.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wlhs_bo/wlhs_searching_config/rf - generationbestConf - init_points=20 ,n_iter=60.csv" beforeDir="false" afterPath="$PROJECT_DIR$/wlhs_bo/wlhs_searching_config/rf - generationbestConf - init_points=20 ,n_iter=60.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../yyq_server/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../yyq_server/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yyq_server/bo/lhs_bo/LHS_Bayesian_Optimization.py" beforeDir="false" afterPath="$PROJECT_DIR$/../yyq_server/bo/lhs_bo/LHS_Bayesian_Optimization.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yyq_server/bo/lhs_bo/run.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../yyq_server/bo/lhs_bo/run.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yyq_server/bo/lhs_bo/sample/wLHS.py" beforeDir="false" afterPath="$PROJECT_DIR$/../yyq_server/bo/lhs_bo/sample/wLHS.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yyq_server/bo/rs_bo/RS_Bayesian_Optimization.py" beforeDir="false" afterPath="$PROJECT_DIR$/../yyq_server/bo/rs_bo/RS_Bayesian_Optimization.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yyq_server/bo/rs_bo/run.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../yyq_server/bo/rs_bo/run.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yyq_server/bo/wlhs_bo/bo_scode_wlhs/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yyq_server/bo/wlhs_bo/bo_scode_wlhs/bayesian_optimization.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yyq_server/bo/wlhs_bo/bo_scode_wlhs/domain_reduction.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yyq_server/bo/wlhs_bo/bo_scode_wlhs/event.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yyq_server/bo/wlhs_bo/bo_scode_wlhs/logger.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yyq_server/bo/wlhs_bo/bo_scode_wlhs/observer.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yyq_server/bo/wlhs_bo/bo_scode_wlhs/target_space.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yyq_server/bo/wlhs_bo/bo_scode_wlhs/util.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../yyq_server/bo/wlhs_bo/run.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../yyq_server/bo/wlhs_bo/run.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yyq_server/bo/wlhs_bo/sample/wLHS.py" beforeDir="false" afterPath="$PROJECT_DIR$/../yyq_server/bo/wlhs_bo/sample/wLHS.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../yyq_server/bo/wlhs_bo/wLHS_Bayesian_Optimization.py" beforeDir="false" afterPath="$PROJECT_DIR$/../yyq_server/bo/wlhs_bo/wLHS_Bayesian_Optimization.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -71,11 +57,12 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/lhs_bo" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Desktop\贝叶斯优化代码（github同步）\ade\yyq_bo\lhs_bo" />
       <recent name="E:\Desktop\贝叶斯优化代码（github同步）\ade\yyq_bo" />
       <recent name="E:\Desktop\贝叶斯优化代码（github同步）\ade\yyq_bo\rs_bo_precision\precision_baye_scode" />
     </key>
@@ -92,9 +79,9 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="E:\Anaconda3\python.exe" />
+      <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/lhs_bo" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
@@ -107,7 +94,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="corr标准归一化" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="run_lhs" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="yyq_bo" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -115,12 +102,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/wlhs_bo/sample" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/lhs_bo" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/wlhs_bo/sample/corr标准归一化.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/lhs_bo/run_lhs.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -173,7 +160,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="wLHS_Bayesian_Optimization" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="text_draw" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="yyq_bo" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -181,12 +168,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/wlhs_bo" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/lhs_bo" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/wlhs_bo/wLHS_Bayesian_Optimization.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/lhs_bo/text_draw.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -198,10 +185,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.run_wlhs" />
-        <item itemvalue="Python.test" />
-        <item itemvalue="Python.wLHS_Bayesian_Optimization" />
+        <item itemvalue="Python.run_lhs" />
         <item itemvalue="Python.LHS_Bayesian_Optimization" />
-        <item itemvalue="Python.corr标准归一化" />
+        <item itemvalue="Python.text_draw" />
+        <item itemvalue="Python.test" />
       </list>
     </recent_temporary>
   </component>
@@ -222,6 +209,7 @@
       <workItem from="1641350356103" duration="15409000" />
       <workItem from="1641453573103" duration="68000" />
       <workItem from="1641455421962" duration="10307000" />
+      <workItem from="1641541638313" duration="3613000" />
     </task>
     <servers />
   </component>
@@ -243,10 +231,12 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/yyq_bo$wLHS__1_.coverage" NAME="wLHS (1) Coverage Results" MODIFIED="1641463686813" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/wlhs_bo/sample" />
     <SUITE FILE_PATH="coverage/yyq_bo$corr.coverage" NAME="corr标准归一化 Coverage Results" MODIFIED="1641465664611" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/wlhs_bo/sample" />
+    <SUITE FILE_PATH="coverage/yyq_bo$text_draw.coverage" NAME="text_draw Coverage Results" MODIFIED="1641542843270" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lhs_bo" />
     <SUITE FILE_PATH="coverage/yyq_bo$wLHS.coverage" NAME="wLHS Coverage Results" MODIFIED="1641456615516" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lhs_bo/sample" />
-    <SUITE FILE_PATH="coverage/yyq_bo$LHS_Bayesian_Optimization.coverage" NAME="LHS_Bayesian_Optimization Coverage Results" MODIFIED="1641466100028" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lhs_bo" />
-    <SUITE FILE_PATH="coverage/yyq_bo$test.coverage" NAME="test Coverage Results" MODIFIED="1641466957822" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/wlhs_bo" />
-    <SUITE FILE_PATH="coverage/yyq_bo$run_wlhs.coverage" NAME="run_wlhs Coverage Results" MODIFIED="1641467863747" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/wlhs_bo" />
+    <SUITE FILE_PATH="coverage/yyq_bo$LHS_Bayesian_Optimization.coverage" NAME="LHS_Bayesian_Optimization Coverage Results" MODIFIED="1641543425236" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lhs_bo" />
+    <SUITE FILE_PATH="coverage/yyq_bo$run_lhs.coverage" NAME="run_lhs Coverage Results" MODIFIED="1641543465349" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lhs_bo" />
+    <SUITE FILE_PATH="coverage/yyq_bo$test.coverage" NAME="test Coverage Results" MODIFIED="1641541716574" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/wlhs_bo" />
+    <SUITE FILE_PATH="coverage/yyq_bo$run_wlhs.coverage" NAME="run_wlhs Coverage Results" MODIFIED="1641543638783" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/wlhs_bo" />
     <SUITE FILE_PATH="coverage/yyq_bo$wLHS_Bayesian_Optimization.coverage" NAME="wLHS_Bayesian_Optimization Coverage Results" MODIFIED="1641466884279" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/wlhs_bo" />
   </component>
 </project>
