@@ -25,6 +25,7 @@ from sample.LHS_sample import LHSample
 
 
 class wLHS():
+    # wlhs = wLHS(K = 5, C = 0.9)    # 采样5个样本点，加权采样积极系数为0.9
     def __init__(self, K, C):
         self.K = K
         self.C = C
@@ -74,7 +75,7 @@ class wLHS():
         # # print('np.random.uniform( '+ str(zj) + ', ' + str(zj1) +' ) = ' + str(x))
         # return x
 
-    # 返回：某一个参数值的K个采样点
+    # 返回：对单个变量，采样K个样本点，k = 5
     def getPoints(self, corr, K, C, lower, upper):
         l = []
         # 新建一个空数组
@@ -84,14 +85,18 @@ class wLHS():
         zarray[K] = upper
         # 如果某一个变量的corr = 0，则对该变量使用标准LHS抽样
         if corr == 0:
-            print('corr = 0，使用标准lhs抽样')
+            print('corr = 0，该参数使用标准lhs抽样')
             bounds = [[lower,upper]]
+            # len(bounds) = 1 ,生成一个样本
+            # K = 5，样本维度为5
+            # LHSample(5, bounds, 1) ： 在bounds范围内生成一个样本，该样本的维度为5
             std_lhs = LHSample(len(bounds), bounds, K)
             l = std_lhs.lhs()
             self.asample.append(l.ravel().tolist())
+            print('lhs生成的采样点为：' + str(l.ravel().tolist()) + '\n')
         # 只有当某一个变量给的corr不等于0时，对该变量使用wLHS抽样
         else:
-            print('corr ！= 0，使用wlhs抽样')
+            print('corr=' + str(corr) + ', 该参数使用wlhs抽样')
             # d = (corr * C) / (math.exp(-corr * lower * C) - math.exp(-corr * upper * C))
             try:
                 x1 = math.exp(-corr * lower * C)
@@ -120,7 +125,8 @@ class wLHS():
                 # 防止参数越界
                 l.append(x) # * (high-low)+low
             self.asample.append(l)
-            print('间隔点为：' + str(zarray) + '\n')
+            print('wlhs生成的间隔点为：' + str(zarray))
+            print('wlhs生成的采样点为：' + str(l) + '\n')
 
     # 将每一个参数值的采样点shuffle后合并,得到所有参数采样值打散后合并的最终的样本
     def all_samples(self):
@@ -128,6 +134,7 @@ class wLHS():
         N = np.shape(self.asample)[1]
         # D维参数（特征）
         D = np.shape(self.asample)[0]
+        print('wlhs共产生' + str(N) + '个样本' + '每个样本有' + str(D) + '个维度（参数）')
         result = np.empty([N, D])
         temp = np.empty([N])
         # 每一个参数（共D维）生成N个值（样本）
@@ -148,6 +155,7 @@ class wLHS():
         return result
 
     # wlhs入口
+    # samples = w.w_lhs(5, C, corr, pbounds)   # 加权采样5个样本点， 加权采样重要性系数为C=0.9
     def w_lhs(self, K ,C, corr, pbounds):
         self.asample = []
         for corr, pname in zip(corr, pbounds):

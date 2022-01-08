@@ -95,7 +95,7 @@ def rangecsv_to_pbounds():
 drawtime = datetime.datetime.now()
 def draw_target(bo):
     # 画图
-    plt.plot(-bo.space.target, label='wlhs_bo  init_points = ' + str(init_points) + ', n_iter = ' + str(n_iter))
+    plt.plot(-bo.space.target, label='wlhs_bo_poi  init_points = ' + str(init_points) + ', n_iter = ' + str(n_iter))
     max = bo._space.target.max()
     max_indx = bo._space.target.argmax()
     # 在图上描出执行时间最低点
@@ -194,11 +194,12 @@ if __name__ == '__main__':
     # logger = JSONLogger(path="./wlhs_searching_config/logs.json")
     # # 2. 将观察者对象绑定到优化器触发的特定事件。
     # optimizer.subscribe(Events.OPTIMIZATION_STEP, logger)
+
     logpath = './logs/logs - ' + str(drawtime.strftime( '%Y-%m-%d %H-%M-%S')) + '.json'
     logger = JSONLogger(path=logpath)
     optimizer.subscribe(Events.OPTIMIZATION_STEP, logger)
 
-    # 采样10个标准lhs，剩下妹五个采样一次wlhs，所以 init_points - 10 必须为5的倍数
+    # 采样10个标准lhs，剩下每五个采样一次wlhs，所以 init_points - 10 必须为5的倍数
     init_points = 30
     n_iter = 20
     optimizer.maximize(init_points=init_points, n_iter=n_iter, acq='poi', xi = 0.005)

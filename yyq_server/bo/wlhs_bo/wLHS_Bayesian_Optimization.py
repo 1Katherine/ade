@@ -3,6 +3,7 @@ import numpy as np
 import datetime
 import shutil
 import time
+import json
 import sys
 import os
 # 将lhs_bo目录放在path路径中 (wlhs_bo/ 是当前文件的上级目录
@@ -110,7 +111,7 @@ def schafferRun(p):
 '''
 def draw_target(bo):
     # 画图
-    plt.plot(-bo.space.target, label='lhs_bo  init_points = ' + str(init_points) + ', n_iter = ' + str(n_iter))
+    plt.plot(-bo.space.target, label='wlhs_bo_poi  init_points = ' + str(init_points) + ', n_iter = ' + str(n_iter))
     max = bo._space.target.max()
     max_indx = bo._space.target.argmax()
     # 在图上描出执行时间最低点
@@ -162,12 +163,13 @@ if __name__ == '__main__':
             random_state=1,
             # bounds_transformer=bounds_transformer
         )
-    logger = JSONLogger(path="./logs.json")
+    logpath = "/usr/local/home/yyq/bo/wlhs_bo/logs.json"
+    logger = JSONLogger(path = logpath)
     optimizer.subscribe(Events.OPTIMIZATION_STEP, logger)
 
     init_points = 30
-    n_iter = 60
-    optimizer.maximize(init_points=init_points, n_iter=n_iter)
+    n_iter = 20
+    optimizer.maximize(init_points=init_points, n_iter=n_iter, acq='poi', xi=0.005)
     print(optimizer.max)
 
     draw_target(optimizer)
@@ -191,3 +193,10 @@ if __name__ == '__main__':
         paramter.append(execution)
         data.loc[n] = paramter
     data.to_csv(generation_confs, index=False)
+
+    # 打开json文件追加内容 - optimizer.max
+    max = str(optimizer.max)
+    fr = open(logpath, 'a')
+    model=json.dumps(max)
+    fr.write(model)
+    fr.close()

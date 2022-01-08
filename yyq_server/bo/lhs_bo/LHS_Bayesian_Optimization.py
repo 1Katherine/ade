@@ -1,10 +1,8 @@
 import pandas as pd
 import numpy as np
 import datetime
-import joblib
-import matplotlib.pyplot as plt
 import shutil
-import os
+import json
 import time
 import sys
 import os
@@ -171,7 +169,8 @@ if __name__ == '__main__':
             random_state=1,
             # bounds_transformer=bounds_transformer
         )
-    logger = JSONLogger(path="/usr/local/home/yyq/bo/lhs_bo/logs.json")
+    logpath = "/usr/local/home/yyq/bo/lhs_bo/logs.json"
+    logger = JSONLogger(path=logpath)
     optimizer.subscribe(Events.OPTIMIZATION_STEP, logger)
 
     init_points = 20
@@ -198,4 +197,11 @@ if __name__ == '__main__':
         paramter.append(execution)
         data.loc[n] = paramter
     data.to_csv(generation_confs, index=False)
+
+    # 打开json文件追加内容 - optimizer.max
+    max = str(optimizer.max)
+    fr = open(logpath, 'a')
+    model=json.dumps(max)
+    fr.write(model)
+    fr.close()
 
