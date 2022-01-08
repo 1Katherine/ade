@@ -1,0 +1,830 @@
+=============== start wordcount-100G ===============
+2022年 01月 06日 星期四 17:13:04 CST
+=============== start wordcount-100G ===============
+=============== finish wordcount-100G ===============
+2022年 01月 06日 星期四 17:13:11 CST
+=============== finish wordcount-100G ===============
+=============== start wordcount-100G ===============
+2022年 01月 06日 星期四 17:14:08 CST
+=============== start wordcount-100G ===============
+=============== finish wordcount-100G ===============
+2022年 01月 06日 星期四 17:14:15 CST
+=============== finish wordcount-100G ===============
+=============== start wordcount-100G ===============
+2022年 01月 06日 星期四 17:22:58 CST
+=============== start wordcount-100G ===============
+nohup: 忽略输入
+no arg(benchmark-size)
+nohup: 忽略输入
+=============== start wordcount-100G ===============
+2022年 01月 06日 星期四 19:08:10 CST
+=============== start wordcount-100G ===============
+mv: 无法获取"/usr/local/home/yyq/bo/lhs_bo/generationDomainConf.csv" 的文件状态(stat): 没有那个文件或目录
+mv: 无法获取"/usr/local/home/yyq/bo/lhs_bo/lhs_target*" 的文件状态(stat): 没有那个文件或目录
+================= config1 =================
+2022年 01月 06日 星期四 19:08:11 CST
+/usr/local/home/python3/python3/lib/python3.8/subprocess.py:848: RuntimeWarning: line buffering (buffering=1) isn't supported in binary mode, the default buffer size will be used
+  self.stdout = io.open(c2pread, 'rb', bufsize)
+/usr/local/home/python3/python3/lib/python3.8/subprocess.py:853: RuntimeWarning: line buffering (buffering=1) isn't supported in binary mode, the default buffer size will be used
+  self.stderr = io.open(errread, 'rb', bufsize)
+cmd
+
+end before line
+finish
+-------------------stop k8s-node02 --------------
+kill: 用法:kill [-s 信号声明 | -n 信号编号 | -信号声明] 进程号 | 任务声明 ... 或 kill -l [信号声明]
+/usr/local/home/zwr/stop.sh: 第 3 行:kill: (17224) - 没有那个进程
+-------------------stop k8s-node03 --------------
+kill: 用法:kill [-s 信号声明 | -n 信号编号 | -信号声明] 进程号 | 任务声明 ... 或 kill -l [信号声明]
+/usr/local/home/zwr/stop.sh: 第 3 行:kill: (81118) - 没有那个进程
+================= config2 =================
+2022年 01月 06日 星期四 19:11:38 CST
+/usr/local/home/python3/python3/lib/python3.8/subprocess.py:848: RuntimeWarning: line buffering (buffering=1) isn't supported in binary mode, the default buffer size will be used
+  self.stdout = io.open(c2pread, 'rb', bufsize)
+/usr/local/home/python3/python3/lib/python3.8/subprocess.py:853: RuntimeWarning: line buffering (buffering=1) isn't supported in binary mode, the default buffer size will be used
+  self.stderr = io.open(errread, 'rb', bufsize)
+cmd
+
+end before line
+finish
+-------------------stop k8s-node02 --------------
+kill: 用法:kill [-s 信号声明 | -n 信号编号 | -信号声明] 进程号 | 任务声明 ... 或 kill -l [信号声明]
+/usr/local/home/zwr/stop.sh: 第 3 行:kill: (20823) - 没有那个进程
+-------------------stop k8s-node03 --------------
+kill: 用法:kill [-s 信号声明 | -n 信号编号 | -信号声明] 进程号 | 任务声明 ... 或 kill -l [信号声明]
+/usr/local/home/zwr/stop.sh: 第 3 行:kill: (83953) - 没有那个进程
+================= config3 =================
+2022年 01月 06日 星期四 19:16:20 CST
+/usr/local/home/python3/python3/lib/python3.8/subprocess.py:848: RuntimeWarning: line buffering (buffering=1) isn't supported in binary mode, the default buffer size will be used
+  self.stdout = io.open(c2pread, 'rb', bufsize)
+/usr/local/home/python3/python3/lib/python3.8/subprocess.py:853: RuntimeWarning: line buffering (buffering=1) isn't supported in binary mode, the default buffer size will be used
+  self.stderr = io.open(errread, 'rb', bufsize)
+cmd
+
+end before line
+finish
+-------------------stop k8s-node02 --------------
+kill: 用法:kill [-s 信号声明 | -n 信号编号 | -信号声明] 进程号 | 任务声明 ... 或 kill -l [信号声明]
+/usr/local/home/zwr/stop.sh: 第 3 行:kill: (25458) - 没有那个进程
+-------------------stop k8s-node03 --------------
+kill: 用法:kill [-s 信号声明 | -n 信号编号 | -信号声明] 进程号 | 任务声明 ... 或 kill -l [信号声明]
+/usr/local/home/zwr/stop.sh: 第 3 行:kill: (87788) - 没有那个进程
+================= config4 =================
+2022年 01月 06日 星期四 19:22:58 CST
+/usr/local/home/python3/python3/lib/python3.8/subprocess.py:848: RuntimeWarning: line buffering (buffering=1) isn't supported in binary mode, the default buffer size will be used
+  self.stdout = io.open(c2pread, 'rb', bufsize)
+/usr/local/home/python3/python3/lib/python3.8/subprocess.py:853: RuntimeWarning: line buffering (buffering=1) isn't supported in binary mode, the default buffer size will be used
+  self.stderr = io.open(errread, 'rb', bufsize)
+cmd
+
+end before line
+finish
+-------------------stop k8s-node02 --------------
+kill: 用法:kill [-s 信号声明 | -n 信号编号 | -信号声明] 进程号 | 任务声明 ... 或 kill -l [信号声明]
+/usr/local/home/zwr/stop.sh: 第 3 行:kill: (29230) - 没有那个进程
+-------------------stop k8s-node03 --------------
+kill: 用法:kill [-s 信号声明 | -n 信号编号 | -信号声明] 进程号 | 任务声明 ... 或 kill -l [信号声明]
+/usr/local/home/zwr/stop.sh: 第 3 行:kill: (90768) - 没有那个进程
+================= config5 =================
+2022年 01月 06日 星期四 19:27:48 CST
+/usr/local/home/python3/python3/lib/python3.8/subprocess.py:848: RuntimeWarning: line buffering (buffering=1) isn't supported in binary mode, the default buffer size will be used
+  self.stdout = io.open(c2pread, 'rb', bufsize)
+/usr/local/home/python3/python3/lib/python3.8/subprocess.py:853: RuntimeWarning: line buffering (buffering=1) isn't supported in binary mode, the default buffer size will be used
+  self.stderr = io.open(errread, 'rb', bufsize)
+cmd
+
+end before line
+finish
+-------------------stop k8s-node02 --------------
+kill: 用法:kill [-s 信号声明 | -n 信号编号 | -信号声明] 进程号 | 任务声明 ... 或 kill -l [信号声明]
+/usr/local/home/zwr/stop.sh: 第 3 行:kill: (32795) - 没有那个进程
+-------------------stop k8s-node03 --------------
+kill: 用法:kill [-s 信号声明 | -n 信号编号 | -信号声明] 进程号 | 任务声明 ... 或 kill -l [信号声明]
+/usr/local/home/zwr/stop.sh: 第 3 行:kill: (93436) - 没有那个进程
+================= config6 =================
+2022年 01月 06日 星期四 19:32:32 CST
+/usr/local/home/python3/python3/lib/python3.8/subprocess.py:848: RuntimeWarning: line buffering (buffering=1) isn't supported in binary mode, the default buffer size will be used
+  self.stdout = io.open(c2pread, 'rb', bufsize)
+/usr/local/home/python3/python3/lib/python3.8/subprocess.py:853: RuntimeWarning: line buffering (buffering=1) isn't supported in binary mode, the default buffer size will be used
+  self.stderr = io.open(errread, 'rb', bufsize)
+cmd
+
+end before line
+finish
+-------------------stop k8s-node02 --------------
+kill: 用法:kill [-s 信号声明 | -n 信号编号 | -信号声明] 进程号 | 任务声明 ... 或 kill -l [信号声明]
+/usr/local/home/zwr/stop.sh: 第 3 行:kill: (36050) - 没有那个进程
+-------------------stop k8s-node03 --------------
+kill: 用法:kill [-s 信号声明 | -n 信号编号 | -信号声明] 进程号 | 任务声明 ... 或 kill -l [信号声明]
+/usr/local/home/zwr/stop.sh: 第 3 行:kill: (95680) - 没有那个进程
+================= config7 =================
+2022年 01月 06日 星期四 19:35:57 CST
+/usr/local/home/python3/python3/lib/python3.8/subprocess.py:848: RuntimeWarning: line buffering (buffering=1) isn't supported in binary mode, the default buffer size will be used
+  self.stdout = io.open(c2pread, 'rb', bufsize)
+/usr/local/home/python3/python3/lib/python3.8/subprocess.py:853: RuntimeWarning: line buffering (buffering=1) isn't supported in binary mode, the default buffer size will be used
+  self.stderr = io.open(errread, 'rb', bufsize)
+cmd
+
+end before line
+finish
+-------------------stop k8s-node02 --------------
+kill: 用法:kill [-s 信号声明 | -n 信号编号 | -信号声明] 进程号 | 任务声明 ... 或 kill -l [信号声明]
+/usr/local/home/zwr/stop.sh: 第 3 行:kill: (39322) - 没有那个进程
+-------------------stop k8s-node03 --------------
+kill: 用法:kill [-s 信号声明 | -n 信号编号 | -信号声明] 进程号 | 任务声明 ... 或 kill -l [信号声明]
+/usr/local/home/zwr/stop.sh: 第 3 行:kill: (97960) - 没有那个进程
+================= config8 =================
+2022年 01月 06日 星期四 19:39:28 CST
+/usr/local/home/python3/python3/lib/python3.8/subprocess.py:848: RuntimeWarning: line buffering (buffering=1) isn't supported in binary mode, the default buffer size will be used
+  self.stdout = io.open(c2pread, 'rb', bufsize)
+/usr/local/home/python3/python3/lib/python3.8/subprocess.py:853: RuntimeWarning: line buffering (buffering=1) isn't supported in binary mode, the default buffer size will be used
+  self.stderr = io.open(errread, 'rb', bufsize)
+cmd
+
+end before line
+finish
+-------------------stop k8s-node02 --------------
+kill: 用法:kill [-s 信号声明 | -n 信号编号 | -信号声明] 进程号 | 任务声明 ... 或 kill -l [信号声明]
+/usr/local/home/zwr/stop.sh: 第 3 行:kill: (42781) - 没有那个进程
+-------------------stop k8s-node03 --------------
+kill: 用法:kill [-s 信号声明 | -n 信号编号 | -信号声明] 进程号 | 任务声明 ... 或 kill -l [信号声明]
+/usr/local/home/zwr/stop.sh: 第 3 行:kill: (100425) - 没有那个进程
+================= config9 =================
+2022年 01月 06日 星期四 19:43:21 CST
+/usr/local/home/python3/python3/lib/python3.8/subprocess.py:848: RuntimeWarning: line buffering (buffering=1) isn't supported in binary mode, the default buffer size will be used
+  self.stdout = io.open(c2pread, 'rb', bufsize)
+/usr/local/home/python3/python3/lib/python3.8/subprocess.py:853: RuntimeWarning: line buffering (buffering=1) isn't supported in binary mode, the default buffer size will be used
+  self.stderr = io.open(errread, 'rb', bufsize)
+cmd
+
+end before line
+finish
+-------------------stop k8s-node02 --------------
+kill: 用法:kill [-s 信号声明 | -n 信号编号 | -信号声明] 进程号 | 任务声明 ... 或 kill -l [信号声明]
+/usr/local/home/zwr/stop.sh: 第 3 行:kill: (48066) - 没有那个进程
+-------------------stop k8s-node03 --------------
+kill: 用法:kill [-s 信号声明 | -n 信号编号 | -信号声明] 进程号 | 任务声明 ... 或 kill -l [信号声明]
+/usr/local/home/zwr/stop.sh: 第 3 行:kill: (104149) - 没有那个进程
+================= config10 =================
+2022年 01月 06日 星期四 19:49:12 CST
+/usr/local/home/python3/python3/lib/python3.8/subprocess.py:848: RuntimeWarning: line buffering (buffering=1) isn't supported in binary mode, the default buffer size will be used
+  self.stdout = io.open(c2pread, 'rb', bufsize)
+/usr/local/home/python3/python3/lib/python3.8/subprocess.py:853: RuntimeWarning: line buffering (buffering=1) isn't supported in binary mode, the default buffer size will be used
+  self.stderr = io.open(errread, 'rb', bufsize)
+cmd
+
+end before line
+finish
+-------------------stop k8s-node02 --------------
+kill: 用法:kill [-s 信号声明 | -n 信号编号 | -信号声明] 进程号 | 任务声明 ... 或 kill -l [信号声明]
+/usr/local/home/zwr/stop.sh: 第 3 行:kill: (53505) - 没有那个进程
+-------------------stop k8s-node03 --------------
+kill: 用法:kill [-s 信号声明 | -n 信号编号 | -信号声明] 进程号 | 任务声明 ... 或 kill -l [信号声明]
+/usr/local/home/zwr/stop.sh: 第 3 行:kill: (108066) - 没有那个进程
+================= config11 =================
+2022年 01月 06日 星期四 19:55:27 CST
+/usr/local/home/python3/python3/lib/python3.8/subprocess.py:848: RuntimeWarning: line buffering (buffering=1) isn't supported in binary mode, the default buffer size will be used
+  self.stdout = io.open(c2pread, 'rb', bufsize)
+/usr/local/home/python3/python3/lib/python3.8/subprocess.py:853: RuntimeWarning: line buffering (buffering=1) isn't supported in binary mode, the default buffer size will be used
+  self.stderr = io.open(errread, 'rb', bufsize)
+cmd
+
+end before line
+finish
+-------------------stop k8s-node02 --------------
+kill: 用法:kill [-s 信号声明 | -n 信号编号 | -信号声明] 进程号 | 任务声明 ... 或 kill -l [信号声明]
+/usr/local/home/zwr/stop.sh: 第 3 行:kill: (57869) - 没有那个进程
+-------------------stop k8s-node03 --------------
+kill: 用法:kill [-s 信号声明 | -n 信号编号 | -信号声明] 进程号 | 任务声明 ... 或 kill -l [信号声明]
+/usr/local/home/zwr/stop.sh: 第 3 行:kill: (111232) - 没有那个进程
+================= config12 =================
+2022年 01月 06日 星期四 20:00:21 CST
+/usr/local/home/python3/python3/lib/python3.8/subprocess.py:848: RuntimeWarning: line buffering (buffering=1) isn't supported in binary mode, the default buffer size will be used
+  self.stdout = io.open(c2pread, 'rb', bufsize)
+/usr/local/home/python3/python3/lib/python3.8/subprocess.py:853: RuntimeWarning: line buffering (buffering=1) isn't supported in binary mode, the default buffer size will be used
+  self.stderr = io.open(errread, 'rb', bufsize)
+cmd
+
+end before line
+finish
+-------------------stop k8s-node02 --------------
+kill: 用法:kill [-s 信号声明 | -n 信号编号 | -信号声明] 进程号 | 任务声明 ... 或 kill -l [信号声明]
+/usr/local/home/zwr/stop.sh: 第 3 行:kill: (62901) - 没有那个进程
+-------------------stop k8s-node03 --------------
+kill: 用法:kill [-s 信号声明 | -n 信号编号 | -信号声明] 进程号 | 任务声明 ... 或 kill -l [信号声明]
+/usr/local/home/zwr/stop.sh: 第 3 行:kill: (114797) - 没有那个进程
+================= config13 =================
+2022年 01月 06日 星期四 20:06:13 CST
+/usr/local/home/python3/python3/lib/python3.8/subprocess.py:848: RuntimeWarning: line buffering (buffering=1) isn't supported in binary mode, the default buffer size will be used
+  self.stdout = io.open(c2pread, 'rb', bufsize)
+/usr/local/home/python3/python3/lib/python3.8/subprocess.py:853: RuntimeWarning: line buffering (buffering=1) isn't supported in binary mode, the default buffer size will be used
+  self.stderr = io.open(errread, 'rb', bufsize)
+cmd
+
+end before line
+finish
+-------------------stop k8s-node02 --------------
+kill: 用法:kill [-s 信号声明 | -n 信号编号 | -信号声明] 进程号 | 任务声明 ... 或 kill -l [信号声明]
+/usr/local/home/zwr/stop.sh: 第 3 行:kill: (66804) - 没有那个进程
+-------------------stop k8s-node03 --------------
+kill: 用法:kill [-s 信号声明 | -n 信号编号 | -信号声明] 进程号 | 任务声明 ... 或 kill -l [信号声明]
+/usr/local/home/zwr/stop.sh: 第 3 行:kill: (117668) - 没有那个进程
+================= config14 =================
+2022年 01月 06日 星期四 20:10:53 CST
+/usr/local/home/python3/python3/lib/python3.8/subprocess.py:848: RuntimeWarning: line buffering (buffering=1) isn't supported in binary mode, the default buffer size will be used
+  self.stdout = io.open(c2pread, 'rb', bufsize)
+/usr/local/home/python3/python3/lib/python3.8/subprocess.py:853: RuntimeWarning: line buffering (buffering=1) isn't supported in binary mode, the default buffer size will be used
+  self.stderr = io.open(errread, 'rb', bufsize)
+cmd
+
+end before line
+finish
+-------------------stop k8s-node02 --------------
+kill: 用法:kill [-s 信号声明 | -n 信号编号 | -信号声明] 进程号 | 任务声明 ... 或 kill -l [信号声明]
+/usr/local/home/zwr/stop.sh: 第 3 行:kill: (71485) - 没有那个进程
+-------------------stop k8s-node03 --------------
+kill: 用法:kill [-s 信号声明 | -n 信号编号 | -信号声明] 进程号 | 任务声明 ... 或 kill -l [信号声明]
+/usr/local/home/zwr/stop.sh: 第 3 行:kill: (121145) - 没有那个进程
+================= config15 =================
+2022年 01月 06日 星期四 20:16:28 CST
+/usr/local/home/python3/python3/lib/python3.8/subprocess.py:848: RuntimeWarning: line buffering (buffering=1) isn't supported in binary mode, the default buffer size will be used
+  self.stdout = io.open(c2pread, 'rb', bufsize)
+/usr/local/home/python3/python3/lib/python3.8/subprocess.py:853: RuntimeWarning: line buffering (buffering=1) isn't supported in binary mode, the default buffer size will be used
+  self.stderr = io.open(errread, 'rb', bufsize)
+cmd
+
+end before line
+finish
+-------------------stop k8s-node02 --------------
+kill: 用法:kill [-s 信号声明 | -n 信号编号 | -信号声明] 进程号 | 任务声明 ... 或 kill -l [信号声明]
+/usr/local/home/zwr/stop.sh: 第 3 行:kill: (73617) - 没有那个进程
+-------------------stop k8s-node03 --------------
+kill: 用法:kill [-s 信号声明 | -n 信号编号 | -信号声明] 进程号 | 任务声明 ... 或 kill -l [信号声明]
+/usr/local/home/zwr/stop.sh: 第 3 行:kill: (123033) - 没有那个进程
+================= config16 =================
+2022年 01月 06日 星期四 20:19:42 CST
+/usr/local/home/python3/python3/lib/python3.8/subprocess.py:848: RuntimeWarning: line buffering (buffering=1) isn't supported in binary mode, the default buffer size will be used
+  self.stdout = io.open(c2pread, 'rb', bufsize)
+/usr/local/home/python3/python3/lib/python3.8/subprocess.py:853: RuntimeWarning: line buffering (buffering=1) isn't supported in binary mode, the default buffer size will be used
+  self.stderr = io.open(errread, 'rb', bufsize)
+cmd
+
+end before line
+finish
+-------------------stop k8s-node02 --------------
+kill: 用法:kill [-s 信号声明 | -n 信号编号 | -信号声明] 进程号 | 任务声明 ... 或 kill -l [信号声明]
+/usr/local/home/zwr/stop.sh: 第 3 行:kill: (78662) - 没有那个进程
+-------------------stop k8s-node03 --------------
+kill: 用法:kill [-s 信号声明 | -n 信号编号 | -信号声明] 进程号 | 任务声明 ... 或 kill -l [信号声明]
+/usr/local/home/zwr/stop.sh: 第 3 行:kill: (127048) - 没有那个进程
+================= config17 =================
+2022年 01月 06日 星期四 20:26:24 CST
+/usr/local/home/python3/python3/lib/python3.8/subprocess.py:848: RuntimeWarning: line buffering (buffering=1) isn't supported in binary mode, the default buffer size will be used
+  self.stdout = io.open(c2pread, 'rb', bufsize)
+/usr/local/home/python3/python3/lib/python3.8/subprocess.py:853: RuntimeWarning: line buffering (buffering=1) isn't supported in binary mode, the default buffer size will be used
+  self.stderr = io.open(errread, 'rb', bufsize)
+cmd
+
+end before line
+finish
+-------------------stop k8s-node02 --------------
+kill: 用法:kill [-s 信号声明 | -n 信号编号 | -信号声明] 进程号 | 任务声明 ... 或 kill -l [信号声明]
+/usr/local/home/zwr/stop.sh: 第 3 行:kill: (2900) - 没有那个进程
+-------------------stop k8s-node03 --------------
+kill: 用法:kill [-s 信号声明 | -n 信号编号 | -信号声明] 进程号 | 任务声明 ... 或 kill -l [信号声明]
+/usr/local/home/zwr/stop.sh: 第 3 行:kill: (131592) - 没有那个进程
+================= config18 =================
+2022年 01月 06日 星期四 20:34:24 CST
+/usr/local/home/python3/python3/lib/python3.8/subprocess.py:848: RuntimeWarning: line buffering (buffering=1) isn't supported in binary mode, the default buffer size will be used
+  self.stdout = io.open(c2pread, 'rb', bufsize)
+/usr/local/home/python3/python3/lib/python3.8/subprocess.py:853: RuntimeWarning: line buffering (buffering=1) isn't supported in binary mode, the default buffer size will be used
+  self.stderr = io.open(errread, 'rb', bufsize)
+cmd
+
+end before line
+finish
+-------------------stop k8s-node02 --------------
+kill: 用法:kill [-s 信号声明 | -n 信号编号 | -信号声明] 进程号 | 任务声明 ... 或 kill -l [信号声明]
+/usr/local/home/zwr/stop.sh: 第 3 行:kill: (8297) - 没有那个进程
+-------------------stop k8s-node03 --------------
+kill: 用法:kill [-s 信号声明 | -n 信号编号 | -信号声明] 进程号 | 任务声明 ... 或 kill -l [信号声明]
+/usr/local/home/zwr/stop.sh: 第 3 行:kill: (135927) - 没有那个进程
+================= config19 =================
+2022年 01月 06日 星期四 20:41:38 CST
+/usr/local/home/python3/python3/lib/python3.8/subprocess.py:848: RuntimeWarning: line buffering (buffering=1) isn't supported in binary mode, the default buffer size will be used
+  self.stdout = io.open(c2pread, 'rb', bufsize)
+/usr/local/home/python3/python3/lib/python3.8/subprocess.py:853: RuntimeWarning: line buffering (buffering=1) isn't supported in binary mode, the default buffer size will be used
+  self.stderr = io.open(errread, 'rb', bufsize)
+cmd
+
+end before line
+finish
+-------------------stop k8s-node02 --------------
+kill: 用法:kill [-s 信号声明 | -n 信号编号 | -信号声明] 进程号 | 任务声明 ... 或 kill -l [信号声明]
+/usr/local/home/zwr/stop.sh: 第 3 行:kill: (14160) - 没有那个进程
+-------------------stop k8s-node03 --------------
+kill: 用法:kill [-s 信号声明 | -n 信号编号 | -信号声明] 进程号 | 任务声明 ... 或 kill -l [信号声明]
+/usr/local/home/zwr/stop.sh: 第 3 行:kill: (140290) - 没有那个进程
+================= config20 =================
+2022年 01月 06日 星期四 20:48:48 CST
+/usr/local/home/python3/python3/lib/python3.8/subprocess.py:848: RuntimeWarning: line buffering (buffering=1) isn't supported in binary mode, the default buffer size will be used
+  self.stdout = io.open(c2pread, 'rb', bufsize)
+/usr/local/home/python3/python3/lib/python3.8/subprocess.py:853: RuntimeWarning: line buffering (buffering=1) isn't supported in binary mode, the default buffer size will be used
+  self.stderr = io.open(errread, 'rb', bufsize)
+cmd
+
+end before line
+finish
+-------------------stop k8s-node02 --------------
+kill: 用法:kill [-s 信号声明 | -n 信号编号 | -信号声明] 进程号 | 任务声明 ... 或 kill -l [信号声明]
+/usr/local/home/zwr/stop.sh: 第 3 行:kill: (17935) - 没有那个进程
+-------------------stop k8s-node03 --------------
+kill: 用法:kill [-s 信号声明 | -n 信号编号 | -信号声明] 进程号 | 任务声明 ... 或 kill -l [信号声明]
+/usr/local/home/zwr/stop.sh: 第 3 行:kill: (143085) - 没有那个进程
+================= config21 =================
+2022年 01月 06日 星期四 20:53:30 CST
+/usr/local/home/python3/python3/lib/python3.8/subprocess.py:848: RuntimeWarning: line buffering (buffering=1) isn't supported in binary mode, the default buffer size will be used
+  self.stdout = io.open(c2pread, 'rb', bufsize)
+/usr/local/home/python3/python3/lib/python3.8/subprocess.py:853: RuntimeWarning: line buffering (buffering=1) isn't supported in binary mode, the default buffer size will be used
+  self.stderr = io.open(errread, 'rb', bufsize)
+cmd
+
+end before line
+finish
+-------------------stop k8s-node02 --------------
+kill: 用法:kill [-s 信号声明 | -n 信号编号 | -信号声明] 进程号 | 任务声明 ... 或 kill -l [信号声明]
+/usr/local/home/zwr/stop.sh: 第 3 行:kill: (21351) - 没有那个进程
+-------------------stop k8s-node03 --------------
+kill: 用法:kill [-s 信号声明 | -n 信号编号 | -信号声明] 进程号 | 任务声明 ... 或 kill -l [信号声明]
+/usr/local/home/zwr/stop.sh: 第 3 行:kill: (145553) - 没有那个进程
+================= config22 =================
+2022年 01月 06日 星期四 20:57:21 CST
+/usr/local/home/python3/python3/lib/python3.8/subprocess.py:848: RuntimeWarning: line buffering (buffering=1) isn't supported in binary mode, the default buffer size will be used
+  self.stdout = io.open(c2pread, 'rb', bufsize)
+/usr/local/home/python3/python3/lib/python3.8/subprocess.py:853: RuntimeWarning: line buffering (buffering=1) isn't supported in binary mode, the default buffer size will be used
+  self.stderr = io.open(errread, 'rb', bufsize)
+cmd
+
+end before line
+finish
+-------------------stop k8s-node02 --------------
+kill: 用法:kill [-s 信号声明 | -n 信号编号 | -信号声明] 进程号 | 任务声明 ... 或 kill -l [信号声明]
+/usr/local/home/zwr/stop.sh: 第 3 行:kill: (26202) - 没有那个进程
+-------------------stop k8s-node03 --------------
+kill: 用法:kill [-s 信号声明 | -n 信号编号 | -信号声明] 进程号 | 任务声明 ... 或 kill -l [信号声明]
+/usr/local/home/zwr/stop.sh: 第 3 行:kill: (148891) - 没有那个进程
+================= config23 =================
+2022年 01月 06日 星期四 21:02:24 CST
+/usr/local/home/python3/python3/lib/python3.8/subprocess.py:848: RuntimeWarning: line buffering (buffering=1) isn't supported in binary mode, the default buffer size will be used
+  self.stdout = io.open(c2pread, 'rb', bufsize)
+/usr/local/home/python3/python3/lib/python3.8/subprocess.py:853: RuntimeWarning: line buffering (buffering=1) isn't supported in binary mode, the default buffer size will be used
+  self.stderr = io.open(errread, 'rb', bufsize)
+cmd
+
+end before line
+finish
+-------------------stop k8s-node02 --------------
+kill: 用法:kill [-s 信号声明 | -n 信号编号 | -信号声明] 进程号 | 任务声明 ... 或 kill -l [信号声明]
+/usr/local/home/zwr/stop.sh: 第 3 行:kill: (29684) - 没有那个进程
+-------------------stop k8s-node03 --------------
+kill: 用法:kill [-s 信号声明 | -n 信号编号 | -信号声明] 进程号 | 任务声明 ... 或 kill -l [信号声明]
+/usr/local/home/zwr/stop.sh: 第 3 行:kill: (151381) - 没有那个进程
+================= config24 =================
+2022年 01月 06日 星期四 21:06:25 CST
+/usr/local/home/python3/python3/lib/python3.8/subprocess.py:848: RuntimeWarning: line buffering (buffering=1) isn't supported in binary mode, the default buffer size will be used
+  self.stdout = io.open(c2pread, 'rb', bufsize)
+/usr/local/home/python3/python3/lib/python3.8/subprocess.py:853: RuntimeWarning: line buffering (buffering=1) isn't supported in binary mode, the default buffer size will be used
+  self.stderr = io.open(errread, 'rb', bufsize)
+cmd
+
+end before line
+finish
+-------------------stop k8s-node02 --------------
+kill: 用法:kill [-s 信号声明 | -n 信号编号 | -信号声明] 进程号 | 任务声明 ... 或 kill -l [信号声明]
+/usr/local/home/zwr/stop.sh: 第 3 行:kill: (36948) - 没有那个进程
+-------------------stop k8s-node03 --------------
+kill: 用法:kill [-s 信号声明 | -n 信号编号 | -信号声明] 进程号 | 任务声明 ... 或 kill -l [信号声明]
+/usr/local/home/zwr/stop.sh: 第 3 行:kill: (157001) - 没有那个进程
+================= config25 =================
+2022年 01月 06日 星期四 21:15:48 CST
+/usr/local/home/python3/python3/lib/python3.8/subprocess.py:848: RuntimeWarning: line buffering (buffering=1) isn't supported in binary mode, the default buffer size will be used
+  self.stdout = io.open(c2pread, 'rb', bufsize)
+/usr/local/home/python3/python3/lib/python3.8/subprocess.py:853: RuntimeWarning: line buffering (buffering=1) isn't supported in binary mode, the default buffer size will be used
+  self.stderr = io.open(errread, 'rb', bufsize)
+cmd
+
+end before line
+finish
+-------------------stop k8s-node02 --------------
+kill: 用法:kill [-s 信号声明 | -n 信号编号 | -信号声明] 进程号 | 任务声明 ... 或 kill -l [信号声明]
+/usr/local/home/zwr/stop.sh: 第 3 行:kill: (41308) - 没有那个进程
+-------------------stop k8s-node03 --------------
+kill: 用法:kill [-s 信号声明 | -n 信号编号 | -信号声明] 进程号 | 任务声明 ... 或 kill -l [信号声明]
+/usr/local/home/zwr/stop.sh: 第 3 行:kill: (159979) - 没有那个进程
+================= config26 =================
+2022年 01月 06日 星期四 21:20:26 CST
+/usr/local/home/python3/python3/lib/python3.8/subprocess.py:848: RuntimeWarning: line buffering (buffering=1) isn't supported in binary mode, the default buffer size will be used
+  self.stdout = io.open(c2pread, 'rb', bufsize)
+/usr/local/home/python3/python3/lib/python3.8/subprocess.py:853: RuntimeWarning: line buffering (buffering=1) isn't supported in binary mode, the default buffer size will be used
+  self.stderr = io.open(errread, 'rb', bufsize)
+cmd
+
+end before line
+finish
+-------------------stop k8s-node02 --------------
+kill: 用法:kill [-s 信号声明 | -n 信号编号 | -信号声明] 进程号 | 任务声明 ... 或 kill -l [信号声明]
+/usr/local/home/zwr/stop.sh: 第 3 行:kill: (48554) - 没有那个进程
+-------------------stop k8s-node03 --------------
+kill: 用法:kill [-s 信号声明 | -n 信号编号 | -信号声明] 进程号 | 任务声明 ... 或 kill -l [信号声明]
+/usr/local/home/zwr/stop.sh: 第 3 行:kill: (165558) - 没有那个进程
+================= config27 =================
+2022年 01月 06日 星期四 21:29:49 CST
+/usr/local/home/python3/python3/lib/python3.8/subprocess.py:848: RuntimeWarning: line buffering (buffering=1) isn't supported in binary mode, the default buffer size will be used
+  self.stdout = io.open(c2pread, 'rb', bufsize)
+/usr/local/home/python3/python3/lib/python3.8/subprocess.py:853: RuntimeWarning: line buffering (buffering=1) isn't supported in binary mode, the default buffer size will be used
+  self.stderr = io.open(errread, 'rb', bufsize)
+cmd
+
+end before line
+finish
+-------------------stop k8s-node02 --------------
+kill: 用法:kill [-s 信号声明 | -n 信号编号 | -信号声明] 进程号 | 任务声明 ... 或 kill -l [信号声明]
+/usr/local/home/zwr/stop.sh: 第 3 行:kill: (54872) - 没有那个进程
+-------------------stop k8s-node03 --------------
+kill: 用法:kill [-s 信号声明 | -n 信号编号 | -信号声明] 进程号 | 任务声明 ... 或 kill -l [信号声明]
+/usr/local/home/zwr/stop.sh: 第 3 行:kill: (170798) - 没有那个进程
+================= config28 =================
+2022年 01月 06日 星期四 21:38:45 CST
+/usr/local/home/python3/python3/lib/python3.8/subprocess.py:848: RuntimeWarning: line buffering (buffering=1) isn't supported in binary mode, the default buffer size will be used
+  self.stdout = io.open(c2pread, 'rb', bufsize)
+/usr/local/home/python3/python3/lib/python3.8/subprocess.py:853: RuntimeWarning: line buffering (buffering=1) isn't supported in binary mode, the default buffer size will be used
+  self.stderr = io.open(errread, 'rb', bufsize)
+cmd
+
+end before line
+finish
+-------------------stop k8s-node02 --------------
+kill: 用法:kill [-s 信号声明 | -n 信号编号 | -信号声明] 进程号 | 任务声明 ... 或 kill -l [信号声明]
+/usr/local/home/zwr/stop.sh: 第 3 行:kill: (59817) - 没有那个进程
+-------------------stop k8s-node03 --------------
+kill: 用法:kill [-s 信号声明 | -n 信号编号 | -信号声明] 进程号 | 任务声明 ... 或 kill -l [信号声明]
+/usr/local/home/zwr/stop.sh: 第 3 行:kill: (174526) - 没有那个进程
+================= config29 =================
+2022年 01月 06日 星期四 21:44:52 CST
+/usr/local/home/python3/python3/lib/python3.8/subprocess.py:848: RuntimeWarning: line buffering (buffering=1) isn't supported in binary mode, the default buffer size will be used
+  self.stdout = io.open(c2pread, 'rb', bufsize)
+/usr/local/home/python3/python3/lib/python3.8/subprocess.py:853: RuntimeWarning: line buffering (buffering=1) isn't supported in binary mode, the default buffer size will be used
+  self.stderr = io.open(errread, 'rb', bufsize)
+cmd
+
+end before line
+finish
+-------------------stop k8s-node02 --------------
+kill: 用法:kill [-s 信号声明 | -n 信号编号 | -信号声明] 进程号 | 任务声明 ... 或 kill -l [信号声明]
+/usr/local/home/zwr/stop.sh: 第 3 行:kill: (62166) - 没有那个进程
+-------------------stop k8s-node03 --------------
+kill: 用法:kill [-s 信号声明 | -n 信号编号 | -信号声明] 进程号 | 任务声明 ... 或 kill -l [信号声明]
+/usr/local/home/zwr/stop.sh: 第 3 行:kill: (176662) - 没有那个进程
+================= config30 =================
+2022年 01月 06日 星期四 21:48:31 CST
+/usr/local/home/python3/python3/lib/python3.8/subprocess.py:848: RuntimeWarning: line buffering (buffering=1) isn't supported in binary mode, the default buffer size will be used
+  self.stdout = io.open(c2pread, 'rb', bufsize)
+/usr/local/home/python3/python3/lib/python3.8/subprocess.py:853: RuntimeWarning: line buffering (buffering=1) isn't supported in binary mode, the default buffer size will be used
+  self.stderr = io.open(errread, 'rb', bufsize)
+cmd
+
+end before line
+finish
+-------------------stop k8s-node02 --------------
+kill: 用法:kill [-s 信号声明 | -n 信号编号 | -信号声明] 进程号 | 任务声明 ... 或 kill -l [信号声明]
+/usr/local/home/zwr/stop.sh: 第 3 行:kill: (64497) - 没有那个进程
+-------------------stop k8s-node03 --------------
+kill: 用法:kill [-s 信号声明 | -n 信号编号 | -信号声明] 进程号 | 任务声明 ... 或 kill -l [信号声明]
+/usr/local/home/zwr/stop.sh: 第 3 行:kill: (178720) - 没有那个进程
+================= config31 =================
+2022年 01月 06日 星期四 21:52:10 CST
+/usr/local/home/python3/python3/lib/python3.8/subprocess.py:848: RuntimeWarning: line buffering (buffering=1) isn't supported in binary mode, the default buffer size will be used
+  self.stdout = io.open(c2pread, 'rb', bufsize)
+/usr/local/home/python3/python3/lib/python3.8/subprocess.py:853: RuntimeWarning: line buffering (buffering=1) isn't supported in binary mode, the default buffer size will be used
+  self.stderr = io.open(errread, 'rb', bufsize)
+cmd
+
+end before line
+finish
+-------------------stop k8s-node02 --------------
+kill: 用法:kill [-s 信号声明 | -n 信号编号 | -信号声明] 进程号 | 任务声明 ... 或 kill -l [信号声明]
+/usr/local/home/zwr/stop.sh: 第 3 行:kill: (69221) - 没有那个进程
+-------------------stop k8s-node03 --------------
+kill: 用法:kill [-s 信号声明 | -n 信号编号 | -信号声明] 进程号 | 任务声明 ... 或 kill -l [信号声明]
+/usr/local/home/zwr/stop.sh: 第 3 行:kill: (182672) - 没有那个进程
+================= config32 =================
+2022年 01月 06日 星期四 21:58:58 CST
+/usr/local/home/python3/python3/lib/python3.8/subprocess.py:848: RuntimeWarning: line buffering (buffering=1) isn't supported in binary mode, the default buffer size will be used
+  self.stdout = io.open(c2pread, 'rb', bufsize)
+/usr/local/home/python3/python3/lib/python3.8/subprocess.py:853: RuntimeWarning: line buffering (buffering=1) isn't supported in binary mode, the default buffer size will be used
+  self.stderr = io.open(errread, 'rb', bufsize)
+cmd
+
+end before line
+finish
+-------------------stop k8s-node02 --------------
+kill: 用法:kill [-s 信号声明 | -n 信号编号 | -信号声明] 进程号 | 任务声明 ... 或 kill -l [信号声明]
+/usr/local/home/zwr/stop.sh: 第 3 行:kill: (72952) - 没有那个进程
+-------------------stop k8s-node03 --------------
+kill: 用法:kill [-s 信号声明 | -n 信号编号 | -信号声明] 进程号 | 任务声明 ... 或 kill -l [信号声明]
+/usr/local/home/zwr/stop.sh: 第 3 行:kill: (185405) - 没有那个进程
+================= config33 =================
+2022年 01月 06日 星期四 22:03:20 CST
+/usr/local/home/python3/python3/lib/python3.8/subprocess.py:848: RuntimeWarning: line buffering (buffering=1) isn't supported in binary mode, the default buffer size will be used
+  self.stdout = io.open(c2pread, 'rb', bufsize)
+/usr/local/home/python3/python3/lib/python3.8/subprocess.py:853: RuntimeWarning: line buffering (buffering=1) isn't supported in binary mode, the default buffer size will be used
+  self.stderr = io.open(errread, 'rb', bufsize)
+cmd
+
+end before line
+finish
+-------------------stop k8s-node02 --------------
+kill: 用法:kill [-s 信号声明 | -n 信号编号 | -信号声明] 进程号 | 任务声明 ... 或 kill -l [信号声明]
+/usr/local/home/zwr/stop.sh: 第 3 行:kill: (62177) - 没有那个进程
+-------------------stop k8s-node03 --------------
+kill: 用法:kill [-s 信号声明 | -n 信号编号 | -信号声明] 进程号 | 任务声明 ... 或 kill -l [信号声明]
+/usr/local/home/zwr/stop.sh: 第 3 行:kill: (271349) - 没有那个进程
+================= config34 =================
+2022年 01月 07日 星期五 14:47:43 CST
+/usr/local/home/python3/python3/lib/python3.8/subprocess.py:848: RuntimeWarning: line buffering (buffering=1) isn't supported in binary mode, the default buffer size will be used
+  self.stdout = io.open(c2pread, 'rb', bufsize)
+/usr/local/home/python3/python3/lib/python3.8/subprocess.py:853: RuntimeWarning: line buffering (buffering=1) isn't supported in binary mode, the default buffer size will be used
+  self.stderr = io.open(errread, 'rb', bufsize)
+cmd
+
+end before line
+finish
+-------------------stop k8s-node02 --------------
+kill: 用法:kill [-s 信号声明 | -n 信号编号 | -信号声明] 进程号 | 任务声明 ... 或 kill -l [信号声明]
+/usr/local/home/zwr/stop.sh: 第 3 行:kill: (69886) - 没有那个进程
+-------------------stop k8s-node03 --------------
+kill: 用法:kill [-s 信号声明 | -n 信号编号 | -信号声明] 进程号 | 任务声明 ... 或 kill -l [信号声明]
+/usr/local/home/zwr/stop.sh: 第 3 行:kill: (277016) - 没有那个进程
+================= config35 =================
+2022年 01月 07日 星期五 14:56:56 CST
+/usr/local/home/python3/python3/lib/python3.8/subprocess.py:848: RuntimeWarning: line buffering (buffering=1) isn't supported in binary mode, the default buffer size will be used
+  self.stdout = io.open(c2pread, 'rb', bufsize)
+/usr/local/home/python3/python3/lib/python3.8/subprocess.py:853: RuntimeWarning: line buffering (buffering=1) isn't supported in binary mode, the default buffer size will be used
+  self.stderr = io.open(errread, 'rb', bufsize)
+cmd
+
+end before line
+finish
+-------------------stop k8s-node02 --------------
+kill: 用法:kill [-s 信号声明 | -n 信号编号 | -信号声明] 进程号 | 任务声明 ... 或 kill -l [信号声明]
+/usr/local/home/zwr/stop.sh: 第 3 行:kill: (71638) - 没有那个进程
+-------------------stop k8s-node03 --------------
+kill: 用法:kill [-s 信号声明 | -n 信号编号 | -信号声明] 进程号 | 任务声明 ... 或 kill -l [信号声明]
+/usr/local/home/zwr/stop.sh: 第 3 行:kill: (278716) - 没有那个进程
+================= config36 =================
+2022年 01月 07日 星期五 15:00:06 CST
+/usr/local/home/python3/python3/lib/python3.8/subprocess.py:848: RuntimeWarning: line buffering (buffering=1) isn't supported in binary mode, the default buffer size will be used
+  self.stdout = io.open(c2pread, 'rb', bufsize)
+/usr/local/home/python3/python3/lib/python3.8/subprocess.py:853: RuntimeWarning: line buffering (buffering=1) isn't supported in binary mode, the default buffer size will be used
+  self.stderr = io.open(errread, 'rb', bufsize)
+cmd
+
+end before line
+finish
+-------------------stop k8s-node02 --------------
+kill: 用法:kill [-s 信号声明 | -n 信号编号 | -信号声明] 进程号 | 任务声明 ... 或 kill -l [信号声明]
+/usr/local/home/zwr/stop.sh: 第 3 行:kill: (74962) - 没有那个进程
+-------------------stop k8s-node03 --------------
+kill: 用法:kill [-s 信号声明 | -n 信号编号 | -信号声明] 进程号 | 任务声明 ... 或 kill -l [信号声明]
+/usr/local/home/zwr/stop.sh: 第 3 行:kill: (281032) - 没有那个进程
+================= config37 =================
+2022年 01月 07日 星期五 15:03:39 CST
+/usr/local/home/python3/python3/lib/python3.8/subprocess.py:848: RuntimeWarning: line buffering (buffering=1) isn't supported in binary mode, the default buffer size will be used
+  self.stdout = io.open(c2pread, 'rb', bufsize)
+/usr/local/home/python3/python3/lib/python3.8/subprocess.py:853: RuntimeWarning: line buffering (buffering=1) isn't supported in binary mode, the default buffer size will be used
+  self.stderr = io.open(errread, 'rb', bufsize)
+cmd
+
+end before line
+finish
+-------------------stop k8s-node02 --------------
+kill: 用法:kill [-s 信号声明 | -n 信号编号 | -信号声明] 进程号 | 任务声明 ... 或 kill -l [信号声明]
+/usr/local/home/zwr/stop.sh: 第 3 行:kill: (78322) - 没有那个进程
+-------------------stop k8s-node03 --------------
+kill: 用法:kill [-s 信号声明 | -n 信号编号 | -信号声明] 进程号 | 任务声明 ... 或 kill -l [信号声明]
+/usr/local/home/zwr/stop.sh: 第 3 行:kill: (283414) - 没有那个进程
+================= config38 =================
+2022年 01月 07日 星期五 15:07:24 CST
+/usr/local/home/python3/python3/lib/python3.8/subprocess.py:848: RuntimeWarning: line buffering (buffering=1) isn't supported in binary mode, the default buffer size will be used
+  self.stdout = io.open(c2pread, 'rb', bufsize)
+/usr/local/home/python3/python3/lib/python3.8/subprocess.py:853: RuntimeWarning: line buffering (buffering=1) isn't supported in binary mode, the default buffer size will be used
+  self.stderr = io.open(errread, 'rb', bufsize)
+cmd
+
+end before line
+finish
+-------------------stop k8s-node02 --------------
+kill: 用法:kill [-s 信号声明 | -n 信号编号 | -信号声明] 进程号 | 任务声明 ... 或 kill -l [信号声明]
+/usr/local/home/zwr/stop.sh: 第 3 行:kill: (1671) - 没有那个进程
+-------------------stop k8s-node03 --------------
+kill: 用法:kill [-s 信号声明 | -n 信号编号 | -信号声明] 进程号 | 任务声明 ... 或 kill -l [信号声明]
+/usr/local/home/zwr/stop.sh: 第 3 行:kill: (286379) - 没有那个进程
+================= config39 =================
+2022年 01月 07日 星期五 15:11:51 CST
+/usr/local/home/python3/python3/lib/python3.8/subprocess.py:848: RuntimeWarning: line buffering (buffering=1) isn't supported in binary mode, the default buffer size will be used
+  self.stdout = io.open(c2pread, 'rb', bufsize)
+/usr/local/home/python3/python3/lib/python3.8/subprocess.py:853: RuntimeWarning: line buffering (buffering=1) isn't supported in binary mode, the default buffer size will be used
+  self.stderr = io.open(errread, 'rb', bufsize)
+cmd
+
+end before line
+finish
+-------------------stop k8s-node02 --------------
+kill: 用法:kill [-s 信号声明 | -n 信号编号 | -信号声明] 进程号 | 任务声明 ... 或 kill -l [信号声明]
+/usr/local/home/zwr/stop.sh: 第 3 行:kill: (5056) - 没有那个进程
+-------------------stop k8s-node03 --------------
+kill: 用法:kill [-s 信号声明 | -n 信号编号 | -信号声明] 进程号 | 任务声明 ... 或 kill -l [信号声明]
+/usr/local/home/zwr/stop.sh: 第 3 行:kill: (289316) - 没有那个进程
+================= config40 =================
+2022年 01月 07日 星期五 15:17:06 CST
+/usr/local/home/python3/python3/lib/python3.8/subprocess.py:848: RuntimeWarning: line buffering (buffering=1) isn't supported in binary mode, the default buffer size will be used
+  self.stdout = io.open(c2pread, 'rb', bufsize)
+/usr/local/home/python3/python3/lib/python3.8/subprocess.py:853: RuntimeWarning: line buffering (buffering=1) isn't supported in binary mode, the default buffer size will be used
+  self.stderr = io.open(errread, 'rb', bufsize)
+cmd
+
+end before line
+finish
+-------------------stop k8s-node02 --------------
+kill: 用法:kill [-s 信号声明 | -n 信号编号 | -信号声明] 进程号 | 任务声明 ... 或 kill -l [信号声明]
+/usr/local/home/zwr/stop.sh: 第 3 行:kill: (10102) - 没有那个进程
+-------------------stop k8s-node03 --------------
+kill: 用法:kill [-s 信号声明 | -n 信号编号 | -信号声明] 进程号 | 任务声明 ... 或 kill -l [信号声明]
+/usr/local/home/zwr/stop.sh: 第 3 行:kill: (293227) - 没有那个进程
+================= config41 =================
+2022年 01月 07日 星期五 15:23:30 CST
+/usr/local/home/python3/python3/lib/python3.8/subprocess.py:848: RuntimeWarning: line buffering (buffering=1) isn't supported in binary mode, the default buffer size will be used
+  self.stdout = io.open(c2pread, 'rb', bufsize)
+/usr/local/home/python3/python3/lib/python3.8/subprocess.py:853: RuntimeWarning: line buffering (buffering=1) isn't supported in binary mode, the default buffer size will be used
+  self.stderr = io.open(errread, 'rb', bufsize)
+cmd
+
+end before line
+finish
+-------------------stop k8s-node02 --------------
+kill: 用法:kill [-s 信号声明 | -n 信号编号 | -信号声明] 进程号 | 任务声明 ... 或 kill -l [信号声明]
+/usr/local/home/zwr/stop.sh: 第 3 行:kill: (13531) - 没有那个进程
+-------------------stop k8s-node03 --------------
+kill: 用法:kill [-s 信号声明 | -n 信号编号 | -信号声明] 进程号 | 任务声明 ... 或 kill -l [信号声明]
+/usr/local/home/zwr/stop.sh: 第 3 行:kill: (295879) - 没有那个进程
+================= config42 =================
+2022年 01月 07日 星期五 15:27:48 CST
+/usr/local/home/python3/python3/lib/python3.8/subprocess.py:848: RuntimeWarning: line buffering (buffering=1) isn't supported in binary mode, the default buffer size will be used
+  self.stdout = io.open(c2pread, 'rb', bufsize)
+/usr/local/home/python3/python3/lib/python3.8/subprocess.py:853: RuntimeWarning: line buffering (buffering=1) isn't supported in binary mode, the default buffer size will be used
+  self.stderr = io.open(errread, 'rb', bufsize)
+cmd
+
+end before line
+finish
+-------------------stop k8s-node02 --------------
+kill: 用法:kill [-s 信号声明 | -n 信号编号 | -信号声明] 进程号 | 任务声明 ... 或 kill -l [信号声明]
+/usr/local/home/zwr/stop.sh: 第 3 行:kill: (22013) - 没有那个进程
+-------------------stop k8s-node03 --------------
+kill: 用法:kill [-s 信号声明 | -n 信号编号 | -信号声明] 进程号 | 任务声明 ... 或 kill -l [信号声明]
+/usr/local/home/zwr/stop.sh: 第 3 行:kill: (302987) - 没有那个进程
+================= config43 =================
+2022年 01月 07日 星期五 15:40:04 CST
+/usr/local/home/python3/python3/lib/python3.8/subprocess.py:848: RuntimeWarning: line buffering (buffering=1) isn't supported in binary mode, the default buffer size will be used
+  self.stdout = io.open(c2pread, 'rb', bufsize)
+/usr/local/home/python3/python3/lib/python3.8/subprocess.py:853: RuntimeWarning: line buffering (buffering=1) isn't supported in binary mode, the default buffer size will be used
+  self.stderr = io.open(errread, 'rb', bufsize)
+cmd
+
+end before line
+finish
+-------------------stop k8s-node02 --------------
+kill: 用法:kill [-s 信号声明 | -n 信号编号 | -信号声明] 进程号 | 任务声明 ... 或 kill -l [信号声明]
+/usr/local/home/zwr/stop.sh: 第 3 行:kill: (26015) - 没有那个进程
+-------------------stop k8s-node03 --------------
+kill: 用法:kill [-s 信号声明 | -n 信号编号 | -信号声明] 进程号 | 任务声明 ... 或 kill -l [信号声明]
+/usr/local/home/zwr/stop.sh: 第 3 行:kill: (306146) - 没有那个进程
+================= config44 =================
+2022年 01月 07日 星期五 15:45:21 CST
+/usr/local/home/python3/python3/lib/python3.8/subprocess.py:848: RuntimeWarning: line buffering (buffering=1) isn't supported in binary mode, the default buffer size will be used
+  self.stdout = io.open(c2pread, 'rb', bufsize)
+/usr/local/home/python3/python3/lib/python3.8/subprocess.py:853: RuntimeWarning: line buffering (buffering=1) isn't supported in binary mode, the default buffer size will be used
+  self.stderr = io.open(errread, 'rb', bufsize)
+cmd
+
+end before line
+finish
+-------------------stop k8s-node02 --------------
+kill: 用法:kill [-s 信号声明 | -n 信号编号 | -信号声明] 进程号 | 任务声明 ... 或 kill -l [信号声明]
+/usr/local/home/zwr/stop.sh: 第 3 行:kill: (33266) - 没有那个进程
+-------------------stop k8s-node03 --------------
+kill: 用法:kill [-s 信号声明 | -n 信号编号 | -信号声明] 进程号 | 任务声明 ... 或 kill -l [信号声明]
+/usr/local/home/zwr/stop.sh: 第 3 行:kill: (965) - 没有那个进程
+================= config45 =================
+2022年 01月 07日 星期五 15:55:09 CST
+/usr/local/home/python3/python3/lib/python3.8/subprocess.py:848: RuntimeWarning: line buffering (buffering=1) isn't supported in binary mode, the default buffer size will be used
+  self.stdout = io.open(c2pread, 'rb', bufsize)
+/usr/local/home/python3/python3/lib/python3.8/subprocess.py:853: RuntimeWarning: line buffering (buffering=1) isn't supported in binary mode, the default buffer size will be used
+  self.stderr = io.open(errread, 'rb', bufsize)
+cmd
+
+end before line
+finish
+-------------------stop k8s-node02 --------------
+kill: 用法:kill [-s 信号声明 | -n 信号编号 | -信号声明] 进程号 | 任务声明 ... 或 kill -l [信号声明]
+/usr/local/home/zwr/stop.sh: 第 3 行:kill: (36184) - 没有那个进程
+-------------------stop k8s-node03 --------------
+kill: 用法:kill [-s 信号声明 | -n 信号编号 | -信号声明] 进程号 | 任务声明 ... 或 kill -l [信号声明]
+/usr/local/home/zwr/stop.sh: 第 3 行:kill: (3355) - 没有那个进程
+================= config46 =================
+2022年 01月 07日 星期五 15:58:27 CST
+/usr/local/home/python3/python3/lib/python3.8/subprocess.py:848: RuntimeWarning: line buffering (buffering=1) isn't supported in binary mode, the default buffer size will be used
+  self.stdout = io.open(c2pread, 'rb', bufsize)
+/usr/local/home/python3/python3/lib/python3.8/subprocess.py:853: RuntimeWarning: line buffering (buffering=1) isn't supported in binary mode, the default buffer size will be used
+  self.stderr = io.open(errread, 'rb', bufsize)
+cmd
+
+end before line
+finish
+-------------------stop k8s-node02 --------------
+kill: 用法:kill [-s 信号声明 | -n 信号编号 | -信号声明] 进程号 | 任务声明 ... 或 kill -l [信号声明]
+/usr/local/home/zwr/stop.sh: 第 3 行:kill: (39505) - 没有那个进程
+-------------------stop k8s-node03 --------------
+kill: 用法:kill [-s 信号声明 | -n 信号编号 | -信号声明] 进程号 | 任务声明 ... 或 kill -l [信号声明]
+/usr/local/home/zwr/stop.sh: 第 3 行:kill: (6055) - 没有那个进程
+================= config47 =================
+2022年 01月 07日 星期五 16:01:55 CST
+/usr/local/home/python3/python3/lib/python3.8/subprocess.py:848: RuntimeWarning: line buffering (buffering=1) isn't supported in binary mode, the default buffer size will be used
+  self.stdout = io.open(c2pread, 'rb', bufsize)
+/usr/local/home/python3/python3/lib/python3.8/subprocess.py:853: RuntimeWarning: line buffering (buffering=1) isn't supported in binary mode, the default buffer size will be used
+  self.stderr = io.open(errread, 'rb', bufsize)
+cmd
+
+end before line
+finish
+-------------------stop k8s-node02 --------------
+kill: 用法:kill [-s 信号声明 | -n 信号编号 | -信号声明] 进程号 | 任务声明 ... 或 kill -l [信号声明]
+/usr/local/home/zwr/stop.sh: 第 3 行:kill: (44909) - 没有那个进程
+-------------------stop k8s-node03 --------------
+kill: 用法:kill [-s 信号声明 | -n 信号编号 | -信号声明] 进程号 | 任务声明 ... 或 kill -l [信号声明]
+/usr/local/home/zwr/stop.sh: 第 3 行:kill: (9925) - 没有那个进程
+================= config48 =================
+2022年 01月 07日 星期五 16:08:08 CST
+/usr/local/home/python3/python3/lib/python3.8/subprocess.py:848: RuntimeWarning: line buffering (buffering=1) isn't supported in binary mode, the default buffer size will be used
+  self.stdout = io.open(c2pread, 'rb', bufsize)
+/usr/local/home/python3/python3/lib/python3.8/subprocess.py:853: RuntimeWarning: line buffering (buffering=1) isn't supported in binary mode, the default buffer size will be used
+  self.stderr = io.open(errread, 'rb', bufsize)
+cmd
+
+end before line
+finish
+-------------------stop k8s-node02 --------------
+kill: 用法:kill [-s 信号声明 | -n 信号编号 | -信号声明] 进程号 | 任务声明 ... 或 kill -l [信号声明]
+/usr/local/home/zwr/stop.sh: 第 3 行:kill: (51591) - 没有那个进程
+-------------------stop k8s-node03 --------------
+kill: 用法:kill [-s 信号声明 | -n 信号编号 | -信号声明] 进程号 | 任务声明 ... 或 kill -l [信号声明]
+/usr/local/home/zwr/stop.sh: 第 3 行:kill: (15002) - 没有那个进程
+================= config49 =================
+2022年 01月 07日 星期五 16:16:41 CST
+/usr/local/home/python3/python3/lib/python3.8/subprocess.py:848: RuntimeWarning: line buffering (buffering=1) isn't supported in binary mode, the default buffer size will be used
+  self.stdout = io.open(c2pread, 'rb', bufsize)
+/usr/local/home/python3/python3/lib/python3.8/subprocess.py:853: RuntimeWarning: line buffering (buffering=1) isn't supported in binary mode, the default buffer size will be used
+  self.stderr = io.open(errread, 'rb', bufsize)
+cmd
+
+end before line
+finish
+-------------------stop k8s-node02 --------------
+kill: 用法:kill [-s 信号声明 | -n 信号编号 | -信号声明] 进程号 | 任务声明 ... 或 kill -l [信号声明]
+/usr/local/home/zwr/stop.sh: 第 3 行:kill: (58226) - 没有那个进程
+-------------------stop k8s-node03 --------------
+kill: 用法:kill [-s 信号声明 | -n 信号编号 | -信号声明] 进程号 | 任务声明 ... 或 kill -l [信号声明]
+/usr/local/home/zwr/stop.sh: 第 3 行:kill: (19850) - 没有那个进程
+================= config50 =================
+2022年 01月 07日 星期五 16:24:42 CST
+/usr/local/home/python3/python3/lib/python3.8/subprocess.py:848: RuntimeWarning: line buffering (buffering=1) isn't supported in binary mode, the default buffer size will be used
+  self.stdout = io.open(c2pread, 'rb', bufsize)
+/usr/local/home/python3/python3/lib/python3.8/subprocess.py:853: RuntimeWarning: line buffering (buffering=1) isn't supported in binary mode, the default buffer size will be used
+  self.stderr = io.open(errread, 'rb', bufsize)
+cmd
+
+end before line
+finish
+-------------------stop k8s-node02 --------------
+kill: 用法:kill [-s 信号声明 | -n 信号编号 | -信号声明] 进程号 | 任务声明 ... 或 kill -l [信号声明]
+/usr/local/home/zwr/stop.sh: 第 3 行:kill: (62155) - 没有那个进程
+-------------------stop k8s-node03 --------------
+kill: 用法:kill [-s 信号声明 | -n 信号编号 | -信号声明] 进程号 | 任务声明 ... 或 kill -l [信号声明]
+/usr/local/home/zwr/stop.sh: 第 3 行:kill: (22572) - 没有那个进程
+------------使用lhs生成初始样本点------------
+76838s
+{'maxIndex': 35, 'target': -180.026, 'params': {'spark.broadcast.blockSize': 52.93766656720699, 'spark.broadcast.checksum': 0.21254631654815492, 'spark.broadcast.compress': 0.3999496048757011, 'spark.default.parallelism': 349.291365352944, 'spark.executor.cores': 3.864711869956588, 'spark.executor.instances': 7.509780514324127, 'spark.executor.memory': 6.496198592514058, 'spark.executor.memoryOverhead': 875.3240656480754, 'spark.kryoserializer.buffer': 106.25151518148367, 'spark.kryoserializer.buffer.max': 51.493748293748126, 'spark.locality.wait': 9.039324043990794, 'spark.maxRemoteBlockSizeFetchToMem': 1252249222.0603247, 'spark.memory.fraction': 0.8556348318759242, 'spark.memory.offHeap.enabled': 0.3385797959346366, 'spark.memory.offHeap.size': 659.42766792026, 'spark.memory.storageFraction': 0.742489199964746, 'spark.rdd.compress': 0.06061154647401912, 'spark.reducer.maxBlocksInFlightPerAddress': 2047720334.1275547, 'spark.reducer.maxReqsInFlight': 1482913369.7357817, 'spark.reducer.maxSizeInFlight': 61.9191922033011, 'spark.scheduler.mode': 0.7105474351529599, 'spark.scheduler.revive.interval': 852.0740650036594, 'spark.shuffle.compress': 0.5326261668903095, 'spark.shuffle.file.buffer': 30.93361633424481, 'spark.shuffle.io.numConnectionsPerPeer': 3.581591728540357, 'spark.shuffle.sort.bypassMergeThreshold': 288.3154414292297, 'spark.storage.memoryFraction': 0.5943272781113129, 'spark.storage.memoryMapThreshold': 3.261424624885291}}
+mv: 无法获取"/usr/local/home/yyq/bo/lhs_bo/lhs_target*" 的文件状态(stat): 没有那个文件或目录
+=============== finish wordcount-100G ===============
+2022年 01月 07日 星期五 16:28:50 CST
+=============== finish wordcount-100G ===============
