@@ -203,6 +203,7 @@ class TargetSpace(object):
             # 如果之前见过这个点，则直接从历史信息中获取该点对应的target y值，无需重新计算
             # 不会执行下面的操作，直接返回对应的target
             target = self._cache[_hashable(x)]
+            print('probe说：以前见过你啦！x = ' + str(x) + 'target = ' + str(target))
         # 如果之前没有见过这个点，执行以下语句
         except KeyError:
             # 将点封装成dict（参数名称，参数值）形式
@@ -210,6 +211,7 @@ class TargetSpace(object):
             # 将参数传给black function计算对应的target y值
             target = self.target_func(**params)
             # 将新加入的点注册到样本集合中
+            print('probe说：没见过！帮你计算target！x = ' + str(x) + 'target = ' + str(target))
             self.register(x, target)
         # 返回该点对应的target值
         return target
@@ -261,10 +263,11 @@ class TargetSpace(object):
         return lhs_sample
 
     '''
-        新增代码: 新增wlhs采样 init_points 个样本点
+        新增代码: 根据已有的样本点（std_samples，std_target）使用wlhs采样 wlhs_init_point 个样本点
+        
         2021/12/30 19:17
     '''
-    # 拉丁超立方生成样本点
+    # 加权拉丁超立方生成样本点，wlhs_init_point=5，每次加权采样5个样本
     def wlhs_sample(self, wlhs_init_point, std_samples, std_target):
         data = np.empty((1, self.dim))
         '''

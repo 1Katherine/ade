@@ -232,15 +232,15 @@ class BayesianOptimization(Observable):
         lhsample = self._space.lhs_sample(std_lhs_init_points)
         for std_samples in lhsample:
             # 获取标准lhs产生的样本的target值
-            params = dict(zip(self.space._keys, std_samples))
-            target = self._space.target_func(**params)
+            # 使用_space.probe获取样本的target值，如果以前没有见过这个样本则通过实际运行获得target， 并将样本注册到hash中，
+            # 如果以前见过这个样本则从hashmap中取出target，无需实际运行
+            target = self._space.probe(std_samples)
+            # 将一个样本的target传入总std_target列表
             std_target.append(target)
             # 将初始队列中传入标准lhs产生的样本
             allsample.append(std_samples)
-            # self._queue.add(std_samples.ravel())
 
         import numpy as np
-        # print(std_target)
 
         # 每次使用5个样本进行wlhs,总共运行numbers次wlhs
         wlhs_init_point = 5
@@ -249,9 +249,9 @@ class BayesianOptimization(Observable):
             wlhsample = self._space.wlhs_sample(wlhs_init_point, lhsample, std_target)
             for wsam in wlhsample:
                 allsample.append(wsam)
-                params = dict(zip(self.space._keys, wsam))
-                target = self._space.target_func(**params)
-
+                # 使用_space.probe获取样本的target值，如果以前没有见过这个样本则通过实际运行获得target， 并将样本注册到hash中，
+                # 如果以前见过这个样本则从hashmap中取出target，无需实际运行
+                target = self._space.probe(wsam)
                 wsam = np.array([wsam])
                 lhsample = np.array(lhsample.tolist() + wsam.tolist())
                 std_target.append(target)
@@ -306,6 +306,7 @@ class BayesianOptimization(Observable):
         # 先输出_queue中的初始随机生成样本，后输出迭代过程中，贝叶斯根据已有样本集合找到的每一次最优可能的样本点
         while not self._queue.empty or iteration < n_iter:
             try:
+                # x_probe = [2.22185333e+02 1.77907455e+00 4.66217962e+00]
                 # 获取 _queue 中的下一个数 （_queue中存放的是init样本），输出init样本的时候，iteration一直为0
                 x_probe = next(self._queue)
             # 直到超出了_queue个数（init样本输出完毕），报错，执行报错后的代码
@@ -314,6 +315,7 @@ class BayesianOptimization(Observable):
                 util.update_params()
                 # suggest：通过aquisition function找到下一个最有可能的点（init样本生成完成后，根据已有样本集合找到最有可能的样本点）
                 x_probe = self.suggest(util)
+                # x_probe = {'spark.default.parallelism': 352.04651515700687, 'spark.executor.cores': 1.5188513541685025}
                 iteration += 1
             # 获取x_probe 对应的target
             self.probe(x_probe, lazy=False)

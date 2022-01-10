@@ -24,6 +24,9 @@ class LHSample():
         :return:样本数据
         '''
         # 结果为：N个样本，每个样本有D个参数（特征）
+
+        print('使用lhs')
+
         result = np.empty([self.N, self.D])
         temp = np.empty([self.N])
         # 采样距离间隔

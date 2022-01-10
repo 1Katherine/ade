@@ -11,6 +11,7 @@ import numpy as np
 
 # D 参数个数， bounds= [[0,90],[0,30]]   N 需要生成几个初始样本
 class LHSample():
+    # lhs = new LHSample(len(bounds), bounds, N)   生成N个样本，样本的维度为len(bounds)
     def __init__(self, D, bounds, N):
         self.D = D
         self.bounds = bounds;
@@ -18,12 +19,15 @@ class LHSample():
 
     def lhs(self):
         '''
-        :param D:参数个数
+        :param D:参数个数(维度) = len(bounds)
         :param bounds:参数对应范围（list）
-        :param N:拉丁超立方层数
+        :param N:拉丁超立方层数,几层就是几个样本
         :return:样本数据
         '''
         # 结果为：N个样本，每个样本有D个参数（特征）
+
+        print('使用lhs，生成' + str(self.N) + '个样本，每个样本维度为' + str(self.D))
+
         result = np.empty([self.N, self.D])
         temp = np.empty([self.N])
         # 采样距离间隔
