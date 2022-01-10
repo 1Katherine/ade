@@ -1,8 +1,5 @@
 import pandas as pd
-import numpy as np
 import datetime
-import joblib
-import matplotlib.pyplot as plt
 import shutil
 import time
 import sys
@@ -17,13 +14,13 @@ import matplotlib.pyplot as plt
 
 
 # 服务器运行spark时config文件
-config_run_path = "/usr/local/home/yyq/bo/rs_bo/config/wordcount-100G/"
+config_run_path = "/usr/local/home/yyq/bo/rs_bo_precision/config/wordcount-100G/"
 # 重要参数
-vital_params_path = "/usr/local/home/yyq/bo/rs_bo/parameters_set.txt"
+vital_params_path = "/usr/local/home/yyq/bo/rs_bo_precision/parameters_set.txt"
 # 维护的参数-范围表
-conf_range_table = "/usr/local/home/yyq/bo/rs_bo/Spark_conf_range_wordcount.xlsx"
+conf_range_table = "/usr/local/home/yyq/bo/rs_bo_precision/Spark_conf_range_wordcount.xlsx"
 # 保存配置
-generation_confs = "/usr/local/home/yyq/bo/rs_bo/generationConf.csv"
+generation_confs = "/usr/local/home/yyq/bo/rs_bo_precision/generationConf.csv"
 
 
 
@@ -113,10 +110,9 @@ def schafferRun(p):
 '''
     画出优化过程中的target值的变化过程
 '''
-time = datetime.datetime.now()
 def draw_target(bo):
     # 画图
-    plt.plot(-bo.space.target, label='lhs_bo  init_points = ' + str(init_points) + ', n_iter = ' + str(n_iter))
+    plt.plot(-bo.space.target, label='precision_bo  init_points = ' + str(init_points) + ', n_iter = ' + str(n_iter))
     max = bo._space.target.max()
     max_indx = bo._space.target.argmax()
     # 在图上描出执行时间最低点
@@ -124,8 +120,7 @@ def draw_target(bo):
     plt.xlabel('迭代次数')
     plt.ylabel('runtime')
     plt.legend()
-    time = datetime.datetime.now()
-    plt.savefig("./rs_pre_target - " + str(time.strftime( '%Y-%m-%d %H-%M-%S')) + ".png")
+    plt.savefig("/usr/local/home/yyq/bo/rs_bo_precision/rs_precision_target.png")
     plt.show()
 
 
@@ -143,7 +138,7 @@ if __name__ == '__main__':
         # 遍历训练数据中的参数，读取其对应的参数空间
     d1={}
     d2={}
-    precisions = []  # 参数精度
+    precisions = {}  # 参数精度
     for conf in vital_params['vital_params']:
         if conf in confDict:
             d1 = {conf: (confDict[conf]['min'], confDict[conf]['max'])}
@@ -158,7 +153,7 @@ if __name__ == '__main__':
 
 
 
-    # bounds_transformer = SequentialDomainReductionTransformer()
+    bounds_transformer = SequentialDomainReductionTransformer()
 
     #定义贝叶斯优化模型
     optimizer = BayesianOptimization(
@@ -167,15 +162,17 @@ if __name__ == '__main__':
             precisions=precisions,
             verbose=2,
             random_state=1,
-            # bounds_transformer=bounds_transformer
+            bounds_transformer=bounds_transformer
         )
-    logger = JSONLogger(path="./logs.json")
+    logger = JSONLogger(path="/usr/local/home/yyq/bo/rs_bo_precision/logs.json")
     optimizer.subscribe(Events.OPTIMIZATION_STEP, logger)
 
-    init_points = 30
-    n_iter = 60
+    init_points = 10
+    n_iter = 30
     optimizer.maximize(init_points=init_points, n_iter=n_iter)
     print(optimizer.max)
+
+    draw_target(optimizer)
 
 
     #存储数据
@@ -185,13 +182,11 @@ if __name__ == '__main__':
     # 存储搜索到最好的十个配置
     for key, value in optimizer.res[0]['params'].items():
         index.append(key)
-    # print (index)
+
 
     data = pd.DataFrame(columns=[x for x in index])
     data['runtime'] = ''
-    # print (data)
     for i in optimizer.res:
-
         n = n + 1
         paramter = []
         execution = -i['target']
@@ -199,8 +194,4 @@ if __name__ == '__main__':
             paramter.append(value)
         paramter.append(execution)
         data.loc[n] = paramter
-    # print(data)
-    # data = data.sort_values('runtime').reset_index(drop=True)
-    # data = data[:5]
-    # data.insert(column='runtime',time)
     data.to_csv(generation_confs, index=False)

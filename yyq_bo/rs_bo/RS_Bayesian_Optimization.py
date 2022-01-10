@@ -139,11 +139,11 @@ if __name__ == '__main__':
         pbounds=pbounds,
         verbose=2,
         random_state=1,
-        # bounds_transformer=bounds_transformer
+        bounds_transformer=bounds_transformer
     )
 
     init_points = 30
-    n_iter = 60
+    n_iter = 30
     optimizer.maximize(init_points=init_points, n_iter=n_iter)
     print('optimizer.max = ' + str(optimizer.max))
     draw_target(optimizer)

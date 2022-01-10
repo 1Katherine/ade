@@ -228,6 +228,7 @@ class BayesianOptimization(Observable):
             if self._bounds_transformer:
                 self.set_bounds(
                     self._bounds_transformer.transform(self._space))
+                # print('self._space.bounds = ' + str(self._space.bounds))
 
             '''
                注释代码：以前自己加的判断迭代收敛的方法

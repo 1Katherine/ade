@@ -2,26 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4a0a2be8-c1cd-4844-b2da-852d26503cce" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../yyq_bo/lhs_bo/ei_LHS_Bayesian_Optimization.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../yyq_bo/lhs_bo/poi_LHS_Bayesian_Optimization.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../yyq_bo/lhs_bo/run_lhs.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../yyq_bo/lhs_bo/text_draw.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../yyq_bo/lhs_bo/LHS_Bayesian_Optimization_domain.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yyq_bo/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../yyq_bo/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../yyq_bo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../yyq_bo/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yyq_bo/lhs_bo/LHS_Bayesian_Optimization.py" beforeDir="false" afterPath="$PROJECT_DIR$/../yyq_bo/lhs_bo/LHS_Bayesian_Optimization.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yyq_bo/wlhs_bo/wLHS_Bayesian_Optimization.py" beforeDir="false" afterPath="$PROJECT_DIR$/../yyq_bo/wlhs_bo/wLHS_Bayesian_Optimization.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yyq_bo/wlhs_bo/wlhs_searching_config/rf - generationbestConf - init_points=20 ,n_iter=60.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../yyq_bo/wlhs_bo/wlhs_searching_config/rf - generationbestConf - init_points=20 ,n_iter=60.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yyq_bo/.idea/yyq_bo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../yyq_bo/.idea/yyq_bo.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yyq_bo/lhs_bo/bo_scode/domain_reduction.py" beforeDir="false" afterPath="$PROJECT_DIR$/../yyq_bo/lhs_bo/bo_scode/domain_reduction.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yyq_bo/rs_bo_precision/RS_Bayesian_Optimization_precision.py" beforeDir="false" afterPath="$PROJECT_DIR$/../yyq_bo/rs_bo_precision/RS_Bayesian_Optimization_precision.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bo/wlhs_bo/bo_scode_wlhs/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bo/wlhs_bo/bo_scode_wlhs/bayesian_optimization.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bo/wlhs_bo/bo_scode_wlhs/domain_reduction.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bo/wlhs_bo/bo_scode_wlhs/event.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bo/wlhs_bo/bo_scode_wlhs/logger.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bo/wlhs_bo/bo_scode_wlhs/observer.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bo/wlhs_bo/bo_scode_wlhs/target_space.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bo/wlhs_bo/bo_scode_wlhs/util.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bo/wlhs_bo/run.sh" beforeDir="false" afterPath="$PROJECT_DIR$/bo/wlhs_bo/run.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bo/wlhs_bo/sample/wLHS.py" beforeDir="false" afterPath="$PROJECT_DIR$/bo/wlhs_bo/sample/wLHS.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bo/wlhs_bo/wLHS_Bayesian_Optimization.py" beforeDir="false" afterPath="$PROJECT_DIR$/bo/wlhs_bo/wLHS_Bayesian_Optimization.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bo/rs_bo_precision/RS_Precision_Bayesian_Optimization.py" beforeDir="false" afterPath="$PROJECT_DIR$/bo/rs_bo_precision/RS_Precision_Bayesian_Optimization.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bo/rs_bo_precision/run.sh" beforeDir="false" afterPath="$PROJECT_DIR$/bo/rs_bo_precision/run.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,6 +109,7 @@
       <workItem from="1641543503031" duration="26000" />
       <workItem from="1641543545176" duration="4000" />
       <workItem from="1641543559028" duration="1334000" />
+      <workItem from="1641782690493" duration="590000" />
     </task>
     <servers />
   </component>

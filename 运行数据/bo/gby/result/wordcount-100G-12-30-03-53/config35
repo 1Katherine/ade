@@ -1,0 +1,68 @@
+# Fixed configuration
+# Spark home
+hibench.spark.home      /usr/local/home/spark/spark
+# hibench.spark.master     yarn-client
+hibench.spark.master    k8s://https://192.168.0.10:6443
+spark.kubernetes.container.image     192.168.0.40/library/spark:v2.4.4
+spark.kubernetes.node.selector.cluster    cluster02
+
+
+spark.eventLog.enabled           true
+spark.eventLog.dir               hdfs://192.168.0.10:9000/spark/log
+spark.history.fs.logDirectory 	 hdfs://192.168.0.10:9000/spark/log
+spark.eventLog.compress true
+
+#======================================================
+# Spark Streaming
+#======================================================
+# Spark streaming Batchnterval in millisecond (default 100)
+hibench.streambench.spark.batchInterval          100
+
+# Number of nodes that will receive kafka input (default: 4)
+hibench.streambench.spark.receiverNumber        4
+
+# Indicate RDD storage level. (default: 2)
+# 0 = StorageLevel.MEMORY_ONLY
+# 1 = StorageLevel.MEMORY_AND_DISK_SER
+# other = StorageLevel.MEMORY_AND_DISK_SER_2
+hibench.streambench.spark.storageLevel 2
+
+# indicate whether to test the write ahead log new feature (default: false)
+hibench.streambench.spark.enableWAL false
+
+# if testWAL is true, this path to store stream context in hdfs shall be specified. If false, it can be empty (default: /var/tmp)
+hibench.streambench.spark.checkpointPath /var/tmp
+
+# whether to use direct approach or not (dafault: true)
+hibench.streambench.spark.useDirectMode true
+
+
+# Random configuration
+ spark.broadcast.blockSize	35m
+ spark.broadcast.checksum	false
+ spark.broadcast.compress	true
+ spark.default.parallelism	230
+ spark.executor.cores	2
+ spark.executor.instances	6
+ spark.executor.memory	7g
+ spark.executor.memoryOverhead	579m
+ spark.kryoserializer.buffer	81k
+ spark.kryoserializer.buffer.max	62m
+ spark.locality.wait	7s
+ spark.maxRemoteBlockSizeFetchToMem	1532144755
+ spark.memory.fraction	0.79
+ spark.memory.offHeap.enabled	false
+ spark.memory.offHeap.size	713m
+ spark.memory.storageFraction	0.55
+ spark.rdd.compress	false
+ spark.reducer.maxBlocksInFlightPerAddress	1586723983
+ spark.reducer.maxReqsInFlight	1897367985
+ spark.reducer.maxSizeInFlight	33m
+ spark.scheduler.mode	FIFO
+ spark.scheduler.revive.interval	910ms
+ spark.shuffle.compress	true
+ spark.shuffle.file.buffer	31k
+ spark.shuffle.io.numConnectionsPerPeer	4
+ spark.shuffle.sort.bypassMergeThreshold	243
+ spark.storage.memoryMapThreshold	1m
+ spark.storage.memoryFraction	0.64

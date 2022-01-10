@@ -91,6 +91,13 @@ class SequentialDomainReductionTransformer(DomainTransformer):
         # 按行读取new_bounds，每一行代表一个参数值的范围上下界
         # variable为 1*2 矩阵
         for i, variable in enumerate(new_bounds):
+            '''
+                新增 下界 > 上界，交换上下界
+            '''
+            if variable[0] > variable[1]:
+                temp = variable[1]
+                variable[1] = variable[0]
+                variable[0] = temp
             # global_bounds是原始的参数上下界
             # 如果这个参数值的新下界比原始的下界还小（防止新范围越界初始范围）
             if variable[0] < global_bounds[i, 0]:
@@ -98,7 +105,6 @@ class SequentialDomainReductionTransformer(DomainTransformer):
             # 如果这个参数值的新上界比原始的上界还大（防止新范围越界初始范围）
             if variable[1] > global_bounds[i, 1]:
                 variable[1] = global_bounds[i, 1]
-
         return new_bounds
 
     def _create_bounds(self, parameters: dict, bounds: np.array) -> dict:
@@ -111,8 +117,6 @@ class SequentialDomainReductionTransformer(DomainTransformer):
         # 获取新的边界范围,r是1*x矩阵,current_optimal是1*x矩阵
         # np是2*x的矩阵，转置后为x*2的矩阵，即每个参数对应的新的上下界
         # 参数1的新范围是[最好样本点在参数1的值-0.5r,参数1的值+0.5r]
-        # 参数2的新范围是[最好样本点在参数2的值-0.5r,参数2的值+0.5r]
-        # 参数n的新范围是[最好样本点在参数n的值-0.5r,参数n的值+0.5r]
         new_bounds = np.array(
             [
                 # np 第一行为current_optimal（最好样本点的参数值全部 - 0.5 * self.r）
