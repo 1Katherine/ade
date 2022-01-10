@@ -155,9 +155,9 @@ if __name__ == '__main__':
     )
 
     # 把贝叶斯优化结果保存在logs文件中
-    logpath = './logs/logs - ' + str(time.strftime( '%Y-%m-%d %H-%M-%S')) + '.json'
-    logger = JSONLogger(path=logpath)
-    optimizer.subscribe(Events.OPTIMIZATION_STEP, logger)
+    # logpath = './logs/logs - ' + str(time.strftime( '%Y-%m-%d %H-%M-%S')) + '.json'
+    # logger = JSONLogger(path=logpath)
+    # optimizer.subscribe(Events.OPTIMIZATION_STEP, logger)
 
     init_points = 10
     n_iter = 30

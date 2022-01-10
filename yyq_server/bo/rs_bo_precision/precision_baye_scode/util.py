@@ -64,6 +64,7 @@ def acq_max(ac, gp, y_max, bounds, precisions, random_state, n_warmup=10000, n_i
                 x_tries[i][col] = np.round(random_state.uniform(lower, upper, size=1),2)
         # print('x_tries[i] = ' + str(x_tries[i]))
 
+
     '''
             注释源代码
             注释时间：2021/1/5  14:15
@@ -103,8 +104,10 @@ def acq_max(ac, gp, y_max, bounds, precisions, random_state, n_warmup=10000, n_i
                     x_seeds[i][col] = int(upper)
                 else:
                     x_seeds[i][col] = np.random.randint(lower, upper, size=1)
+                    # print(np.random.randint(lower, upper, size=1))
             if pre == 0.01:
                 x_seeds[i][col] = np.round(random_state.uniform(lower, upper, size=1), 2)
+        # print('x_seeds[i] = ' + str(x_seeds[i]))
 
     for x_try in x_seeds:
         # Find the minimum of minus the acquisition function 求-ac的极小值 = 求ac的极大值
@@ -120,7 +123,13 @@ def acq_max(ac, gp, y_max, bounds, precisions, random_state, n_warmup=10000, n_i
         # Store it if better than previous minimum(maximum).
         # 如果找到了比max_acq还要大的样本x，则更新max_acq
         if max_acq is None or -res.fun[0] >= max_acq:
-            x_max = res.x
+            # print('res.x = ' + str(res.x))
+            for row, (num, pre) in enumerate(np.column_stack((res.x, precisions))):
+                if pre == 1.0:
+                    x_max[row] = int(num)
+                if pre == 0.01 :
+                    x_max[row] = round(num, 2)
+            # x_max = res.x
             max_acq = -res.fun[0]
 
     # Clip output to make sure it lies within the bounds. Due to floating

@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="979008bb-2160-493f-9f34-d1dee7767165" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/rs_bo_precision/precision_baye_scode/test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rs_bo_precision/RS_Bayesian_Optimization_precision.py" beforeDir="false" afterPath="$PROJECT_DIR$/rs_bo_precision/RS_Bayesian_Optimization_precision.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rs_bo_precision/precision_baye_scode/domain_reduction.py" beforeDir="false" afterPath="$PROJECT_DIR$/rs_bo_precision/precision_baye_scode/domain_reduction.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rs_bo_precision/precision_baye_scode/target_space.py" beforeDir="false" afterPath="$PROJECT_DIR$/rs_bo_precision/precision_baye_scode/target_space.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rs_bo_precision/precision_baye_scode/util.py" beforeDir="false" afterPath="$PROJECT_DIR$/rs_bo_precision/precision_baye_scode/util.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yyq_server/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../yyq_server/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yyq_server/bo/rs_bo_precision/precision_baye_scode/domain_reduction.py" beforeDir="false" afterPath="$PROJECT_DIR$/../yyq_server/bo/rs_bo_precision/precision_baye_scode/domain_reduction.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../yyq_server/bo/rs_bo_precision/precision_baye_scode/util.py" beforeDir="false" afterPath="$PROJECT_DIR$/../yyq_server/bo/rs_bo_precision/precision_baye_scode/util.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -202,6 +197,7 @@
       <workItem from="1641782009346" duration="4437000" />
       <workItem from="1641802451082" duration="123000" />
       <workItem from="1641803794531" duration="6238000" />
+      <workItem from="1641812809836" duration="2034000" />
     </task>
     <servers />
   </component>
@@ -232,7 +228,7 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/yyq_bo$RS_Bayesian_Optimization_precision.coverage" NAME="RS_Bayesian_Optimization_precision Coverage Results" MODIFIED="1641809982699" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/rs_bo_precision" />
+    <SUITE FILE_PATH="coverage/yyq_bo$RS_Bayesian_Optimization_precision.coverage" NAME="RS_Bayesian_Optimization_precision Coverage Results" MODIFIED="1641814254111" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/rs_bo_precision" />
     <SUITE FILE_PATH="coverage/yyq_bo$RS_Bayesian_Optimization.coverage" NAME="RS_Bayesian_Optimization Coverage Results" MODIFIED="1641783592836" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/rs_bo" />
     <SUITE FILE_PATH="coverage/yyq_bo$domain_reduction.coverage" NAME="domain_reduction Coverage Results" MODIFIED="1641784009689" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lhs_bo/bo_scode" />
     <SUITE FILE_PATH="coverage/yyq_bo$LHS_sample.coverage" NAME="LHS_sample Coverage Results" MODIFIED="1641782121813" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lhs_bo/sample" />
@@ -240,6 +236,6 @@
     <SUITE FILE_PATH="coverage/yyq_bo$test.coverage" NAME="test Coverage Results" MODIFIED="1641809706825" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/rs_bo_precision/precision_baye_scode" />
     <SUITE FILE_PATH="coverage/yyq_bo$bayesian_optimization.coverage" NAME="bayesian_optimization Coverage Results" MODIFIED="1641784084948" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lhs_bo/bo_scode" />
     <SUITE FILE_PATH="coverage/yyq_bo$LHS_Bayesian_Optimization_domain.coverage" NAME="LHS_Bayesian_Optimization_domain Coverage Results" MODIFIED="1641784680857" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lhs_bo" />
-    <SUITE FILE_PATH="coverage/yyq_bo$util.coverage" NAME="util Coverage Results" MODIFIED="1641809792332" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/rs_bo_precision/precision_baye_scode" />
+    <SUITE FILE_PATH="coverage/yyq_bo$util.coverage" NAME="util Coverage Results" MODIFIED="1641813646274" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/rs_bo_precision/precision_baye_scode" />
   </component>
 </project>
