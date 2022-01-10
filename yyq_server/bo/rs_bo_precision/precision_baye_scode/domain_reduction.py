@@ -113,6 +113,9 @@ class SequentialDomainReductionTransformer(DomainTransformer):
             # 如果这个参数值的新上界比原始的上界还大（防止新范围越界初始范围）
             if variable[1] > global_bounds[i, 1]:
                 variable[1] = global_bounds[i, 1]
+            # 针对x_tries[i][col] = np.random.randint(lower, upper ,size=1)，lower和upper相差不能少于1
+
+
         return new_bounds
 
     def _create_bounds(self, parameters: dict, bounds: np.array) -> dict:

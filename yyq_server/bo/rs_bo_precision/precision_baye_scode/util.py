@@ -52,12 +52,17 @@ def acq_max(ac, gp, y_max, bounds, precisions, random_state, n_warmup=10000, n_i
             更新时间：2021/1/5  14:15
     '''
     bounds_and_pre = np.column_stack((bounds, precisions))
+    # print('bounds = ' + str(bounds))
     for i in range(n_warmup):
         for col, (lower, upper, pre) in enumerate(bounds_and_pre):
             if pre == 1.0:
-                x_tries[i][col] = np.random.randint(lower, upper ,size=1)
+                if upper - lower < 1:
+                    x_tries[i][col] = int(upper)
+                else:
+                    x_tries[i][col] = np.random.randint(lower, upper, size=1)
             if pre == 0.01:
                 x_tries[i][col] = np.round(random_state.uniform(lower, upper, size=1),2)
+        # print('x_tries[i] = ' + str(x_tries[i]))
 
     '''
             注释源代码
@@ -73,6 +78,8 @@ def acq_max(ac, gp, y_max, bounds, precisions, random_state, n_warmup=10000, n_i
     x_max = x_tries[ys.argmax()]
     # 记录采集函数找到的最大样本点，用于explore样本点时的更新使用
     max_acq = ys.max()
+    # print('x_max1 = ' + str(x_max))
+
 
     '''
                 注释源代码
@@ -90,11 +97,14 @@ def acq_max(ac, gp, y_max, bounds, precisions, random_state, n_warmup=10000, n_i
     '''
     for i in range(n_iter):
         for col, (lower, upper, pre) in enumerate(bounds_and_pre):
+            # print('pre = ' + str(pre))
             if pre == 1.0:
-                x_seeds[i][col] = np.random.randint(lower, upper ,size=1)
+                if upper - lower < 1:
+                    x_seeds[i][col] = int(upper)
+                else:
+                    x_seeds[i][col] = np.random.randint(lower, upper, size=1)
             if pre == 0.01:
                 x_seeds[i][col] = np.round(random_state.uniform(lower, upper, size=1), 2)
-    # print('x_seeds = ' + str(x_seeds))
 
     for x_try in x_seeds:
         # Find the minimum of minus the acquisition function 求-ac的极小值 = 求ac的极大值
@@ -104,22 +114,20 @@ def acq_max(ac, gp, y_max, bounds, precisions, random_state, n_warmup=10000, n_i
                        x_try.reshape(1, -1),
                        bounds=bounds,
                        method="L-BFGS-B")
-
         # See if success
         if not res.success:
             continue
-
         # Store it if better than previous minimum(maximum).
         # 如果找到了比max_acq还要大的样本x，则更新max_acq
         if max_acq is None or -res.fun[0] >= max_acq:
             x_max = res.x
             max_acq = -res.fun[0]
-            # print('x_max = ' + str(x_max))
 
     # Clip output to make sure it lies within the bounds. Due to floating
     # point technicalities this is not always the case.
-    # np.clip将数组中的元素限制在a_min, a_max之间，大于a_max的就使得它等于 a_max，小于a_min,的就使得它等于a_min
-    return np.clip(x_max, bounds[:, 0], bounds[:, 1])
+    # np.clip将数组中的元素限制在a_min, a_max之间，大于a_max的就使得它等于 a_max，小于a_min,的就使得它等于a_min\
+    return x_max
+    # return np.clip(x_max, bounds[:, 0], bounds[:, 1])
 
 
 class UtilityFunction(object):

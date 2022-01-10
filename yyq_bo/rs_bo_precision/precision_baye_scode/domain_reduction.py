@@ -96,15 +96,26 @@ class SequentialDomainReductionTransformer(DomainTransformer):
         self.r = self.contraction_rate * self.r
 
     def _trim(self, new_bounds: np.array, global_bounds: np.array) -> np.array:
-        # 穷举bound
+        # 按行读取new_bounds，每一行代表一个参数值的范围上下界
+        # variable为 1*2 矩阵
         for i, variable in enumerate(new_bounds):
+            '''
+                新增 下界 > 上界，交换上下界
+            '''
+            if variable[0] > variable[1]:
+                temp = variable[1]
+                variable[1] = variable[0]
+                variable[0] = temp
+            # global_bounds是原始的参数上下界
+            # 如果这个参数值的新下界比原始的下界还小（防止新范围越界初始范围）
             if variable[0] < global_bounds[i, 0]:
-                # 记录最小下界
                 variable[0] = global_bounds[i, 0]
+            # 如果这个参数值的新上界比原始的上界还大（防止新范围越界初始范围）
             if variable[1] > global_bounds[i, 1]:
-                # 记录最大上界
                 variable[1] = global_bounds[i, 1]
-        # 返回最小下界和最大上界
+            # 针对x_tries[i][col] = np.random.randint(lower, upper ,size=1)，lower和upper相差不能少于1
+
+
         return new_bounds
 
     def _create_bounds(self, parameters: dict, bounds: np.array) -> dict:

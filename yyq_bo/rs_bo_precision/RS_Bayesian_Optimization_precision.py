@@ -1,11 +1,7 @@
 import array
 import datetime
 import time
-
 import numpy as np
-import shutil
-import random
-import csv
 from sklearn.ensemble import GradientBoostingRegressor
 import pandas as pd
 import lightgbm as lgb
@@ -155,13 +151,13 @@ if __name__ == '__main__':
         precisions=precisions,
         verbose=2,
         random_state=1,
-        # bounds_transformer=bounds_transformer
+        bounds_transformer=bounds_transformer
     )
 
     # 把贝叶斯优化结果保存在logs文件中
-    # logpath = './logs/logs - ' + str(time.strftime( '%Y-%m-%d %H-%M-%S')) + '.json'
-    # logger = JSONLogger(path=logpath)
-    # optimizer.subscribe(Events.OPTIMIZATION_STEP, logger)
+    logpath = './logs/logs - ' + str(time.strftime( '%Y-%m-%d %H-%M-%S')) + '.json'
+    logger = JSONLogger(path=logpath)
+    optimizer.subscribe(Events.OPTIMIZATION_STEP, logger)
 
     init_points = 10
     n_iter = 30
@@ -178,8 +174,8 @@ if __name__ == '__main__':
     searchDuration = (endTime - startTime).seconds
 
     # 打开json文件追加内容 - optimizer.max
-    max = str(optimizer.max)
-    fr = open(logpath, 'a')
-    model=json.dumps(max)
-    fr.write(model)
-    fr.close()
+    # max = str(optimizer.max)
+    # fr = open(logpath, 'a')
+    # model=json.dumps(max)
+    # fr.write(model)
+    # fr.close()

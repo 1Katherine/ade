@@ -2,15 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4a0a2be8-c1cd-4844-b2da-852d26503cce" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../yyq_bo/lhs_bo/LHS_Bayesian_Optimization_domain.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yyq_bo/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../yyq_bo/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../yyq_bo/rs_bo_precision/precision_baye_scode/test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../yyq_bo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../yyq_bo/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yyq_bo/.idea/yyq_bo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../yyq_bo/.idea/yyq_bo.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yyq_bo/lhs_bo/bo_scode/domain_reduction.py" beforeDir="false" afterPath="$PROJECT_DIR$/../yyq_bo/lhs_bo/bo_scode/domain_reduction.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../yyq_bo/rs_bo_precision/RS_Bayesian_Optimization_precision.py" beforeDir="false" afterPath="$PROJECT_DIR$/../yyq_bo/rs_bo_precision/RS_Bayesian_Optimization_precision.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yyq_bo/rs_bo_precision/precision_baye_scode/domain_reduction.py" beforeDir="false" afterPath="$PROJECT_DIR$/../yyq_bo/rs_bo_precision/precision_baye_scode/domain_reduction.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yyq_bo/rs_bo_precision/precision_baye_scode/target_space.py" beforeDir="false" afterPath="$PROJECT_DIR$/../yyq_bo/rs_bo_precision/precision_baye_scode/target_space.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yyq_bo/rs_bo_precision/precision_baye_scode/util.py" beforeDir="false" afterPath="$PROJECT_DIR$/../yyq_bo/rs_bo_precision/precision_baye_scode/util.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bo/rs_bo_precision/RS_Precision_Bayesian_Optimization.py" beforeDir="false" afterPath="$PROJECT_DIR$/bo/rs_bo_precision/RS_Precision_Bayesian_Optimization.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bo/rs_bo_precision/run.sh" beforeDir="false" afterPath="$PROJECT_DIR$/bo/rs_bo_precision/run.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bo/rs_bo_precision/precision_baye_scode/domain_reduction.py" beforeDir="false" afterPath="$PROJECT_DIR$/bo/rs_bo_precision/precision_baye_scode/domain_reduction.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bo/rs_bo_precision/precision_baye_scode/util.py" beforeDir="false" afterPath="$PROJECT_DIR$/bo/rs_bo_precision/precision_baye_scode/util.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,15 +31,15 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/bo/wlhs_bo" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/bo/rs_bo_precision/precision_baye_scode" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Desktop\github同步代码\1 贝叶斯优化代码（github同步）\ade\yyq_server\bo\rs_bo_precision\precision_baye_scode" />
       <recent name="E:\Desktop\贝叶斯优化代码（github同步）\ade\yyq_server\bo\wlhs_bo" />
       <recent name="E:\Desktop\贝叶斯优化代码（github同步）\ade\yyq_server\bo\rs_bo_precision" />
       <recent name="E:\Desktop\贝叶斯优化代码（github同步）\ade\yyq_server\bo" />
       <recent name="E:\Desktop\yyq_server\bo\lhs_bo" />
-      <recent name="E:\Desktop\yyq_server\bo\rs_bo" />
     </key>
   </component>
   <component name="RunManager" selected="Python.LHS_Bayesian_Optimization">
@@ -110,6 +110,7 @@
       <workItem from="1641543545176" duration="4000" />
       <workItem from="1641543559028" duration="1334000" />
       <workItem from="1641782690493" duration="590000" />
+      <workItem from="1641808707176" duration="71000" />
     </task>
     <servers />
   </component>

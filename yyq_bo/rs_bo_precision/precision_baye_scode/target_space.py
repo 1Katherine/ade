@@ -52,6 +52,7 @@ class TargetSpace(object):
             [item[1] for item in sorted(pbounds.items(), key=lambda x: x[0])],
             dtype=np.float
         )
+
         '''
             新增属性 precisions
             更新时间：2021/1/5  14:15
@@ -60,6 +61,7 @@ class TargetSpace(object):
             [item[1] for item in sorted(precisions.items(), key=lambda x: x[0])],
             dtype=np.float
         )
+
 
         # preallocated memory for X and Y points
         self._params = np.empty(shape=(0, self.dim))
