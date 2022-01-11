@@ -117,7 +117,7 @@ def draw_target(bo):
     max_indx = bo._space.target.argmax()
     # 在图上描出执行时间最低点
     plt.scatter(max_indx, -max, s=20, color='r')
-    plt.xlabel('迭代次数')
+    plt.xlabel('interations')
     plt.ylabel('runtime')
     plt.legend()
     plt.savefig("/usr/local/home/yyq/bo/rs_bo_precision/rs_precision_target.png")

@@ -56,10 +56,7 @@ def acq_max(ac, gp, y_max, bounds, precisions, random_state, n_warmup=10000, n_i
     for i in range(n_warmup):
         for col, (lower, upper, pre) in enumerate(bounds_and_pre):
             if pre == 1.0:
-                if upper - lower < 1:
-                    x_tries[i][col] = int(upper)
-                else:
-                    x_tries[i][col] = np.random.randint(lower, upper, size=1)
+                x_tries[i][col] = np.round(random_state.uniform(lower, upper, size=1))
             if pre == 0.01:
                 x_tries[i][col] = np.round(random_state.uniform(lower, upper, size=1),2)
         # print('x_tries[i] = ' + str(x_tries[i]))
@@ -100,11 +97,7 @@ def acq_max(ac, gp, y_max, bounds, precisions, random_state, n_warmup=10000, n_i
         for col, (lower, upper, pre) in enumerate(bounds_and_pre):
             # print('pre = ' + str(pre))
             if pre == 1.0:
-                if upper - lower < 1:
-                    x_seeds[i][col] = int(upper)
-                else:
-                    x_seeds[i][col] = np.random.randint(lower, upper, size=1)
-                    # print(np.random.randint(lower, upper, size=1))
+                x_seeds[i][col] = np.round(random_state.uniform(lower, upper, size=1))
             if pre == 0.01:
                 x_seeds[i][col] = np.round(random_state.uniform(lower, upper, size=1), 2)
         # print('x_seeds[i] = ' + str(x_seeds[i]))
@@ -126,7 +119,8 @@ def acq_max(ac, gp, y_max, bounds, precisions, random_state, n_warmup=10000, n_i
             # print('res.x = ' + str(res.x))
             for row, (num, pre) in enumerate(np.column_stack((res.x, precisions))):
                 if pre == 1.0:
-                    x_max[row] = int(num)
+                    # 四舍五入取整数
+                    x_max[row] = round(num)
                 if pre == 0.01 :
                     x_max[row] = round(num, 2)
             # x_max = res.x

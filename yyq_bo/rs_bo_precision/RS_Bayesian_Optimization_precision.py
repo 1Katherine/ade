@@ -75,6 +75,8 @@ def black_box_function(**params):
 '''
 time = datetime.datetime.now()
 def draw_target(bo):
+    plt.rcParams['font.sans-serif'] = 'SimHei'
+    plt.rcParams['axes.unicode_minus'] = False
     # 画图
     plt.plot(-bo.space.target, label='rs_bo  init_points = ' + str(init_points) + ', n_iter = ' + str(n_iter))
     max = bo._space.target.max()

@@ -18,9 +18,12 @@ import numpy as np
 #  [1.07374182e+09 1.41525638e+09]
 #  [2.80280452e+01 3.99719548e+01]
 #  [4.20101534e+01 4.59898466e+01]]
-matrix = np.array([1 ,2])
-# y = np.random.uniform(matrix[0], matrix[1], size=1)
-x = np.random.randint(matrix[0], matrix[1] ,size=1)
+# matrix = np.array([1 ,2])
+# # y = np.random.uniform(matrix[0], matrix[1], size=1)
+# x = np.random.randint(matrix[0], matrix[1] ,size=1)
+# print(x)
+# print(matrix[0])
+# print(matrix[1])
+
+x = np.round(np.random.uniform(0, 1, size=1))
 print(x)
-print(matrix[0])
-print(matrix[1])
