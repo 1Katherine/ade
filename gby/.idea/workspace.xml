@@ -2,83 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ff43d838-cdb7-4d5c-9069-be1211b18e30" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/ACS_cluster_test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../yyq_bo/rs_bo_precision/RS_Bayesian_Optimization_precision.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../yyq_bo/rs_bo_precision/Spark_conf_range_wordcount.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../yyq_bo/rs_bo_precision/files100/ada/ada.pkl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../yyq_bo/rs_bo_precision/files100/ada/ada_parameters_error.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../yyq_bo/rs_bo_precision/files100/ada/ada_parameters_features.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../yyq_bo/rs_bo_precision/files100/ada/parameters_error.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../yyq_bo/rs_bo_precision/files100/ada/parameters_features.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../yyq_bo/rs_bo_precision/files100/ada/reserved/ada_reserved.pkl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../yyq_bo/rs_bo_precision/files100/ada/reserved/reserved_error.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../yyq_bo/rs_bo_precision/files100/ada/reserved/selected_parameters.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../yyq_bo/rs_bo_precision/files100/ada/selected_parameters.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../yyq_bo/rs_bo_precision/files100/gbdt/gbdt.pkl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../yyq_bo/rs_bo_precision/files100/gbdt/gbdt_parameters_error.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../yyq_bo/rs_bo_precision/files100/gbdt/gbdt_parameters_features.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../yyq_bo/rs_bo_precision/files100/gbdt/parameters_error.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../yyq_bo/rs_bo_precision/files100/gbdt/parameters_features.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../yyq_bo/rs_bo_precision/files100/gbdt/reserved/gbdt_reserved.pkl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../yyq_bo/rs_bo_precision/files100/gbdt/reserved/reserved_error.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../yyq_bo/rs_bo_precision/files100/gbdt/reserved/selected_parameters.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../yyq_bo/rs_bo_precision/files100/gbdt/selected_parameters.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../yyq_bo/rs_bo_precision/files100/lgb/lgb.pkl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../yyq_bo/rs_bo_precision/files100/lgb/lgb_parameters_error.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../yyq_bo/rs_bo_precision/files100/lgb/lgb_parameters_features.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../yyq_bo/rs_bo_precision/files100/lgb/parameters_error.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../yyq_bo/rs_bo_precision/files100/lgb/parameters_features.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../yyq_bo/rs_bo_precision/files100/lgb/reserved/lgb_reserved.pkl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../yyq_bo/rs_bo_precision/files100/lgb/reserved/reserved_error.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../yyq_bo/rs_bo_precision/files100/lgb/reserved/selected_parameters.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../yyq_bo/rs_bo_precision/files100/lgb/selected_parameters.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../yyq_bo/rs_bo_precision/files100/rf/parameters_error.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../yyq_bo/rs_bo_precision/files100/rf/parameters_features.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../yyq_bo/rs_bo_precision/files100/rf/reserved/reserved_error.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../yyq_bo/rs_bo_precision/files100/rf/reserved/rf_reserved.pkl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../yyq_bo/rs_bo_precision/files100/rf/reserved/selected_parameters.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../yyq_bo/rs_bo_precision/files100/rf/rf.pkl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../yyq_bo/rs_bo_precision/files100/rf/rf_parameters_error.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../yyq_bo/rs_bo_precision/files100/rf/rf_parameters_features.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../yyq_bo/rs_bo_precision/files100/rf/selected_parameters.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../yyq_bo/rs_bo_precision/files100/xgb/parameters_error.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../yyq_bo/rs_bo_precision/files100/xgb/parameters_features.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../yyq_bo/rs_bo_precision/files100/xgb/reserved/reserved_error.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../yyq_bo/rs_bo_precision/files100/xgb/reserved/selected_parameters.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../yyq_bo/rs_bo_precision/files100/xgb/reserved/xgb_reserved.pkl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../yyq_bo/rs_bo_precision/files100/xgb/selected_parameters.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../yyq_bo/rs_bo_precision/files100/xgb/xgb.pkl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../yyq_bo/rs_bo_precision/files100/xgb/xgb_parameters_error.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../yyq_bo/rs_bo_precision/files100/xgb/xgb_parameters_features.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../yyq_bo/rs_bo_precision/precision_baye_scode/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../yyq_bo/rs_bo_precision/precision_baye_scode/bayesian_optimization.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../yyq_bo/rs_bo_precision/precision_baye_scode/domain_reduction.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../yyq_bo/rs_bo_precision/precision_baye_scode/event.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../yyq_bo/rs_bo_precision/precision_baye_scode/logger.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../yyq_bo/rs_bo_precision/precision_baye_scode/observer.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../yyq_bo/rs_bo_precision/precision_baye_scode/target_space.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../yyq_bo/rs_bo_precision/precision_baye_scode/util.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../yyq_bo/rs_bo_precision/searching_config/adagenerationbestConf.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../yyq_bo/rs_bo_precision/searching_config/gbdtgenerationbestConf.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../yyq_bo/rs_bo_precision/searching_config/lgbgenerationbestConf.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../yyq_bo/rs_bo_precision/searching_config/rfgenerationbestConf.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../yyq_bo/rs_bo_precision/searching_config/xgbgenerationbestConf.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../yyq_server/bo/.idea/bo.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sko/ACA.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sko/AFSA.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sko/DE.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sko/GA.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sko/IA.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sko/PSO.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sko/SA.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sko/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sko/base.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sko/demo_func.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sko/operators/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sko/operators/crossover.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sko/operators/mutation.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sko/operators/ranking.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sko/operators/selection.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sko/operators_gpu/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sko/operators_gpu/crossover_gpu.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sko/operators_gpu/mutation_gpu.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sko/operators_gpu/ranking_gpu.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sko/operators_gpu/selection_gpu.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sko/tool_kit.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sko/tools.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yyq_bo/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../yyq_bo/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ACS_cluster_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/ACS_cluster_test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../yyq_bo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../yyq_bo/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yyq_bo/.idea/yyq_bo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../yyq_bo/.idea/yyq_bo.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yyq_bo/lhs_bo/LHS_Bayesian_Optimization.py" beforeDir="false" afterPath="$PROJECT_DIR$/../yyq_bo/lhs_bo/LHS_Bayesian_Optimization.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yyq_bo/lhs_bo/bo_scode/target_space.py" beforeDir="false" afterPath="$PROJECT_DIR$/../yyq_bo/lhs_bo/bo_scode/target_space.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yyq_bo/lhs_bo/bo_scode/util.py" beforeDir="false" afterPath="$PROJECT_DIR$/../yyq_bo/lhs_bo/bo_scode/util.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yyq_bo/lhs_bo/lhs_searching_config/rf - generationbestConf - init_points=30 ,n_iter=60.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../yyq_bo/lhs_bo/lhs_searching_config/rf - generationbestConf - init_points=30 ,n_iter=60.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yyq_bo/rs_bo/RS_Bayesian_Optimization.py" beforeDir="false" afterPath="$PROJECT_DIR$/../yyq_bo/rs_bo/RS_Bayesian_Optimization.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yyq_bo/rs_bo/rs_searching_config/target - 2022-01-01 14-51-37.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yyq_bo/rs_bo/rs_searching_config/target - 2022-01-01 14-51-51.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yyq_server/bo/lhs_bo/LHS_Bayesian_Optimization.py" beforeDir="false" afterPath="$PROJECT_DIR$/../yyq_server/bo/lhs_bo/LHS_Bayesian_Optimization.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yyq_server/bo/lhs_bo/bo_scode/target_space.py" beforeDir="false" afterPath="$PROJECT_DIR$/../yyq_server/bo/lhs_bo/bo_scode/target_space.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yyq_server/bo/lhs_bo/bo_scode/util.py" beforeDir="false" afterPath="$PROJECT_DIR$/../yyq_server/bo/lhs_bo/bo_scode/util.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,14 +73,18 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/sko" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Desktop\github同步代码\1 贝叶斯优化代码（github同步）\ade\gby\sko" />
       <recent name="E:\Desktop\贝叶斯优化代码（github同步）\ade\gby" />
       <recent name="E:\Desktop\之前代码+贝叶斯\ade\gby" />
       <recent name="E:\Desktop\gby" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Desktop\github同步代码\1 贝叶斯优化代码（github同步）\ade\gby\sko" />
     </key>
   </component>
   <component name="RunManager" selected="Python.ACS_cluster_test">
@@ -294,6 +246,8 @@
       <workItem from="1640932364480" duration="1779000" />
       <workItem from="1640934268181" duration="605000" />
       <workItem from="1641261554506" duration="26951000" />
+      <workItem from="1641885320966" duration="182000" />
+      <workItem from="1641885533872" duration="928000" />
     </task>
     <servers />
   </component>
@@ -314,6 +268,13 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/sko/GA.py</url>
+          <line>6</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
           <properties notifyOnTerminate="true" exception="BaseException">
@@ -332,7 +293,7 @@
     <SUITE FILE_PATH="coverage/gby$csvToConf.coverage" NAME="csvToConf Coverage Results" MODIFIED="1640254228820" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/gby$RS_Bayesian_Optimization.coverage" NAME="RS_Bayesian_Optimization Coverage Results" MODIFIED="1640933773919" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/gby$LHS_Bayesian_Optimization__1_.coverage" NAME="LHS_Bayesian_Optimization (1) Coverage Results" MODIFIED="1640933796266" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/gby$ACS_cluster_test.coverage" NAME="ACS_cluster_test Coverage Results" MODIFIED="1641350285359" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/gby$ACS_cluster_test.coverage" NAME="ACS_cluster_test Coverage Results" MODIFIED="1641885340833" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/gby$Bayesian_Optimization.coverage" NAME="Bayesian Optimization Coverage Results" MODIFIED="1640851114264" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/gby$wLHS_Bayesian_Optimization.coverage" NAME="wLHS_Bayesian_Optimization Coverage Results" MODIFIED="1640917428179" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/gby$GA.coverage" NAME="GA Coverage Results" MODIFIED="1641289437839" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../../../anaconda3/Lib/site-packages/sko" />

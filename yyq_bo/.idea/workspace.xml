@@ -2,38 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="979008bb-2160-493f-9f34-d1dee7767165" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../gby/sko/ACA.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gby/sko/AFSA.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gby/sko/DE.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gby/sko/GA.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gby/sko/IA.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gby/sko/PSO.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gby/sko/SA.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gby/sko/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gby/sko/base.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gby/sko/demo_func.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gby/sko/operators/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gby/sko/operators/crossover.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gby/sko/operators/mutation.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gby/sko/operators/ranking.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gby/sko/operators/selection.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gby/sko/operators_gpu/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gby/sko/operators_gpu/crossover_gpu.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gby/sko/operators_gpu/mutation_gpu.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gby/sko/operators_gpu/ranking_gpu.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gby/sko/operators_gpu/selection_gpu.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gby/sko/tool_kit.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gby/sko/tools.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gby/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../gby/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gby/ACS_cluster_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/../gby/ACS_cluster_test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rs_bo_precision/RS_Bayesian_Optimization_precision.py" beforeDir="false" afterPath="$PROJECT_DIR$/rs_bo_precision/RS_Bayesian_Optimization_precision.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rs_bo_precision/precision_baye_scode/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/rs_bo_precision/precision_baye_scode/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rs_bo_precision/precision_baye_scode/util.py" beforeDir="false" afterPath="$PROJECT_DIR$/rs_bo_precision/precision_baye_scode/util.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yyq_server/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../yyq_server/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yyq_server/bo/rs_bo_precision/RS_Precision_Bayesian_Optimization.py" beforeDir="false" afterPath="$PROJECT_DIR$/../yyq_server/bo/rs_bo_precision/RS_Precision_Bayesian_Optimization.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yyq_server/bo/rs_bo_precision/precision_baye_scode/util.py" beforeDir="false" afterPath="$PROJECT_DIR$/../yyq_server/bo/rs_bo_precision/precision_baye_scode/util.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../运行数据/rs_bo_precision_domain/config/wordcount-100G-01-10-12-20/config1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../运行数据/rs_bo_precision_domain/config/wordcount-100G-01-10-12-20/config10" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../运行数据/rs_bo_precision_domain/config/wordcount-100G-01-10-12-20/config2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../运行数据/rs_bo_precision_domain/config/wordcount-100G-01-10-12-20/config3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../运行数据/rs_bo_precision_domain/config/wordcount-100G-01-10-12-20/config4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../运行数据/rs_bo_precision_domain/config/wordcount-100G-01-10-12-20/config5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../运行数据/rs_bo_precision_domain/config/wordcount-100G-01-10-12-20/config6" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../运行数据/rs_bo_precision_domain/config/wordcount-100G-01-10-12-20/config7" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../运行数据/rs_bo_precision_domain/config/wordcount-100G-01-10-12-20/config8" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../运行数据/rs_bo_precision_domain/config/wordcount-100G-01-10-12-20/config9" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../运行数据/rs_bo_precision_domain/config/wordcount-100G-01-10-12-20/logs.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../运行数据/rs_bo_precision_domain/config/wordcount-100G-01-10-16-28/config1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../运行数据/rs_bo_precision_domain/config/wordcount-100G-01-10-16-28/config10" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../运行数据/rs_bo_precision_domain/config/wordcount-100G-01-10-16-28/config2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../运行数据/rs_bo_precision_domain/config/wordcount-100G-01-10-16-28/config3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../运行数据/rs_bo_precision_domain/config/wordcount-100G-01-10-16-28/config4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../运行数据/rs_bo_precision_domain/config/wordcount-100G-01-10-16-28/config5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../运行数据/rs_bo_precision_domain/config/wordcount-100G-01-10-16-28/config6" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../运行数据/rs_bo_precision_domain/config/wordcount-100G-01-10-16-28/config7" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../运行数据/rs_bo_precision_domain/config/wordcount-100G-01-10-16-28/config8" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../运行数据/rs_bo_precision_domain/config/wordcount-100G-01-10-16-28/config9" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../运行数据/rs_bo_precision_domain/config/wordcount-100G-01-10-16-28/logs.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../运行数据/rs_bo_precision_domain/config/wordcount-100G-01-10-19-30" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../运行数据/rs_bo_precision_domain/config/wordcount-100G-01-10-22-24/generationConf.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../运行数据/rs_bo_precision_domain/config/wordcount-100G-01-10-22-24/generationConf.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../运行数据/wlhs_bo/config/wordcount-100G-01-08-02-49/generationConf.csv" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +76,29 @@
       <recent name="E:\Desktop\贝叶斯优化代码（github同步）\ade\yyq_bo\lhs_bo\2lhs_searching_config" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.RS_Bayesian_Optimization_precision">
+  <component name="RunManager" selected="Python.LHS_Bayesian_Optimization">
+    <configuration name="LHS_Bayesian_Optimization" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="yyq_bo" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/lhs_bo" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/lhs_bo/LHS_Bayesian_Optimization.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="LHS_Bayesian_Optimization_domain" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="yyq_bo" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -128,7 +143,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="bayesian_optimization" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="domain_reduction" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="yyq_bo" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -141,7 +156,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/lhs_bo/bo_scode/bayesian_optimization.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/lhs_bo/bo_scode/domain_reduction.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -150,7 +165,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="poi_LHS_Bayesian_Optimization" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="yyq_bo" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -158,34 +173,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/rs_bo_precision/precision_baye_scode" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/lhs_bo" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/rs_bo_precision/precision_baye_scode/test.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="util" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="yyq_bo" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/rs_bo_precision/precision_baye_scode" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/rs_bo_precision/precision_baye_scode/util.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/lhs_bo/poi_LHS_Bayesian_Optimization.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -196,11 +189,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.RS_Bayesian_Optimization_precision" />
-        <item itemvalue="Python.test" />
-        <item itemvalue="Python.util" />
+        <item itemvalue="Python.LHS_Bayesian_Optimization" />
+        <item itemvalue="Python.poi_LHS_Bayesian_Optimization" />
         <item itemvalue="Python.LHS_Bayesian_Optimization_domain" />
-        <item itemvalue="Python.bayesian_optimization" />
+        <item itemvalue="Python.domain_reduction" />
+        <item itemvalue="Python.RS_Bayesian_Optimization_precision" />
       </list>
     </recent_temporary>
   </component>
@@ -227,6 +220,9 @@
       <workItem from="1641803794531" duration="6238000" />
       <workItem from="1641812809836" duration="2628000" />
       <workItem from="1641865630686" duration="1714000" />
+      <workItem from="1641868366368" duration="1639000" />
+      <workItem from="1641870147197" duration="2163000" />
+      <workItem from="1641885506709" duration="14000" />
     </task>
     <servers />
   </component>
@@ -259,12 +255,13 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/yyq_bo$RS_Bayesian_Optimization_precision.coverage" NAME="RS_Bayesian_Optimization_precision Coverage Results" MODIFIED="1641866856437" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/rs_bo_precision" />
     <SUITE FILE_PATH="coverage/yyq_bo$RS_Bayesian_Optimization.coverage" NAME="RS_Bayesian_Optimization Coverage Results" MODIFIED="1641783592836" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/rs_bo" />
-    <SUITE FILE_PATH="coverage/yyq_bo$domain_reduction.coverage" NAME="domain_reduction Coverage Results" MODIFIED="1641784009689" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lhs_bo/bo_scode" />
+    <SUITE FILE_PATH="coverage/yyq_bo$domain_reduction.coverage" NAME="domain_reduction Coverage Results" MODIFIED="1641868753149" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lhs_bo/bo_scode" />
+    <SUITE FILE_PATH="coverage/yyq_bo$poi_LHS_Bayesian_Optimization.coverage" NAME="poi_LHS_Bayesian_Optimization Coverage Results" MODIFIED="1641884405545" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lhs_bo" />
     <SUITE FILE_PATH="coverage/yyq_bo$LHS_sample.coverage" NAME="LHS_sample Coverage Results" MODIFIED="1641782121813" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lhs_bo/sample" />
-    <SUITE FILE_PATH="coverage/yyq_bo$LHS_Bayesian_Optimization.coverage" NAME="LHS_Bayesian_Optimization Coverage Results" MODIFIED="1641782269004" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lhs_bo" />
+    <SUITE FILE_PATH="coverage/yyq_bo$LHS_Bayesian_Optimization.coverage" NAME="LHS_Bayesian_Optimization Coverage Results" MODIFIED="1641884425236" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lhs_bo" />
     <SUITE FILE_PATH="coverage/yyq_bo$test.coverage" NAME="test Coverage Results" MODIFIED="1641866778765" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/rs_bo_precision/precision_baye_scode" />
     <SUITE FILE_PATH="coverage/yyq_bo$bayesian_optimization.coverage" NAME="bayesian_optimization Coverage Results" MODIFIED="1641784084948" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lhs_bo/bo_scode" />
-    <SUITE FILE_PATH="coverage/yyq_bo$LHS_Bayesian_Optimization_domain.coverage" NAME="LHS_Bayesian_Optimization_domain Coverage Results" MODIFIED="1641784680857" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lhs_bo" />
     <SUITE FILE_PATH="coverage/yyq_bo$util.coverage" NAME="util Coverage Results" MODIFIED="1641813646274" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/rs_bo_precision/precision_baye_scode" />
+    <SUITE FILE_PATH="coverage/yyq_bo$LHS_Bayesian_Optimization_domain.coverage" NAME="LHS_Bayesian_Optimization_domain Coverage Results" MODIFIED="1641868780131" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lhs_bo" />
   </component>
 </project>

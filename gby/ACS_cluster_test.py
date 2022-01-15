@@ -5,8 +5,12 @@ import lightgbm as lgb
 from sklearn.ensemble import RandomForestRegressor
 import matplotlib.pyplot as plt
 import joblib
-from sko.GA import GA
 import numpy as np
+import os
+import sys
+sys.path.append(os.path.dirname(os.path.realpath(__file__)))
+from sko.GA import GA
+
 
 
 # 主机上运行的代码
@@ -49,16 +53,16 @@ def build_training_model(name):
 '''
 def draw_target(bo):
     # 画图
-    plt.plot(-bo.space.target, label='rs_bo  init_points = ' + str(init_points))
+    plt.plot(-bo.space.target, label='ga')
     max = bo._space.target.max()
     max_indx = bo._space.target.argmax()
     # 在图上描出执行时间最低点
     plt.scatter(max_indx, -max, s=20, color='r')
-    plt.xlabel('迭代次数')
+    plt.xlabel('iterations')
     plt.ylabel('runtime')
     plt.legend()
     time = datetime.datetime.now()
-    plt.savefig("./rs_searching_config/target - " + str(time.strftime( '%Y-%m-%d %H-%M-%S')) + ".png")
+    plt.savefig("./rs_searching_config/target.png")
     plt.show()
 
 '''
