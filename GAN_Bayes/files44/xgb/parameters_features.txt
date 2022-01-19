@@ -1,0 +1,10 @@
+
+2022-01-13 13:33:49
+训练时长0m24s
+使用算法: xgb
+0.05191036908224624
+4
+spark.executor.cores: 0.6258519887924194
+spark.executor.instances: 0.22299546003341675
+spark.scheduler.revive.interval: 0.1273145228624344
+spark.executor.memoryOverhead: 0.023837996646761894

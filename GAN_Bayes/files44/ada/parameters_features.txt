@@ -1,0 +1,8 @@
+
+2022-01-13 13:33:23
+训练时长0m3s
+使用算法: ada
+0.09117495091842755
+2
+spark.scheduler.revive.interval: 0.5764407082655607
+spark.executor.cores: 0.4235592917344393

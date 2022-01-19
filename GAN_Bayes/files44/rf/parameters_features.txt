@@ -1,0 +1,8 @@
+
+2022-01-13 13:33:59
+训练时长0m8s
+使用算法: rf
+0.051363986222089764
+2
+spark.executor.cores: 0.568094548525281
+spark.scheduler.revive.interval: 0.431905451474719

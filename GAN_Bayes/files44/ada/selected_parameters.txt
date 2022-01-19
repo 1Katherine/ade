@@ -1,0 +1,3 @@
+vital_params
+spark.scheduler.revive.interval
+spark.executor.cores

@@ -1,0 +1,5 @@
+vital_params
+spark.executor.cores
+spark.executor.instances
+spark.scheduler.revive.interval
+spark.executor.memoryOverhead

@@ -1,0 +1,3 @@
+vital_params
+spark.memory.offHeap.size
+spark.shuffle.io.numConnectionsPerPeer

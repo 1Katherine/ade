@@ -2,38 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4a0a2be8-c1cd-4844-b2da-852d26503cce" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../yyq_bo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../yyq_bo/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yyq_bo/rs_bo_precision/RS_Bayesian_Optimization_precision.py" beforeDir="false" afterPath="$PROJECT_DIR$/../yyq_bo/rs_bo_precision/RS_Bayesian_Optimization_precision.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yyq_bo/rs_bo_precision/precision_baye_scode/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/../yyq_bo/rs_bo_precision/precision_baye_scode/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yyq_bo/rs_bo_precision/precision_baye_scode/util.py" beforeDir="false" afterPath="$PROJECT_DIR$/../yyq_bo/rs_bo_precision/precision_baye_scode/util.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bo/rs_bo_precision/RS_Precision_Bayesian_Optimization.py" beforeDir="false" afterPath="$PROJECT_DIR$/bo/rs_bo_precision/RS_Precision_Bayesian_Optimization.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bo/rs_bo_precision/precision_baye_scode/util.py" beforeDir="false" afterPath="$PROJECT_DIR$/bo/rs_bo_precision/precision_baye_scode/util.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../运行数据/rs_bo_precision_domain/config/wordcount-100G-01-10-12-20/config1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../运行数据/rs_bo_precision_domain/config/wordcount-100G-01-10-12-20/config10" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../运行数据/rs_bo_precision_domain/config/wordcount-100G-01-10-12-20/config2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../运行数据/rs_bo_precision_domain/config/wordcount-100G-01-10-12-20/config3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../运行数据/rs_bo_precision_domain/config/wordcount-100G-01-10-12-20/config4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../运行数据/rs_bo_precision_domain/config/wordcount-100G-01-10-12-20/config5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../运行数据/rs_bo_precision_domain/config/wordcount-100G-01-10-12-20/config6" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../运行数据/rs_bo_precision_domain/config/wordcount-100G-01-10-12-20/config7" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../运行数据/rs_bo_precision_domain/config/wordcount-100G-01-10-12-20/config8" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../运行数据/rs_bo_precision_domain/config/wordcount-100G-01-10-12-20/config9" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../运行数据/rs_bo_precision_domain/config/wordcount-100G-01-10-12-20/logs.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../运行数据/rs_bo_precision_domain/config/wordcount-100G-01-10-16-28/config1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../运行数据/rs_bo_precision_domain/config/wordcount-100G-01-10-16-28/config10" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../运行数据/rs_bo_precision_domain/config/wordcount-100G-01-10-16-28/config2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../运行数据/rs_bo_precision_domain/config/wordcount-100G-01-10-16-28/config3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../运行数据/rs_bo_precision_domain/config/wordcount-100G-01-10-16-28/config4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../运行数据/rs_bo_precision_domain/config/wordcount-100G-01-10-16-28/config5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../运行数据/rs_bo_precision_domain/config/wordcount-100G-01-10-16-28/config6" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../运行数据/rs_bo_precision_domain/config/wordcount-100G-01-10-16-28/config7" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../运行数据/rs_bo_precision_domain/config/wordcount-100G-01-10-16-28/config8" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../运行数据/rs_bo_precision_domain/config/wordcount-100G-01-10-16-28/config9" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../运行数据/rs_bo_precision_domain/config/wordcount-100G-01-10-16-28/logs.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../运行数据/rs_bo_precision_domain/config/wordcount-100G-01-10-19-30" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../运行数据/rs_bo_precision_domain/config/wordcount-100G-01-10-22-24/generationConf.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../运行数据/rs_bo_precision_domain/config/wordcount-100G-01-10-22-24/generationConf.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../运行数据/wlhs_bo/config/wordcount-100G-01-08-02-49/generationConf.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../运行数据/运行结果.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/../运行数据/运行结果.xlsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -165,6 +134,7 @@
       <workItem from="1641782690493" duration="590000" />
       <workItem from="1641808707176" duration="71000" />
       <workItem from="1641866896325" duration="455000" />
+      <workItem from="1642408073620" duration="891000" />
     </task>
     <servers />
   </component>

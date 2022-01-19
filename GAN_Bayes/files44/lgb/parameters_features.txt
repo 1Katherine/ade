@@ -1,0 +1,8 @@
+
+2022-01-13 13:33:08
+训练时长0m0s
+使用算法: lgb
+0.25109096077986026
+2
+spark.scheduler.revive.interval: 0.0
+spark.executor.cores: 0.0

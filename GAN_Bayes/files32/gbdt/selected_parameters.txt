@@ -1,0 +1,4 @@
+vital_params
+spark.default.parallelism
+spark.kryoserializer.buffer.max
+spark.maxRemoteBlockSizeFetchToMem

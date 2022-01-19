@@ -1,0 +1,9 @@
+
+2022-01-14 18:15:14
+训练时长0m1s
+使用算法: gbdt
+0.0975392458644388
+3
+spark.default.parallelism: 0.5748678518145014
+spark.kryoserializer.buffer.max: 0.3147311191124635
+spark.maxRemoteBlockSizeFetchToMem: 0.11040102907303517

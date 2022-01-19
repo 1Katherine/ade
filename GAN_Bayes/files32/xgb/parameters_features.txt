@@ -1,0 +1,11 @@
+
+2022-01-14 18:15:47
+训练时长0m25s
+使用算法: xgb
+0.051696915599873695
+5
+spark.executor.memory: 0.3178296983242035
+spark.broadcast.compress: 0.28864145278930664
+spark.executor.instances: 0.256613552570343
+spark.default.parallelism: 0.08467480540275574
+spark.kryoserializer.buffer: 0.05224044248461723

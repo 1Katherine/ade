@@ -1,0 +1,7 @@
+vital_params
+spark.memory.offHeap.size
+spark.shuffle.io.numConnectionsPerPeer
+spark.executor.cores
+spark.executor.instances
+spark.executor.memory
+spark.default.parallelism

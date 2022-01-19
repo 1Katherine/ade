@@ -1,0 +1,6 @@
+vital_params
+spark.scheduler.revive.interval
+spark.executor.cores
+spark.executor.instances
+spark.executor.memory
+spark.default.parallelism
