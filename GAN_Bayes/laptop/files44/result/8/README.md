@@ -1,0 +1,1 @@
+使用wordcount-100G-GAN-44.csv的前8个样本作为bo算法的初始样本

@@ -6,13 +6,20 @@ import os
 sys.path.append(os.path.dirname(os.path.realpath(__file__)))
 from bayes_scode import JSONLogger, Events, BayesianOptimization,SequentialDomainReductionTransformer
 import matplotlib.pyplot as plt
-# 调用代码：python server\ganrs_Bayesian_Optimization_server.py --kindSample=all/odd/even
+# 调用代码：python ganrs_Bayesian_Optimization_server.py --ganrsGroup=4 --sampleType=2
 import argparse
 parser = argparse.ArgumentParser(description='manual to this script')
-parser.add_argument('--kindSample', type=str, default = 'all')
+# 采样方式：0表示所有样本，1表示前ganrsGroup*2个样本，2表示间隔采样每一组样本中只选一个rs一个gan,3表示选择执行时间最少的几个样本作为初始样本
+parser.add_argument('--sampleType', type=int, default = 0,
+                    help='0: for all samole, '
+                         '1: The first two groups of random samples and GAN samples are used as initial samples, '
+                         '2: interval sampling, '
+                         '3: 10 samples with the least execution time')
+# 一组rs+gan样本数，比如2个rs2个gan，反复循环，则一组样本数为2+2=4
+parser.add_argument('--ganrsGroup', type=int, default = 0, help='A set of random samples and the number of GAN samples')
 args = parser.parse_args()
-print('sample_kind = ' + str(args.kindSample))
-
+if args.ganrsGroup == 0:
+    raise Exception("必须执行一组gan和rs的个数，比如每3个rs会有3个gan，--ganrsGroup=" + "6")
 
 
 # 服务器运行spark时config文件
@@ -23,39 +30,52 @@ vital_params_path = "/usr/local/home/yyq/bo/ganrs_bo/parameters_set.txt"
 conf_range_table = "/usr/local/home/yyq/bo/ganrs_bo/Spark_conf_range_wordcount.xlsx"
 # 保存配置
 generation_confs = "/usr/local/home/yyq/bo/ganrs_bo/generationConf.csv"
+# 采样方式有三种（0所有样本或者even/odd，1前ganrs_group*2个样本，2间隔ganrs_group // 2个样本采样，一组样本中只采样1个rs2个gan）
+sample_type = args.sampleType
+# 一组rs+gan的样本数
+ganrs_group = args.ganrsGroup
+# 选择前headn个样本采样(前两组配置）
+headn = ganrs_group * 2
+# 间隔ganrs_interval个样本采样
+ganrs_interval = ganrs_group // 2
 
 # --------------------- 生成 gan-rs 初始种群 start -------------------
-initpoint_path = '/usr/local/home/yyq/bo/ganrs_bo/wordcount-100G-GAN-44.csv'
+initpoint_path = '/usr/local/home/yyq/bo/ganrs_bo/wordcount-100G-GAN.csv'
 initsamples_df = pd.read_csv(initpoint_path)
 
-# 取44个初始样本中所有样本作为bo初始样本
+# 取所有样本作为bo初始样本
 def ganrs_samples_all():
     # 初始样本
     initsamples = initsamples_df[vital_params_list].to_numpy()
+    print('选择50%rs和50%gan的所有样本作为bo算法的初始样本,样本个数为:' + str(len(initsamples)))
     return initsamples
 
-# 取44个初始样本中的偶数行样本作为bo初始样本
-def ganrs_samples_odd():
-    initsamples_odd = initsamples_df[initsamples_df.index % 2 == 0]
-    initsamples = initsamples_odd[vital_params_list].to_numpy()
+# 获取dataframe的前n行样本作为初始样本
+def get_head_n(n):
+    print('取出前' + str(n) + '个样本')
+    initsamples_head = initsamples_df.head(n)
+    initsamples = initsamples_head[vital_params_list].to_numpy()
+    print('取出前两组样本作为初始样本：, shape = ' + str(initsamples.shape))
     return initsamples
 
-# 取44个初始样本中的奇数行样本作为bo初始样本
-def ganrs_samples_even():
-    initsamples_even = initsamples_df[initsamples_df.index % 2 == 1]
-    initsamples = initsamples_even[vital_params_list].to_numpy()
+# 每隔n行取一行
+def get_ganrs_intevaln(n):
+    a = []
+    for i in range(0, len(initsamples_df), n):  ##每隔86行取数据
+        a.append(i)
+    print('取出的行号为：' + str(a))
+    sample = initsamples_df.iloc[a]
+    initsamples = sample[vital_params_list].to_numpy()
+    print('取出的行号为：' + str(a) + ' , shape = ' + str(initsamples.shape))
     return initsamples
 
-def get_ganrs_samples(kind):
-    if kind == 'all':
-        samples = ganrs_samples_all()
-    elif kind == 'odd':
-        samples = ganrs_samples_odd()
-    elif kind == 'even':
-        samples = ganrs_samples_even()
-    else:
-        raise Exception("[!] There is no option to get initsample ")
-    return samples
+# 样本按照runtime 升序排序，获取runtime最少的前n个样本作为初始样本
+def get_best_n(n):
+    initsamples_sort = initsamples_df.sort_values(by='runtime', ascending=True)
+    initsamples_head = initsamples_sort[vital_params_list].head(n)
+    initsamples = initsamples_head.to_numpy()
+    print('把执行时间最少的前10个样本作为初始样本，shape=' + str(initsamples.shape))
+    return initsamples
 # --------------------- 生成 gan-rs 初始种群 end -------------------
 
 
@@ -143,7 +163,11 @@ def draw_target(bo):
     max_indx = bo._space.target.argmax()
     # 在图上描出执行时间最低点
     plt.scatter(max_indx, -max, s=20, color='r')
-    plt.annotate(str(-max) + 's', xy=(max_indx, -max), xycoords='data', xytext=(+20, -20), textcoords='offset points'
+    plt.annotate('maxIndex:' + str(max_indx + 1), xy=(max_indx, -max), xycoords='data', xytext=(+20, +20),
+                 textcoords='offset points'
+                 , fontsize=12, arrowprops=dict(arrowstyle='->', connectionstyle='arc3,rad = .2'))
+    plt.annotate(str(round(-max, 2)) + 's', xy=(max_indx, -max), xycoords='data', xytext=(+20, -20),
+                 textcoords='offset points'
                  , fontsize=16, arrowprops=dict(arrowstyle='->', connectionstyle='arc3,rad = .2'))
     plt.xlabel('iterations')
     plt.ylabel('runtime')
@@ -175,9 +199,22 @@ if __name__ == '__main__':
     vital_params_name = sorted(d2)
     vital_params_list = sorted(d2)
     vital_params_list.append('runtime')
-    # 生成初始样本
-    sample_kind = args.kindSample
-    initsamples = get_ganrs_samples(kind=sample_kind)
+    # ------------------ 选择初始样本（3个方法选其一） start -------------
+    if sample_type == 0:
+        # 选择所有样本
+        initsamples = ganrs_samples_all()
+    elif sample_type == 1:
+        # 选择前n个样本
+        initsamples = get_head_n(n=headn)
+    elif sample_type == 2:
+        # 每隔3个样本选择一个样本（包括第三个样本）
+        initsamples = get_ganrs_intevaln(n = ganrs_interval)
+    elif sample_type == 3:
+        initsamples = get_best_n(n=8)
+    else:
+        raise Exception("[!] 请在0、1、2、3中选择一种初始样本方式，0表示all，1表示前两组样本，"
+                        "2表示间隔采样，3表示执行时间最少前几个样本")
+    # ------------------ 选择初始样本（3个方法选其一） end -------------
 
     bounds_transformer = SequentialDomainReductionTransformer()
     #定义贝叶斯优化模型
