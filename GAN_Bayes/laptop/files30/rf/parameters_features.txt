@@ -1,0 +1,9 @@
+
+2022-01-22 02:16:47
+训练时长0m7s
+使用算法: rf
+0.11089548846313685
+3
+spark.executor.cores: 0.45052272950776234
+spark.executor.memory: 0.4149238328122666
+spark.executor.instances: 0.13455343767997108

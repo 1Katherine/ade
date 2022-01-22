@@ -26,4 +26,3 @@ spark.shuffle.file.buffer
 spark.shuffle.io.numConnectionsPerPeer
 spark.shuffle.sort.bypassMergeThreshold
 spark.storage.memoryMapThreshold
-spark.storage.memoryFraction

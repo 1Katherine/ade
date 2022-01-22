@@ -1,0 +1,9 @@
+
+2022-01-22 02:10:37
+训练时长0m3s
+使用算法: ada
+0.10392004278750588
+3
+spark.executor.memory: 0.438171941725
+spark.executor.cores: 0.39686174421814174
+spark.executor.instances: 0.16496631405685824

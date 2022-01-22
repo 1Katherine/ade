@@ -1,0 +1,8 @@
+
+2022-01-22 02:10:28
+训练时长1m39s
+使用算法: lgb
+0.23247616330096574
+2
+spark.executor.cores: 0.0
+spark.executor.instances: 0.0

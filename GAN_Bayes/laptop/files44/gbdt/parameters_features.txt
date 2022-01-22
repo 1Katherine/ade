@@ -1,0 +1,8 @@
+
+2022-01-13 13:33:18
+训练时长0m7s
+使用算法: gbdt
+0.04879768700838067
+2
+spark.executor.cores: 0.5501528949723461
+spark.scheduler.revive.interval: 0.449847105027654

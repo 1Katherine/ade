@@ -1,0 +1,3 @@
+vital_params
+spark.executor.memory
+spark.executor.instances

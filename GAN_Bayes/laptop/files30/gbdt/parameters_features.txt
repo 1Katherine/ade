@@ -1,0 +1,9 @@
+
+2022-01-22 02:10:31
+训练时长0m1s
+使用算法: gbdt
+0.08722105047339225
+3
+spark.executor.memory: 0.5682843831410664
+spark.executor.cores: 0.30901223620306667
+spark.executor.instances: 0.12270338065586689
