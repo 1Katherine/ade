@@ -25,6 +25,7 @@ interationsNumber=20
 groupNumber=4
 # type = all / firsttwogroup / interval / best
 initType=firsttwogroup
+file=/usr/local/home/yyq/bo/ganrs_bo/wordcount-100G-GAN-30.csv
 
 
 # $1 = wordcount-100G
@@ -40,7 +41,7 @@ mv /usr/local/home/yyq/bo/ganrs_bo/ganrs_target.png /usr/local/home/yyq/bo/ganrs
 
 mkdir -p /usr/local/home/yyq/bo/ganrs_bo/config/wordcount-100G
 
-python3 /usr/local/home/yyq/bo/ganrs_bo/ganrs_Bayesian_Optimization_server.py  --sampleType=$initType --ganrsGroup=$groupNumber --niters=$interationsNumber
+python3 /usr/local/home/yyq/bo/ganrs_bo/ganrs_Bayesian_Optimization_server.py  --sampleType=$initType --ganrsGroup=$groupNumber --niters=$interationsNumber --initFile=$file
 
 finishTime=$(date "+%m-%d-%H-%M")
 mv /usr/local/home/yyq/bo/ganrs_bo/config/$1 /usr/local/home/yyq/bo/ganrs_bo/config/$1-$finishTime

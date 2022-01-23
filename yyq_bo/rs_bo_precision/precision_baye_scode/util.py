@@ -72,6 +72,7 @@ def acq_max(ac, gp, y_max, bounds, precisions, random_state, n_warmup=10000, n_i
     # 使用训练好的gp模型和采集函数预测x_tries对应的y值 ys.shape = (10000,)
     # ac=utility_function.utility , 给定x样本点，返回gp预测的y
     ys = ac(x_tries, gp=gp, y_max=y_max)
+    # print('ac_ys = \n' + str(ys))
     # argmax最大值所对应的索引， 取出预测的最大y值对应的样本x
     x_max = x_tries[ys.argmax()]
     # 记录采集函数找到的最大样本点，用于explore样本点时的更新使用

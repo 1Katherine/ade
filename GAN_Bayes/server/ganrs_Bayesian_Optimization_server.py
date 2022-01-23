@@ -7,7 +7,7 @@ import os
 sys.path.append(os.path.dirname(os.path.realpath(__file__)))
 from bayes_scode import JSONLogger, Events, BayesianOptimization,SequentialDomainReductionTransformer
 import matplotlib.pyplot as plt
-# 调用代码：python ganrs_Bayesian_Optimization_server.py --sampleType=all --ganrsGroup=4 --niters=20
+# 调用代码：python ganrs_Bayesian_Optimization_server.py --sampleType=all --ganrsGroup=4 --niters=10 --initFile=/usr/local/home/yyq/bo/ganrs_bo/wordcount-100G-GAN.csv
 import argparse
 parser = argparse.ArgumentParser(description='manual to this script')
 # 采样方式：0表示所有样本，1表示前ganrsGroup*2个样本，2表示间隔采样每一组样本中只选一个rs一个gan,3表示选择执行时间最少的几个样本作为初始样本
@@ -20,9 +20,14 @@ parser.add_argument('--sampleType', type=str, default = all,
 parser.add_argument('--ganrsGroup', type=int, default = 0, help='A set of random samples and the number of GAN samples.'
                                                                 'For example, two random samples are followed by two GAN samples, so ganrsGroup is equal to 4')
 parser.add_argument('--niters', type=int, default = 15, help='The number of iterations of the Bayesian optimization algorithm')
+parser.add_argument('--initFile', type=str, default=None, help='50% random sampling and 50% GAN generated initial sample files')
 args = parser.parse_args()
 if args.ganrsGroup == 0:
     raise Exception("必须执行一组gan和rs的个数，比如每3个rs会有3个gan，--ganrsGroup=6")
+if args.initFile == None:
+    raise Exception("必须指定50%随机采样和50%GAN的初始样本文件")
+print('--sampleType = ' + args.sampleType + '\t --ganrsGroup = '
+      + str(args.ganrsGroup) + '\t --niters = ' + str(args.niters) + '\t --initFile = ' + args.initFile)
 
 
 # 服务器运行spark时config文件
@@ -43,7 +48,7 @@ headn = ganrs_group * 2
 ganrs_interval = ganrs_group // 2
 
 # --------------------- 生成 gan-rs 初始种群 start -------------------
-initpoint_path = '/usr/local/home/yyq/bo/ganrs_bo/wordcount-100G-GAN.csv'
+initpoint_path = args.initFile
 initsamples_df = pd.read_csv(initpoint_path)
 
 # 取所有样本作为bo初始样本
