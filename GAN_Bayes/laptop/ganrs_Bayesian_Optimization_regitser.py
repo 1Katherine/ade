@@ -10,17 +10,19 @@ import os
 sys.path.append(os.path.dirname(os.path.realpath(__file__)))
 from bayes_scode import BayesianOptimization, SequentialDomainReductionTransformer, JSONLogger, Events
 import warnings
-# 调用代码：python ganrs_Bayesian_Optimization_regitser.py --ganrsGroup=4 --sampleType=2
+# 调用代码：python ganrs_Bayesian_Optimization_regitser.py --sampleType=all --ganrsGroup=4 --niters=10
 import argparse
 parser = argparse.ArgumentParser(description='manual to this script')
 # 采样方式：0表示所有样本，1表示前ganrsGroup*2个样本，2表示间隔采样每一组样本中只选一个rs一个gan,3表示选择执行时间最少的几个样本作为初始样本
-parser.add_argument('--sampleType', type=int, default = 0,
-                    help='0: for all samole, '
-                         '1: The first two groups of random samples and GAN samples are used as initial samples, '
-                         '2: interval sampling, '
-                         '3: 10 samples with the least execution time')
+parser.add_argument('--sampleType', type=str, default=all,
+                    help='all: for all samole, '
+                         'firsttwogroup: The first two groups of random samples and GAN samples are used as initial samples, '
+                         'interval: interval sampling, '
+                         'best: 10 samples with the least execution time')
 # 一组rs+gan样本数，比如2个rs2个gan，反复循环，则一组样本数为2+2=4
-parser.add_argument('--ganrsGroup', type=int, default = 0, help='A set of random samples and the number of GAN samples')
+parser.add_argument('--ganrsGroup', type=int, default = 0, help='A set of random samples and the number of GAN samples.'
+                                                                'For example, two random samples are followed by two GAN samples, so ganrsGroup is equal to 4')
+parser.add_argument('--niters', type=int, default = 20, help='The number of iterations of the Bayesian optimization algorithm')
 args = parser.parse_args()
 if args.ganrsGroup == 0:
     raise Exception("必须执行一组gan和rs的个数，比如每3个rs会有3个gan，--ganrsGroup=6")
@@ -110,7 +112,6 @@ def ganrs_samples_all():
 
 # 获取dataframe的前n行样本作为初始样本
 def get_head_n(n):
-    print('取出前' + str(n) + '个样本')
     initsamples_head = initsamples_df.head(n)
     initsamples = initsamples_head[vital_params_list].to_numpy()
     print('取出前两组样本作为初始样本：, shape = ' + str(initsamples.shape))
@@ -121,10 +122,9 @@ def get_ganrs_intevaln(n):
     a = []
     for i in range(0, len(initsamples_df), n):  ##每隔86行取数据
         a.append(i)
-    print('取出的行号为：' + str(a))
     sample = initsamples_df.iloc[a]
     initsamples = sample[vital_params_list].to_numpy()
-    print('取出的行号为：' + str(a) + ' , shape = ' + str(initsamples.shape))
+    print('间隔采样，取出的行号为：' + str(a) + ' , shape = ' + str(initsamples.shape))
     return initsamples
 
 # 样本按照runtime 升序排序，获取runtime最少的前n个样本作为初始样本
@@ -186,24 +186,25 @@ if __name__ == '__main__':
     vital_params_list.append('runtime')
 
     # ------------------ 选择初始样本（3个方法选其一） start -------------
-    if sample_type == 0:
+    if sample_type == 'all':
         # 选择所有样本
         initsamples = ganrs_samples_all()
-    elif sample_type == 1:
+    elif sample_type == 'firsttwogroup':
         # 选择前n个样本
         initsamples = get_head_n(n=headn)
-    elif sample_type == 2:
+    elif sample_type == 'interval':
         # 每隔3个样本选择一个样本（包括第三个样本）
         initsamples = get_ganrs_intevaln(n = ganrs_interval)
-    elif sample_type == 3:
+    elif sample_type == 'best':
         initsamples = get_best_n(n=8)
     else:
-        raise Exception("[!] 请在0、1、2、3中选择一种初始样本方式，0表示all，1表示前两组样本，"
-                        "2表示间隔采样，3表示执行时间最少前几个样本")
+        raise Exception("[!] 请在all、firsttwogroup、interval、best中选择一种初始样本方式，firsttwogroup表示前两组样本，"
+                        "interval表示间隔采样，best表示执行时间最少前几个样本")
     # ------------------ 选择初始样本（3个方法选其一） end -------------
 
     init_points = len(initsamples)
-    n_iter = 15
+    n_iter = args.niters
+    print('迭代次数：' + str(n_iter))
     result_path = modelfile  + 'result/' + str(init_points) + '/'
     if not os.path.exists(result_path):
         os.makedirs(result_path)

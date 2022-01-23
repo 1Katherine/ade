@@ -5,6 +5,26 @@ if((pcount==0)); then
 echo "no arg(benchmark-size)";
 exit;
 fi
+# --helo
+if [[ $1 = "--help" ]] || [[ $1 = "-h" ]]
+then
+    echo "'--sampleType', type=str, default = all,help=
+    all: for all samole,
+    firsttwogroup: The first two groups of random samples and GAN samples are used as initial samples,
+    interval: interval sampling,
+    best: 10 samples with the least execution time"
+    echo -e "\n"
+    echo "'--ganrsGroup', type=int, default = 0, help=A set of random samples and the number of GAN samples.
+    For example, two random samples are followed by two GAN samples, so ganrsGroup is equal to 4"
+    echo -e "\n"
+    echo "'--niters', type=int, default = 15, help=The number of iterations of the Bayesian optimization algorithm"
+    echo -e "\n"
+fi
+
+interationsNumber=20
+groupNumber=4
+# type = all / firsttwogroup / interval / best
+initType=firsttwogroup
 
 
 # $1 = wordcount-100G
@@ -19,14 +39,8 @@ mv /usr/local/home/yyq/bo/ganrs_bo/generationConf.csv /usr/local/home/yyq/bo/gan
 mv /usr/local/home/yyq/bo/ganrs_bo/ganrs_target.png /usr/local/home/yyq/bo/ganrs_bo/config/$1-$startTime
 
 mkdir -p /usr/local/home/yyq/bo/ganrs_bo/config/wordcount-100G
-# 所有样本 ganrsGroup为一组rs和gan生成的样本，比如生成3个rs样本后生成3个gan样本，循环反复则ganrsGroup=6
-python3 /usr/local/home/yyq/bo/ganrs_bo/ganrs_Bayesian_Optimization_server.py  --ganrsGroup=6 --sampleType=0
-# 前两组样本（前ganrsGroup*2个样本）
-#python3 /usr/local/home/yyq/bo/ganrs_bo/ganrs_Bayesian_Optimization_server.py  --ganrsGroup=6 --sampleType=1
-# 间隔采样（一组样本选择一个rs生成的一个gan生成的）
-#python3 /usr/local/home/yyq/bo/ganrs_bo/ganrs_Bayesian_Optimization_server.py  --ganrsGroup=6 --sampleType=2
-# 选择执行时间最短的前几个样本作为初始样本
-#python3 /usr/local/home/yyq/bo/ganrs_bo/ganrs_Bayesian_Optimization_server.py  --ganrsGroup=6 --sampleType=3
+
+python3 /usr/local/home/yyq/bo/ganrs_bo/ganrs_Bayesian_Optimization_server.py  --sampleType=$initType --ganrsGroup=$groupNumber --niters=$interationsNumber
 
 finishTime=$(date "+%m-%d-%H-%M")
 mv /usr/local/home/yyq/bo/ganrs_bo/config/$1 /usr/local/home/yyq/bo/ganrs_bo/config/$1-$finishTime

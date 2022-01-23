@@ -1,3 +1,4 @@
+#  -*- coding: UTF-8 -*
 import pandas as pd
 import shutil
 import time
@@ -6,20 +7,22 @@ import os
 sys.path.append(os.path.dirname(os.path.realpath(__file__)))
 from bayes_scode import JSONLogger, Events, BayesianOptimization,SequentialDomainReductionTransformer
 import matplotlib.pyplot as plt
-# 调用代码：python ganrs_Bayesian_Optimization_server.py --ganrsGroup=4 --sampleType=2
+# 调用代码：python ganrs_Bayesian_Optimization_server.py --sampleType=all --ganrsGroup=4 --niters=20
 import argparse
 parser = argparse.ArgumentParser(description='manual to this script')
 # 采样方式：0表示所有样本，1表示前ganrsGroup*2个样本，2表示间隔采样每一组样本中只选一个rs一个gan,3表示选择执行时间最少的几个样本作为初始样本
-parser.add_argument('--sampleType', type=int, default = 0,
-                    help='0: for all samole, '
-                         '1: The first two groups of random samples and GAN samples are used as initial samples, '
-                         '2: interval sampling, '
-                         '3: 10 samples with the least execution time')
+parser.add_argument('--sampleType', type=str, default = all,
+                    help='all: for all samole, '
+                         'firsttwogroup: The first two groups of random samples and GAN samples are used as initial samples, '
+                         'interval: interval sampling, '
+                         'best: 10 samples with the least execution time')
 # 一组rs+gan样本数，比如2个rs2个gan，反复循环，则一组样本数为2+2=4
-parser.add_argument('--ganrsGroup', type=int, default = 0, help='A set of random samples and the number of GAN samples')
+parser.add_argument('--ganrsGroup', type=int, default = 0, help='A set of random samples and the number of GAN samples.'
+                                                                'For example, two random samples are followed by two GAN samples, so ganrsGroup is equal to 4')
+parser.add_argument('--niters', type=int, default = 15, help='The number of iterations of the Bayesian optimization algorithm')
 args = parser.parse_args()
 if args.ganrsGroup == 0:
-    raise Exception("必须执行一组gan和rs的个数，比如每3个rs会有3个gan，--ganrsGroup=" + "6")
+    raise Exception("必须执行一组gan和rs的个数，比如每3个rs会有3个gan，--ganrsGroup=6")
 
 
 # 服务器运行spark时config文件
@@ -63,10 +66,9 @@ def get_ganrs_intevaln(n):
     a = []
     for i in range(0, len(initsamples_df), n):  ##每隔86行取数据
         a.append(i)
-    print('取出的行号为：' + str(a))
     sample = initsamples_df.iloc[a]
     initsamples = sample[vital_params_list].to_numpy()
-    print('取出的行号为：' + str(a) + ' , shape = ' + str(initsamples.shape))
+    print('间隔采样，取出的行号为：' + str(a) + ' , shape = ' + str(initsamples.shape))
     return initsamples
 
 # 样本按照runtime 升序排序，获取runtime最少的前n个样本作为初始样本
@@ -74,7 +76,7 @@ def get_best_n(n):
     initsamples_sort = initsamples_df.sort_values(by='runtime', ascending=True)
     initsamples_head = initsamples_sort[vital_params_list].head(n)
     initsamples = initsamples_head.to_numpy()
-    print('把执行时间最少的前10个样本作为初始样本，shape=' + str(initsamples.shape))
+    print('把执行时间最少的前几个样本作为初始样本，shape=' + str(initsamples.shape))
     return initsamples
 # --------------------- 生成 gan-rs 初始种群 end -------------------
 
@@ -200,20 +202,20 @@ if __name__ == '__main__':
     vital_params_list = sorted(d2)
     vital_params_list.append('runtime')
     # ------------------ 选择初始样本（3个方法选其一） start -------------
-    if sample_type == 0:
+    if sample_type == 'all':
         # 选择所有样本
         initsamples = ganrs_samples_all()
-    elif sample_type == 1:
+    elif sample_type == 'firsttwogroup':
         # 选择前n个样本
         initsamples = get_head_n(n=headn)
-    elif sample_type == 2:
+    elif sample_type == 'interval':
         # 每隔3个样本选择一个样本（包括第三个样本）
         initsamples = get_ganrs_intevaln(n = ganrs_interval)
-    elif sample_type == 3:
+    elif sample_type == 'best':
         initsamples = get_best_n(n=8)
     else:
-        raise Exception("[!] 请在0、1、2、3中选择一种初始样本方式，0表示all，1表示前两组样本，"
-                        "2表示间隔采样，3表示执行时间最少前几个样本")
+        raise Exception("[!] 请在all、firsttwogroup、interval、best中选择一种初始样本方式，firsttwogroup表示前两组样本，"
+                        "interval表示间隔采样，best表示执行时间最少前几个样本")
     # ------------------ 选择初始样本（3个方法选其一） end -------------
 
     bounds_transformer = SequentialDomainReductionTransformer()
@@ -231,7 +233,8 @@ if __name__ == '__main__':
     optimizer.subscribe(Events.OPTIMIZATION_STEP, logger)
 
     init_points = len(initsamples)
-    n_iter = 15
+    n_iter = args.niters
+    print('inerations：' + str(n_iter))
     optimizer.maximize(init_points=init_points, n_iter=n_iter, acq='ei')
     print(optimizer.max)
     draw_target(optimizer)
