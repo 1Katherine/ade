@@ -16,17 +16,27 @@ parser = argparse.ArgumentParser(description='manual to this script')
 # 采样方式：0表示所有样本，1表示前ganrsGroup*2个样本，2表示间隔采样每一组样本中只选一个rs一个gan,3表示选择执行时间最少的几个样本作为初始样本
 parser.add_argument('--sampleType', type=str, default=all,
                     help='all: for all samole, '
-                         'firsttwogroup: The first two groups of random samples and GAN samples are used as initial samples, '
+                         'firstngroup: The first two groups of random samples and GAN samples are used as initial samples, '
                          'interval: interval sampling, '
                          'best: 10 samples with the least execution time')
 # 一组rs+gan样本数，比如2个rs2个gan，反复循环，则一组样本数为2+2=4
 parser.add_argument('--ganrsGroup', type=int, default = 0, help='A set of random samples and the number of GAN samples.'
                                                                 'For example, two random samples are followed by two GAN samples, so ganrsGroup is equal to 4')
+parser.add_argument('--n', type=int, default = 0, help='top n groups')
 parser.add_argument('--niters', type=int, default = 20, help='The number of iterations of the Bayesian optimization algorithm')
 parser.add_argument('--initFile', type=str, default=None, help='50% random sampling and 50% GAN generated initial sample files')
+parser.add_argument('--xi', type=float, default=0.0)
 args = parser.parse_args()
+
+print('xi = ' + str(args.xi))
+
+args.initFile = 'wordcount-100G-GAN-30.csv'
+args.ganrsGroup = 6
+args.sampleType = 'all'
 if args.ganrsGroup == 0:
     raise Exception("必须执行一组gan和rs的个数，比如每3个rs会有3个gan，--ganrsGroup=6")
+if args.sampleType == 'firstngroup' and args.n == 0:
+    raise Exception("初始样本数为0，请指定参数n")
 if args.initFile == None:
     raise Exception("必须指定50%随机采样和50%GAN的初始样本文件")
 '''
@@ -144,12 +154,14 @@ if __name__ == '__main__':
     sample_type = args.sampleType
     # 一组rs+gan的样本数
     ganrs_group = args.ganrsGroup
+    # 前n组(1组3+3个)配置
+    n = args.n
     # 选择前headn个样本采样(前两组配置）
-    headn = ganrs_group * 2
+    headn = ganrs_group * n
     # 间隔ganrs_interval个样本采样
     ganrs_interval = ganrs_group // 2
-    name = 'lgb'
-    modelfile = './files30/'
+    name = 'rf'
+    modelfile = './files32/'
     # 重要参数
     vital_params_path = modelfile + name + "/selected_parameters.txt"
     # 维护的参数-范围表
@@ -157,6 +169,8 @@ if __name__ == '__main__':
 
 
     vital_params = pd.read_csv(vital_params_path)
+    print('重要参数列表（将贝叶斯的x_probe按照重要参数列表顺序转成配置文件实际运行:')
+    print(vital_params)
     # 参数范围和精度，从参数范围表里面获取
 
     # 参数范围表
@@ -184,15 +198,18 @@ if __name__ == '__main__':
 
 
     # 按照贝叶斯优化中的key顺序,得到重要参数的名称vital_params_name用于把json结果文件转成dataframe存成csv，以及重要参数+执行时间列vital_params_list用于读取初始样本
+    print('获取初始样本时，按照贝叶斯内部的key顺序传初始样本和已有的执行时间：')
     vital_params_name = sorted(pbounds)
+    print('vital_params_name = ' + str(vital_params_name))
     vital_params_list = sorted(pbounds)
     vital_params_list.append('runtime')
+    print('vital_params_list = ' + str(vital_params_list))
 
     # ------------------ 选择初始样本（3个方法选其一） start -------------
     if sample_type == 'all':
         # 选择所有样本
         initsamples = ganrs_samples_all()
-    elif sample_type == 'firsttwogroup':
+    elif sample_type == 'firstngroup':
         # 选择前n个样本
         initsamples = get_head_n(n=headn)
     elif sample_type == 'interval':
@@ -201,7 +218,7 @@ if __name__ == '__main__':
     elif sample_type == 'best':
         initsamples = get_best_n(n=8)
     else:
-        raise Exception("[!] 请在all、firsttwogroup、interval、best中选择一种初始样本方式，firsttwogroup表示前两组样本，"
+        raise Exception("[!] 请在all、firstngroup、interval、best中选择一种初始样本方式，firstngroup，"
                         "interval表示间隔采样，best表示执行时间最少前几个样本")
     # ------------------ 选择初始样本（3个方法选其一） end -------------
 
@@ -227,7 +244,7 @@ if __name__ == '__main__':
     )
     logger = JSONLogger(path=logpath)
     optimizer.subscribe(Events.OPTIMIZATION_STEP, logger)
-    optimizer.maximize(init_points=init_points, n_iter=n_iter, acq='ei')
+    optimizer.maximize(init_points=init_points, n_iter=n_iter, acq='ei',xi=args.xi)
     print('optimizer.max = ' + str(optimizer.max))
     draw_target(optimizer)
 
@@ -248,3 +265,4 @@ if __name__ == '__main__':
     # 设置索引从1开始
     res_df.index = range(1, len(res_df)+1)
     res_df.to_csv(generation_confs_csv)
+

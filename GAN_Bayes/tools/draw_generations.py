@@ -13,7 +13,7 @@ def draw_target(x, y, init_points, n_iter):
     # 画图
     plt.plot(x, -y, label=str(boname) + '  init_points = ' + str(init_points) + ', n_iter = ' + str(n_iter))
     max = y.max()
-    max_indx = y.argmax()
+    max_indx = y.argmax()+1
     # 在图上描出执行时间最低点
     plt.scatter(max_indx, -max, s=20, color='r')
     plt.annotate(str(-max) + 's', xy=(max_indx, -max), xycoords='data', xytext=(+20, -20), textcoords='offset points'
@@ -27,17 +27,20 @@ def draw_target(x, y, init_points, n_iter):
 if __name__ == '__main__':
     boname = 'ganrs'
     logpath = './logs.json'
-    init_points = 44
-    n_iter = 15
+    init_points = 8
+    n_iter = 29
 
     target = []
     interations = []
     inters = 0
-    for line in open(logpath, 'r'):
-        data = json.loads(line)
-        target.append(data['target'])
-        interations.append(inters)
-        inters += 1
+    for row, line in enumerate(open(logpath, 'r')):
+        if row < 28:
+            print(row)
+            print(line)
+            data = json.loads(line)
+            target.append(data['target'])
+            interations.append(inters + 1)
+            inters += 1
     x = np.array(interations)
     y = np.array(target)
     draw_target(x, y, init_points, n_iter)

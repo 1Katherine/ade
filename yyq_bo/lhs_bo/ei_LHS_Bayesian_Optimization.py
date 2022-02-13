@@ -95,7 +95,7 @@ def draw_target(bo):
     plt.show()
 
 if __name__ == '__main__':
-    name = 'rf'
+    name = 'ada'
     # 重要参数
     vital_params_path = './files100/' + name + "/selected_parameters.txt"
     # print(vital_params_path)

@@ -1,0 +1,17 @@
+{"target": -209.646, "params": {"spark.executor.cores": 3.0, "spark.executor.instances": 6.0}, "datetime": {"datetime": "2022-01-26 19:33:24", "elapsed": 0.0, "delta": 0.0}}
+{"target": -300.603, "params": {"spark.executor.cores": 1.0, "spark.executor.instances": 8.0}, "datetime": {"datetime": "2022-01-26 19:33:24", "elapsed": 0.0, "delta": 0.0}}
+{"target": -210.803, "params": {"spark.executor.cores": 2.0, "spark.executor.instances": 8.0}, "datetime": {"datetime": "2022-01-26 19:33:24", "elapsed": 0.000997, "delta": 0.000997}}
+{"target": -207.942, "params": {"spark.executor.cores": 2.0, "spark.executor.instances": 8.0}, "datetime": {"datetime": "2022-01-26 19:33:24", "elapsed": 0.000997, "delta": 0.0}}
+{"target": -220.532, "params": {"spark.executor.cores": 2.0, "spark.executor.instances": 8.0}, "datetime": {"datetime": "2022-01-26 19:33:24", "elapsed": 0.009118, "delta": 0.008121}}
+{"target": -216.546, "params": {"spark.executor.cores": 2.0, "spark.executor.instances": 8.0}, "datetime": {"datetime": "2022-01-26 19:33:24", "elapsed": 0.010105, "delta": 0.000987}}
+{"target": -463.057, "params": {"spark.executor.cores": 1.0, "spark.executor.instances": 5.0}, "datetime": {"datetime": "2022-01-26 19:33:24", "elapsed": 0.010105, "delta": 0.0}}
+{"target": -261.291, "params": {"spark.executor.cores": 3.0, "spark.executor.instances": 4.0}, "datetime": {"datetime": "2022-01-26 19:33:24", "elapsed": 0.010105, "delta": 0.0}}
+{"target": -217.651, "params": {"spark.executor.cores": 2.0, "spark.executor.instances": 8.0}, "datetime": {"datetime": "2022-01-26 19:33:24", "elapsed": 0.011104, "delta": 0.000999}}
+{"target": -218.302, "params": {"spark.executor.cores": 2.0, "spark.executor.instances": 8.0}, "datetime": {"datetime": "2022-01-26 19:33:24", "elapsed": 0.011104, "delta": 0.0}}
+{"target": -211.907, "params": {"spark.executor.cores": 2.0, "spark.executor.instances": 8.0}, "datetime": {"datetime": "2022-01-26 19:33:24", "elapsed": 0.011104, "delta": 0.0}}
+{"target": -215.583, "params": {"spark.executor.cores": 2.0, "spark.executor.instances": 8.0}, "datetime": {"datetime": "2022-01-26 19:33:24", "elapsed": 0.012102, "delta": 0.000998}}
+{"target": -255.69758160909018, "params": {"spark.executor.cores": 1.3263289442882775, "spark.executor.instances": 5.47551667989374}, "datetime": {"datetime": "2022-01-26 19:33:24", "elapsed": 0.057977, "delta": 0.045875}}
+{"target": -255.69758160909018, "params": {"spark.executor.cores": 2.2182827252001647, "spark.executor.instances": 7.859498937478362}, "datetime": {"datetime": "2022-01-26 19:33:24", "elapsed": 0.389632, "delta": 0.331655}}
+{"target": -255.69758160909018, "params": {"spark.executor.cores": 1.309214202982794, "spark.executor.instances": 7.492214493155779}, "datetime": {"datetime": "2022-01-26 19:33:24", "elapsed": 0.448474, "delta": 0.058842}}
+{"target": -255.69758160909018, "params": {"spark.executor.cores": 1.2020297905843607, "spark.executor.instances": 7.70290077480703}, "datetime": {"datetime": "2022-01-26 19:33:24", "elapsed": 0.506433, "delta": 0.057959}}
+{"target": -255.69758160909018, "params": {"spark.executor.cores": 1.7244014020293152, "spark.executor.instances": 8.0}, "datetime": {"datetime": "2022-01-26 19:33:25", "elapsed": 0.650454, "delta": 0.144021}}

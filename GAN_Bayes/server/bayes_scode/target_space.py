@@ -190,11 +190,11 @@ class TargetSpace(object):
 
         try:
             target = self._cache[_hashable(x)]
-            print('probe说：以前见过你啦！x = ' + str(x) + ' target = ' + str(target))
+            print('probe说：以前见过你啦！params = ' + str(params) + ' target = ' + str(target))
         except KeyError:
             params = dict(zip(self._keys, x))
             target = self.target_func(**params)
-            print('probe说：没见过！帮你计算target！x = ' + str(x) + ' target = ' + str(target))
+            print('probe说：没见过！帮你计算target！params = ' + str(params) + ' target = ' + str(target))
             self.register(x, target)
         return target
 

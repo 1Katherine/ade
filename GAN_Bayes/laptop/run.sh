@@ -14,12 +14,20 @@ then
     echo "'--niters', type=int, default = 15, help=The number of iterations of the Bayesian optimization algorithm"
     echo -e "\n"
 fi
+file=wordcount-100G-GAN-30.csv
+all_initpoints=50
+groupNumber=6
+# type = all / firstngroup / interval / best
+firstn=2
+initType=all
+if [ $initType == "firstngroup" ]
+then
+  interationsNumber=$(($all_initpoints - $firstn * $groupNumber))
+else
+  interationsNumber=20
+fi
 
-interationsNumber=20
-groupNumber=4
-# type = all / firsttwogroup / interval / best
-initType=best
 
 echo $initType
 echo $interationsNumber
-python ganrs_Bayesian_Optimization_regitser.py --sampleType=$initType --ganrsGroup=$groupNumber --niters=$interationsNumber
+python ganrs_Bayesian_Optimization_regitser.py --sampleType=$initType --ganrsGroup=$groupNumber --n=$firstn --niters=$interationsNumber  --initFile=$file

@@ -3,8 +3,15 @@ import numpy as np
 from scipy.stats import norm
 from scipy.optimize import minimize
 
+# 标准化
+def standardization(data):
+    mu = np.mean(data, axis=0)
+    sigma = np.std(data, axis=0)
+    return (data - mu) / sigma
 
-def acq_max(ac, gp, y_max, bounds, random_state, n_warmup=10000, n_iter=10):
+Tconstant = 0
+predict_target = []
+def acq_max(ac, gp, y_max, Tconstraint, bounds, random_state, n_warmup=10000, n_iter=10):
     """
     A function to find the maximum of the acquisition function
 
@@ -39,32 +46,38 @@ def acq_max(ac, gp, y_max, bounds, random_state, n_warmup=10000, n_iter=10):
     -------
     :return: x_max, The arg max of the acquisition function.
     """
+    global Tconstant
+    Tconstant = Tconstraint
 
     # Warm up with random points
     x_tries = random_state.uniform(bounds[:, 0], bounds[:, 1],
                                    size=(n_warmup, bounds.shape[0]))
-    ys = ac(x_tries, gp=gp, y_max=y_max)
-    x_max = x_tries[ys.argmax()]
-    max_acq = ys.max()
+    test_X_temp = standardization(np.array(x_tries))
+    upper = ac(x=test_X_temp, gp=gp, y_max=y_max)
+    x_max = x_tries[upper.argmax()]
+    max_acq = upper.max()
+    print('upper = \n' + str(upper))
+    # upper 从大到小排序
+    sortnumber = np.argsort(-upper)
+    print('upper.argmax() = ' + str(upper.argmax()))
+    print('Tconstraint = ' + str(Tconstraint))
+    print('all predict_target = \n' + str(-predict_target))
+    print('upper.argmax() = ' + str(upper.argmax()) + ', sortnumber[0] = ' + str(sortnumber[0]))
+    print('x_max = ' + str(x_max) + ', predict_time = ' + str(-predict_target[upper.argmax()]) + ' , Tconstraint = ' + str(Tconstraint))
 
-    # Explore the parameter space more throughly
-    x_seeds = random_state.uniform(bounds[:, 0], bounds[:, 1],
-                                   size=(n_iter, bounds.shape[0]))
-    for x_try in x_seeds:
-        # Find the minimum of minus the acquisition function
-        res = minimize(lambda x: -ac(x.reshape(1, -1), gp=gp, y_max=y_max),
-                       x_try.reshape(1, -1),
-                       bounds=bounds,
-                       method="L-BFGS-B")
-
-        # See if success
-        if not res.success:
-            continue
-
-        # Store it if better than previous minimum(maximum).
-        if max_acq is None or -res.fun[0] >= max_acq:
-            x_max = res.x
-            max_acq = -res.fun[0]
+    # 顺序遍历sortnumber，即upper从大到小的下标数组
+    idx = 0
+    while idx < sortnumber.shape[0] - 1 and -predict_target[sortnumber[idx]] > Tconstraint:
+        print('idx=' + str(idx) + ' ,-predict_target[sortnumber[idx]] > Tconstraint : ' + str(-predict_target[sortnumber[idx]]) + ' > ' + str(Tconstraint))
+        idx = idx + 1
+    if idx == sortnumber.shape[0] - 1:
+        idx = 0
+        x_max = x_tries[upper.argmax()]
+    else:
+        print('idx=' + str(idx) + ' ,-predict_target[sortnumber[idx]] < Tconstraint : ' + str(-predict_target[sortnumber[idx]]) + ' < ' + str(Tconstraint))
+        x_max = x_tries[sortnumber[idx]]
+    # --------------------------------------------------
+    print('idx = ' + str(idx) + ' , x_max = ' + str(x_max) + ', predict_time = ' + str(-predict_target[sortnumber[idx]]) + ' , Tconstraint = ' + str(Tconstraint))
 
     # Clip output to make sure it lies within the bounds. Due to floating
     # point technicalities this is not always the case.
@@ -124,7 +137,12 @@ class UtilityFunction(object):
   
         a = (mean - y_max - xi)
         z = a / std
-        return a * norm.cdf(z) + std * norm.pdf(z)
+        global predict_target, Tconstant
+        predict_target = mean
+        print('Tconstant = ' + str(Tconstant))
+        Ptmax = norm.cdf((Tconstant - mean)/std)
+        print('Ptmax = ' + str(Ptmax))
+        return Ptmax * (a * norm.cdf(z) + std * norm.pdf(z))
 
     @staticmethod
     def _poi(x, gp, y_max, xi):

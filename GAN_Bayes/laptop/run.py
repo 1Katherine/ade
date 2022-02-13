@@ -8,4 +8,5 @@
 '''
 
 import os
-os.system('run.sh --help')
+# os.system('run.sh --help')
+os.system('run.sh')

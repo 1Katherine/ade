@@ -1,6 +1,6 @@
 import warnings
 
-from .target_space import TargetSpace
+from .target_space import TargetSpace,_hashable
 from .event import Events, DEFAULT_EVENTS
 from .logger import _get_default_logger
 from .util import UtilityFunction, acq_max, ensure_rng
@@ -180,6 +180,10 @@ class BayesianOptimization(Observable):
         """Mazimize your function"""
         self._prime_subscriptions()
         self.dispatch(Events.OPTIMIZATION_START)
+        import time
+        # 记录搜索算法开始时间
+        start_time = time.time()
+
         self._prime_queue(init_points)
         self.set_gp_params(**gp_params)
 
@@ -189,19 +193,45 @@ class BayesianOptimization(Observable):
                                kappa_decay=kappa_decay,
                                kappa_decay_delay=kappa_decay_delay)
         iteration = 0
-        while not self._queue.empty or iteration < n_iter:
-            try:
-                x_probe = next(self._queue)
-            except StopIteration:
-                util.update_params()
-                x_probe = self.suggest(util)
-                iteration += 1
-
+        default_runtime = 1100
+        xtimes = 7
+        Tmax = default_runtime / xtimes
+        print('Tmax = ' + str(Tmax))
+        print('self._queue.empty = ' + str(self._queue.empty))
+        # while not self._queue.empty or iteration < n_iter:
+        # try:
+        #     x_probe = next(self._queue)
+        # except StopIteration:
+        #     util.update_params()
+        #     x_probe = self.suggest(util)
+        #     iteration += 1
+        #
+        # self.probe(x_probe, lazy=False)
+        while iteration < n_iter:
+            print('key = \n' + str(self._space._keys))
+            print('bounds = \n' + str(self._space.bounds))
+            print('before probe, param.shape = ' + str(self._space.params.shape))
+            print('before probe, target = ' + str(self._space.target.shape))
+            util.update_params()
+            x_probe = self.suggest(util)
+            iteration += 1
             self.probe(x_probe, lazy=False)
+            print('x_probe = ' + str(x_probe))
 
             if self._bounds_transformer:
                 self.set_bounds(
                     self._bounds_transformer.transform(self._space))
+
+            from .target_space import _hashable
+            x = self._space._as_array(x_probe)
+            target = self._space._cache[_hashable(x)]
+            print('target = ' + str(target))
+            if -target < Tmax:
+                break
+
+        # 记录搜索算法结束时间
+        end_time = time.time()
+        print(str(int(end_time - start_time)) + 's')  # 秒级时间戳
 
         self.dispatch(Events.OPTIMIZATION_END)
 

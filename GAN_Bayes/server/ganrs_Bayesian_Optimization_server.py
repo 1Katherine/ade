@@ -1,4 +1,3 @@
-#  -*- coding: UTF-8 -*
 import pandas as pd
 import shutil
 import time
@@ -13,12 +12,13 @@ parser = argparse.ArgumentParser(description='manual to this script')
 # 采样方式：0表示所有样本，1表示前ganrsGroup*2个样本，2表示间隔采样每一组样本中只选一个rs一个gan,3表示选择执行时间最少的几个样本作为初始样本
 parser.add_argument('--sampleType', type=str, default = all,
                     help='all: for all samole, '
-                         'firsttwogroup: The first two groups of random samples and GAN samples are used as initial samples, '
+                         'firstngroup: The first two groups of random samples and GAN samples are used as initial samples, '
                          'interval: interval sampling, '
                          'best: 10 samples with the least execution time')
 # 一组rs+gan样本数，比如2个rs2个gan，反复循环，则一组样本数为2+2=4
 parser.add_argument('--ganrsGroup', type=int, default = 0, help='A set of random samples and the number of GAN samples.'
                                                                 'For example, two random samples are followed by two GAN samples, so ganrsGroup is equal to 4')
+parser.add_argument('--n', type=int, default = 0, help='top n groups')
 parser.add_argument('--niters', type=int, default = 15, help='The number of iterations of the Bayesian optimization algorithm')
 parser.add_argument('--initFile', type=str, default=None, help='50% random sampling and 50% GAN generated initial sample files')
 args = parser.parse_args()
@@ -42,8 +42,10 @@ generation_confs = "/usr/local/home/yyq/bo/ganrs_bo/generationConf.csv"
 sample_type = args.sampleType
 # 一组rs+gan的样本数
 ganrs_group = args.ganrsGroup
+# 前n组(1组3+3个)配置
+n = args.n
 # 选择前headn个样本采样(前两组配置）
-headn = ganrs_group * 2
+headn = ganrs_group * n
 # 间隔ganrs_interval个样本采样
 ganrs_interval = ganrs_group // 2
 
@@ -124,7 +126,7 @@ last_runtime = 1.0
 def run(configNum):
     # configNum = None
     # 使用给定配置运行spark
-    run_cmd = '/usr/local/home/zwr/wordcount-100G-ga.sh ' + str(configNum)
+    run_cmd = '/usr/local/home/zwr/wordcount-100G-ga.sh ' + str(configNum) + ' /usr/local/home/yyq/bo/ganrs_bo/config/wordcount-100G'
     os.system(run_cmd)
     # 睡眠3秒，保证hibench.report文件完成更新后再读取运行时间
     time.sleep(3)
@@ -186,7 +188,9 @@ def draw_target(bo):
 if __name__ == '__main__':
     # 读取重要参数
     vital_params = pd.read_csv(vital_params_path)
-        # 参数范围和精度，从参数范围表里面获取
+    print('重要参数列表（将贝叶斯的x_probe按照重要参数列表顺序转成配置文件实际运行:')
+    print(vital_params)
+    # 参数范围和精度，从参数范围表里面获取
     sparkConfRangeDf = pd.read_excel(conf_range_table)
     sparkConfRangeDf.set_index('SparkConf', inplace=True)
     confDict = sparkConfRangeDf.to_dict('index')
@@ -202,15 +206,19 @@ if __name__ == '__main__':
             precisions.append(confDict[conf]['pre'])
         else:
             print(conf,'-----参数没有维护: ', '-----')
+
     # 按照贝叶斯优化中的key顺序,得到重要参数的名称vital_params_name用于把json结果文件转成dataframe存成csv，以及重要参数+执行时间列vital_params_list用于读取初始样本
+    print('获取初始样本时，按照贝叶斯内部的key顺序传初始样本和已有的执行时间：')
     vital_params_name = sorted(d2)
+    print('vital_params_name = ' + str(vital_params_name))
     vital_params_list = sorted(d2)
     vital_params_list.append('runtime')
+    print('vital_params_list = ' + str(vital_params_list))
     # ------------------ 选择初始样本（3个方法选其一） start -------------
     if sample_type == 'all':
         # 选择所有样本
         initsamples = ganrs_samples_all()
-    elif sample_type == 'firsttwogroup':
+    elif sample_type == 'firstngroup':
         # 选择前n个样本
         initsamples = get_head_n(n=headn)
     elif sample_type == 'interval':
@@ -219,7 +227,7 @@ if __name__ == '__main__':
     elif sample_type == 'best':
         initsamples = get_best_n(n=8)
     else:
-        raise Exception("[!] 请在all、firsttwogroup、interval、best中选择一种初始样本方式，firsttwogroup表示前两组样本，"
+        raise Exception("[!] 请在all、firstngroup、interval、best中选择一种初始样本方式，firstngroup表示前n组样本，"
                         "interval表示间隔采样，best表示执行时间最少前几个样本")
     # ------------------ 选择初始样本（3个方法选其一） end -------------
 
@@ -239,7 +247,7 @@ if __name__ == '__main__':
 
     init_points = len(initsamples)
     n_iter = args.niters
-    print('inerations：' + str(n_iter))
+    print('interations：' + str(n_iter))
     optimizer.maximize(init_points=init_points, n_iter=n_iter, acq='ei')
     print(optimizer.max)
     draw_target(optimizer)

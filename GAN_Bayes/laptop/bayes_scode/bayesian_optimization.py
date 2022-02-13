@@ -1,12 +1,19 @@
 import warnings
 
-from .target_space import TargetSpace
+from .target_space import TargetSpace,_hashable
 from .event import Events, DEFAULT_EVENTS
 from .logger import _get_default_logger
 from .util import UtilityFunction, acq_max, ensure_rng
 
 from sklearn.gaussian_process.kernels import Matern
 from sklearn.gaussian_process import GaussianProcessRegressor
+import numpy as np
+import pandas as pd
+# 标准化
+def standardization(data):
+    mu = np.mean(data, axis=0)
+    sigma = np.std(data, axis=0)
+    return (data - mu) / sigma
 
 
 class Queue:
@@ -71,6 +78,11 @@ class BayesianOptimization(Observable):
         # its domain, and a record of the evaluations we have done so far
         self._space = TargetSpace(f, pbounds, random_state)
         self.custom_initsamples = custom_initsamples
+
+        print('custom_initsamples = \n' + str(custom_initsamples))
+        df = pd.DataFrame(custom_initsamples)
+        print('custom_initsamples info = ')
+        print(df.info())
         # queue
         self._queue = Queue()
 
@@ -124,7 +136,32 @@ class BayesianOptimization(Observable):
         # we don't really need to see them here.
         with warnings.catch_warnings():
             warnings.simplefilter("ignore")
-            self._gp.fit(self._space.params, self._space.target)
+            # self._gp.fit(self._space.params, self._space.target)
+            # ---------------------- 新增：参数标准化后建立GP模型 start -----------------------
+            train_X_temp = standardization(np.array(self._space.params))
+            train_y_temp = np.array(self._space.target)
+            print('标准化前的train_x = \n' + str(np.array(self._space.params)))
+            print('标准化后的train_x = \n' + str(train_X_temp))
+
+            result_X = np.zeros(shape=(train_X_temp.shape[0],train_X_temp.shape[1]))
+            # 对每一列进行标准化
+            for col in range(train_X_temp.shape[1]):
+                result_X[:,col] = standardization(train_X_temp[:,col])
+            print('测试：每一列进行标准化，标准化后的train_x = \n' + str(result_X))
+
+            train_X_temp[np.isnan(train_X_temp)] = 0
+            print('标准化时如果存在分母（sigma）为0的情况，返回nan。此时将所有nan替换为0 \n' + str(train_X_temp))
+
+            print('train_y = \n' + str(np.array(self._space.target)))
+            y_df = pd.DataFrame(train_y_temp)
+            x_df = pd.DataFrame(train_X_temp)
+            print('train_X_temp info:')
+            print(x_df.info())
+            print('train_y_temp info:')
+            print(y_df.info())
+            self._gp.fit(train_X_temp, train_y_temp)
+
+            # ---------------------- 新增：参数标准化后建立GP模型 end -----------------------
 
         # Finding argmax of the acquisition function.
         suggestion = acq_max(
@@ -132,7 +169,8 @@ class BayesianOptimization(Observable):
             gp=self._gp,
             y_max=self._space.target.max(),
             bounds=self._space.bounds,
-            random_state=self._random_state
+            random_state=self._random_state,
+            Tconstraint=np.percentile(-train_y_temp, 25)
         )
 
         return self._space.array_to_params(suggestion)
@@ -180,6 +218,10 @@ class BayesianOptimization(Observable):
         """Mazimize your function"""
         self._prime_subscriptions()
         self.dispatch(Events.OPTIMIZATION_START)
+        import time
+        # 记录搜索算法开始时间
+        start_time = time.time()
+
         self._prime_queue(init_points)
         self.set_gp_params(**gp_params)
 
@@ -189,19 +231,47 @@ class BayesianOptimization(Observable):
                                kappa_decay=kappa_decay,
                                kappa_decay_delay=kappa_decay_delay)
         iteration = 0
-        while not self._queue.empty or iteration < n_iter:
-            try:
-                x_probe = next(self._queue)
-            except StopIteration:
-                util.update_params()
-                x_probe = self.suggest(util)
-                iteration += 1
-
+        default_runtime = 1100
+        xtimes = 8
+        Tmax = default_runtime / xtimes
+        print('Tmax = ' + str(Tmax))
+        # while not self._queue.empty or iteration < n_iter:
+        # try:
+        #     x_probe = next(self._queue)
+        # except StopIteration:
+        #     util.update_params()
+        #     x_probe = self.suggest(util)
+        #     iteration += 1
+        #
+        # self.probe(x_probe, lazy=False)
+        while iteration < n_iter:
+            print('key = \n' + str(self._space._keys))
+            print('bounds = \n' + str(self._space.bounds))
+            print('before probe, param.shape = ' + str(self._space.params.shape))
+            print('before probe, target = ' + str(self._space.target.shape))
+            util.update_params()
+            x_probe = self.suggest(util)
+            iteration += 1
             self.probe(x_probe, lazy=False)
+            print('x_probe = ' + str(x_probe))
 
             if self._bounds_transformer:
                 self.set_bounds(
                     self._bounds_transformer.transform(self._space))
+
+            from .target_space import _hashable
+            x = self._space._as_array(x_probe)
+            print('x = ' + str(x))
+            predict_target = self._gp.predict([x])
+            print('predict_target = ' + str(predict_target))
+            target = self._space._cache[_hashable(x)]
+            print('target = ' + str(target))
+            if -target < Tmax:
+                break
+
+        # 记录搜索算法结束时间
+        end_time = time.time()
+        print(str(int(end_time - start_time)) + 's')  # 秒级时间戳
 
         self.dispatch(Events.OPTIMIZATION_END)
 

@@ -1,0 +1,7 @@
+spark.default.parallelism,spark.executor.cores,spark.executor.instances,spark.executor.memory,spark.executor.memoryOverhead,spark.memory.fraction,spark.memory.storageFraction,spark.reducer.maxBlocksInFlightPerAddress,spark.reducer.maxSizeInFlight,spark.shuffle.file.buffer,runtime
+416.0,2.0,5.0,4.0,709.0,0.67,0.79,1505146546.0,25.0,16.0,-2853.331130000002
+325.0,1.0,5.0,5.0,595.0,0.5,0.62,1383119454.0,53.0,33.0,-2797.4843400000013
+377.0,1.0,7.0,5.0,435.0,0.56,0.54,1096910921.0,70.0,45.0,-2800.1648400000004
+372.0,2.0,6.0,6.0,692.0,0.57,0.64,1324833103.0,71.0,38.0,-2795.873020000001
+301.0,2.0,7.0,4.0,820.0,0.66,0.72,1544440625.0,66.0,41.0,-2796.6157800000015
+308.0,1.0,7.0,4.0,806.0,0.67,0.77,1769810909.0,70.0,17.0,-2803.1220400000016

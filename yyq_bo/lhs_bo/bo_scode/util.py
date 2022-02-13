@@ -52,24 +52,10 @@ def acq_max(ac, gp, y_max, bounds, random_state, n_warmup=10000, n_iter=10):
         注释源码：随机生成样本
         注释时间：2022/1/5 16:40
     '''
-    # x_tries = random_state.uniform(bounds[:, 0], bounds[:, 1],
-    #                                size=(n_warmup, bounds.shape[0]))
-    # ys = ac(x_tries, gp=gp, y_max=y_max)
-    # x_max = x_tries[ys.argmax()]
-    # max_acq = ys.max()
-
-    '''
-        新增：使用lhs生成样本
-        更新时间：2022/1/5 16:40
-    '''
-    _bounds = bounds.tolist()
-    # bounds = [[200.0, 500.0], [1.0, 3.0], [4.0, 8.0]]
-    # 创建lhs实例
-    l = LHSample(bounds.shape[0], _bounds, n_warmup)
-    # 生成lhs样本（n_warmup个）
-    lhs_sample = l.lhs()
-    ys = ac(lhs_sample, gp=gp, y_max=y_max)
-    x_max = lhs_sample[ys.argmax()]
+    x_tries = random_state.uniform(bounds[:, 0], bounds[:, 1],
+                                   size=(n_warmup, bounds.shape[0]))
+    ys = ac(x_tries, gp=gp, y_max=y_max)
+    x_max = x_tries[ys.argmax()]
     max_acq = ys.max()
 
 
